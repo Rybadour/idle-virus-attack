@@ -1,0 +1,105 @@
+{
+	"x": 0,
+	"y": 0,
+	"width": 256,
+	"height": 256,
+	"iid": "75888860-9f30-11ed-b2c8-dfa72777c7f8",
+	"layers": [],
+	"entities": {
+		"HackingNode": [
+			{
+				"id": "HackingNode",
+				"iid": "eee9d600-9f30-11ed-b2c8-af5eb59573c9",
+				"layer": "Nodes",
+				"x": 40,
+				"y": 40,
+				"width": 30,
+				"height": 30,
+				"color": 9755059,
+				"customFields": {
+					"connectedNodes": [
+						{
+							"entityIid": "efb64dc0-9f30-11ed-b2c8-63e2174ee5fa",
+							"layerIid": "e07964f0-9f30-11ed-b2c8-47ef907f2e4f",
+							"levelIid": "75888860-9f30-11ed-b2c8-dfa72777c7f8",
+							"worldIid": "43b2abf0-9f30-11ed-a753-b9cdee729eed"
+						}
+					]
+				}
+			},
+			{
+				"id": "HackingNode",
+				"iid": "efb64dc0-9f30-11ed-b2c8-63e2174ee5fa",
+				"layer": "Nodes",
+				"x": 168,
+				"y": 56,
+				"width": 30,
+				"height": 30,
+				"color": 9755059,
+				"customFields": {
+					"connectedNodes": [
+						{
+							"entityIid": "f07705b0-9f30-11ed-b2c8-b17f2a5f5676",
+							"layerIid": "e07964f0-9f30-11ed-b2c8-47ef907f2e4f",
+							"levelIid": "75888860-9f30-11ed-b2c8-dfa72777c7f8",
+							"worldIid": "43b2abf0-9f30-11ed-a753-b9cdee729eed"
+						}
+					]
+				}
+			},
+			{
+				"id": "HackingNode",
+				"iid": "f07705b0-9f30-11ed-b2c8-b17f2a5f5676",
+				"layer": "Nodes",
+				"x": 72,
+				"y": 136,
+				"width": 30,
+				"height": 30,
+				"color": 9755059,
+				"customFields": {
+					"connectedNodes": [
+						{
+							"entityIid": "f1008100-9f30-11ed-b2c8-27a587aed514",
+							"layerIid": "e07964f0-9f30-11ed-b2c8-47ef907f2e4f",
+							"levelIid": "75888860-9f30-11ed-b2c8-dfa72777c7f8",
+							"worldIid": "43b2abf0-9f30-11ed-a753-b9cdee729eed"
+						}
+					]
+				}
+			},
+			{
+				"id": "HackingNode",
+				"iid": "f1008100-9f30-11ed-b2c8-27a587aed514",
+				"layer": "Nodes",
+				"x": 184,
+				"y": 168,
+				"width": 30,
+				"height": 30,
+				"color": 9755059,
+				"customFields": {
+					"connectedNodes": [
+						{
+							"entityIid": "f1affae0-9f30-11ed-b2c8-a3e9ca36cb5a",
+							"layerIid": "e07964f0-9f30-11ed-b2c8-47ef907f2e4f",
+							"levelIid": "75888860-9f30-11ed-b2c8-dfa72777c7f8",
+							"worldIid": "43b2abf0-9f30-11ed-a753-b9cdee729eed"
+						}
+					]
+				}
+			},
+			{
+				"id": "HackingNode",
+				"iid": "f1affae0-9f30-11ed-b2c8-a3e9ca36cb5a",
+				"layer": "Nodes",
+				"x": 88,
+				"y": 232,
+				"width": 30,
+				"height": 30,
+				"color": 9755059,
+				"customFields": {
+					"connectedNodes": []
+				}
+			}
+		]
+	}
+}

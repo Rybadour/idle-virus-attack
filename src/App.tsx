@@ -5,7 +5,8 @@ import ReactTooltip from 'react-tooltip';
 
 import './App.scss';
 import { ReactJSXElement } from '@emotion/react/types/jsx-namespace';
-import Viruses from './components/viruses';
+import NodeMap from './components/node-map';
+import { getNodes } from './config/node-map';
 
 function App() {
   return (
@@ -38,7 +39,7 @@ function Content() {
   }, []);
 
   return <div className="content">
-    <Viruses />
+    <NodeMap nodes={getNodes()} />
   </div>;
 }
 

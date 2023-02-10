@@ -1,25 +1,16 @@
 import { useCallback, useState } from "react";
 import styled from "styled-components";
+import { getNodes } from "../config/node-map";
+import { INode } from "../shared/types";
 
 const NODE_SIZE = 30;
-
-interface INode {
-  x: number;
-  y: number;
-}
-
-const nodes: INode[] = [
-  {x: 40, y: 50},
-  {x: 40, y: 100},
-  {x: 150, y: 100}
-];
 
 interface Coords {
   x: number;
   y: number;
 }
 
-export default function Viruses() {
+export default function NodeMap(props: {nodes: Record<string, INode>}) {
   const [panOffset, setPanOffset] = useState<Coords>({x: 0, y: 0});
   const [isDragging, setIsDragging] = useState(false);
 
@@ -35,11 +26,15 @@ export default function Viruses() {
     onMouseMove={(evt) => moveMouse(evt)}
     >
     <g transform={`translate(${panOffset.x} ${panOffset.y})`}>
-    
-    <line x1={nodes[0].x} y1={nodes[0].y} x2={nodes[1].x} y2={nodes[1].y} stroke="white" strokeWidth={3} />
-    <line x1={nodes[1].x} y1={nodes[1].y} x2={nodes[2].x} y2={nodes[2].y} stroke="white" strokeWidth={3} />
 
-    {nodes.map(node =>
+    {Object.values(props.nodes).map(node =>
+      node.connections.map(otherId => {
+        const other = props.nodes[otherId];
+        return <NodeConnection x1={node.x} y1={node.y} x2={other.x} y2={other.y} />;
+      })
+    )}
+
+    {Object.values(props.nodes).map(node =>
       <Node cx={node.x} cy={node.y} r={NODE_SIZE/2} />
     )}
     </g>
@@ -49,7 +44,6 @@ export default function Viruses() {
 const NodesContainer = styled.svg`
   width: 100%;
   height: 100%;
-  margin: 30px;
   border: 1px solid #aaa;
   border-radius: 15px;
   background: black;
@@ -63,4 +57,9 @@ const Node = styled.circle`
     stroke: white;
     stroke-width: 2px;
   }
+`;
+
+const NodeConnection = styled.line`
+  stroke: white;
+  stroke-width: 3px;
 `;
