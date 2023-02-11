@@ -22,7 +22,7 @@
 							"entityIid": "efb64dc0-9f30-11ed-b2c8-63e2174ee5fa",
 							"layerIid": "e07964f0-9f30-11ed-b2c8-47ef907f2e4f",
 							"levelIid": "75888860-9f30-11ed-b2c8-dfa72777c7f8",
-							"worldIid": "43b2abf0-9f30-11ed-a753-b9cdee729eed"
+							"worldIid": "bcd2b590-9f30-11ed-ace3-55032945347a"
 						}
 					]
 				}
@@ -42,7 +42,7 @@
 							"entityIid": "f07705b0-9f30-11ed-b2c8-b17f2a5f5676",
 							"layerIid": "e07964f0-9f30-11ed-b2c8-47ef907f2e4f",
 							"levelIid": "75888860-9f30-11ed-b2c8-dfa72777c7f8",
-							"worldIid": "43b2abf0-9f30-11ed-a753-b9cdee729eed"
+							"worldIid": "bcd2b590-9f30-11ed-ace3-55032945347a"
 						}
 					]
 				}
@@ -62,7 +62,7 @@
 							"entityIid": "f1008100-9f30-11ed-b2c8-27a587aed514",
 							"layerIid": "e07964f0-9f30-11ed-b2c8-47ef907f2e4f",
 							"levelIid": "75888860-9f30-11ed-b2c8-dfa72777c7f8",
-							"worldIid": "43b2abf0-9f30-11ed-a753-b9cdee729eed"
+							"worldIid": "bcd2b590-9f30-11ed-ace3-55032945347a"
 						}
 					]
 				}
@@ -82,7 +82,7 @@
 							"entityIid": "f1affae0-9f30-11ed-b2c8-a3e9ca36cb5a",
 							"layerIid": "e07964f0-9f30-11ed-b2c8-47ef907f2e4f",
 							"levelIid": "75888860-9f30-11ed-b2c8-dfa72777c7f8",
-							"worldIid": "43b2abf0-9f30-11ed-a753-b9cdee729eed"
+							"worldIid": "bcd2b590-9f30-11ed-ace3-55032945347a"
 						}
 					]
 				}
@@ -98,6 +98,26 @@
 				"color": 9755059,
 				"customFields": {
 					"connectedNodes": []
+				}
+			}
+		],
+		"StartIndicator": [
+			{
+				"id": "StartIndicator",
+				"iid": "81707b30-9f30-11ed-ace3-65b9700e7e1b",
+				"layer": "Nodes",
+				"x": 112,
+				"y": 240,
+				"width": 16,
+				"height": 16,
+				"color": 9755059,
+				"customFields": {
+					"StartNode": {
+						"entityIid": "f1affae0-9f30-11ed-b2c8-a3e9ca36cb5a",
+						"layerIid": "e07964f0-9f30-11ed-b2c8-47ef907f2e4f",
+						"levelIid": "75888860-9f30-11ed-b2c8-dfa72777c7f8",
+						"worldIid": "bcd2b590-9f30-11ed-ace3-55032945347a"
+					}
 				}
 			}
 		]

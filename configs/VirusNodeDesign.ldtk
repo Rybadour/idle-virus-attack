@@ -5,12 +5,12 @@
 		"doc": "https://ldtk.io/json",
 		"schema": "https://ldtk.io/files/JSON_SCHEMA.json",
 		"appAuthor": "Sebastien 'deepnight' Benard",
-		"appVersion": "1.1.3",
+		"appVersion": "1.1.1",
 		"url": "https://ldtk.io"
 	},
-	"jsonVersion": "1.1.3",
-	"appBuildId": 458364,
-	"nextUid": 4,
+	"jsonVersion": "1.1.1",
+	"appBuildId": 458076,
+	"nextUid": 7,
 	"identifierStyle": "Capitalize",
 	"worldLayout": "Free",
 	"worldGridWidth": 256,
@@ -65,7 +65,7 @@
 		{
 			"identifier": "HackingNode",
 			"uid": 1,
-			"tags": [],
+			"tags": ["node"],
 			"width": 30,
 			"height": 30,
 			"resizableX": false,
@@ -116,6 +116,64 @@
 					"allowOutOfLevelRef": false,
 					"allowedRefs": "OnlySame",
 					"allowedRefTags": [],
+					"tilesetUid": null
+				}
+			]
+		},
+		{
+			"identifier": "StartIndicator",
+			"uid": 5,
+			"tags": [],
+			"width": 16,
+			"height": 16,
+			"resizableX": false,
+			"resizableY": false,
+			"keepAspectRatio": false,
+			"tileOpacity": 1,
+			"fillOpacity": 1,
+			"lineOpacity": 1,
+			"hollow": false,
+			"color": "#94D9B3",
+			"renderMode": "Rectangle",
+			"showName": true,
+			"tilesetId": null,
+			"tileId": null,
+			"tileRenderMode": "FitInside",
+			"tileRect": null,
+			"nineSliceBorders": [],
+			"maxCount": 0,
+			"limitScope": "PerLevel",
+			"limitBehavior": "MoveLastOne",
+			"pivotX": 0,
+			"pivotY": 0,
+			"fieldDefs": [
+				{
+					"identifier": "StartNode",
+					"__type": "EntityRef",
+					"uid": 6,
+					"type": "F_EntityRef",
+					"isArray": false,
+					"canBeNull": true,
+					"arrayMinLength": null,
+					"arrayMaxLength": null,
+					"editorDisplayMode": "RefLinkBetweenCenters",
+					"editorDisplayPos": "Above",
+					"editorAlwaysShow": false,
+					"editorCutLongValues": true,
+					"editorTextSuffix": null,
+					"editorTextPrefix": null,
+					"useForSmartColor": false,
+					"min": null,
+					"max": null,
+					"regex": null,
+					"acceptFileTypes": null,
+					"defaultOverride": null,
+					"textLanguageMode": null,
+					"symmetricalRef": false,
+					"autoChainRef": true,
+					"allowOutOfLevelRef": true,
+					"allowedRefs": "OnlyTags",
+					"allowedRefTags": ["node"],
 					"tilesetUid": null
 				}
 			]
@@ -171,7 +229,7 @@
 							"__identifier": "HackingNode",
 							"__grid": [2,2],
 							"__pivot": [0.5,0.5],
-							"__tags": [],
+							"__tags": ["node"],
 							"__tile": null,
 							"__smartColor": "#94D9B3",
 							"iid": "eee9d600-9f30-11ed-b2c8-af5eb59573c9",
@@ -183,7 +241,7 @@
 								"entityIid": "efb64dc0-9f30-11ed-b2c8-63e2174ee5fa",
 								"layerIid": "e07964f0-9f30-11ed-b2c8-47ef907f2e4f",
 								"levelIid": "75888860-9f30-11ed-b2c8-dfa72777c7f8",
-								"worldIid": "75886150-9f30-11ed-b2c8-394a0211fd37"
+								"worldIid": "bcd2b590-9f30-11ed-ace3-55032945347a"
 							}], "__type": "Array<EntityRef>", "__tile": null, "defUid": 2, "realEditorValues": [{
 								"id": "V_String",
 								"params": ["efb64dc0-9f30-11ed-b2c8-63e2174ee5fa"]
@@ -193,7 +251,7 @@
 							"__identifier": "HackingNode",
 							"__grid": [10,3],
 							"__pivot": [0.5,0.5],
-							"__tags": [],
+							"__tags": ["node"],
 							"__tile": null,
 							"__smartColor": "#94D9B3",
 							"iid": "efb64dc0-9f30-11ed-b2c8-63e2174ee5fa",
@@ -205,7 +263,7 @@
 								"entityIid": "f07705b0-9f30-11ed-b2c8-b17f2a5f5676",
 								"layerIid": "e07964f0-9f30-11ed-b2c8-47ef907f2e4f",
 								"levelIid": "75888860-9f30-11ed-b2c8-dfa72777c7f8",
-								"worldIid": "75886150-9f30-11ed-b2c8-394a0211fd37"
+								"worldIid": "bcd2b590-9f30-11ed-ace3-55032945347a"
 							}], "__type": "Array<EntityRef>", "__tile": null, "defUid": 2, "realEditorValues": [{
 								"id": "V_String",
 								"params": ["f07705b0-9f30-11ed-b2c8-b17f2a5f5676"]
@@ -215,7 +273,7 @@
 							"__identifier": "HackingNode",
 							"__grid": [4,8],
 							"__pivot": [0.5,0.5],
-							"__tags": [],
+							"__tags": ["node"],
 							"__tile": null,
 							"__smartColor": "#94D9B3",
 							"iid": "f07705b0-9f30-11ed-b2c8-b17f2a5f5676",
@@ -227,7 +285,7 @@
 								"entityIid": "f1008100-9f30-11ed-b2c8-27a587aed514",
 								"layerIid": "e07964f0-9f30-11ed-b2c8-47ef907f2e4f",
 								"levelIid": "75888860-9f30-11ed-b2c8-dfa72777c7f8",
-								"worldIid": "75886150-9f30-11ed-b2c8-394a0211fd37"
+								"worldIid": "bcd2b590-9f30-11ed-ace3-55032945347a"
 							}], "__type": "Array<EntityRef>", "__tile": null, "defUid": 2, "realEditorValues": [{
 								"id": "V_String",
 								"params": ["f1008100-9f30-11ed-b2c8-27a587aed514"]
@@ -237,7 +295,7 @@
 							"__identifier": "HackingNode",
 							"__grid": [11,10],
 							"__pivot": [0.5,0.5],
-							"__tags": [],
+							"__tags": ["node"],
 							"__tile": null,
 							"__smartColor": "#94D9B3",
 							"iid": "f1008100-9f30-11ed-b2c8-27a587aed514",
@@ -249,7 +307,7 @@
 								"entityIid": "f1affae0-9f30-11ed-b2c8-a3e9ca36cb5a",
 								"layerIid": "e07964f0-9f30-11ed-b2c8-47ef907f2e4f",
 								"levelIid": "75888860-9f30-11ed-b2c8-dfa72777c7f8",
-								"worldIid": "75886150-9f30-11ed-b2c8-394a0211fd37"
+								"worldIid": "bcd2b590-9f30-11ed-ace3-55032945347a"
 							}], "__type": "Array<EntityRef>", "__tile": null, "defUid": 2, "realEditorValues": [{
 								"id": "V_String",
 								"params": ["f1affae0-9f30-11ed-b2c8-a3e9ca36cb5a"]
@@ -259,7 +317,7 @@
 							"__identifier": "HackingNode",
 							"__grid": [5,14],
 							"__pivot": [0.5,0.5],
-							"__tags": [],
+							"__tags": ["node"],
 							"__tile": null,
 							"__smartColor": "#94D9B3",
 							"iid": "f1affae0-9f30-11ed-b2c8-a3e9ca36cb5a",
@@ -268,6 +326,28 @@
 							"defUid": 1,
 							"px": [88,232],
 							"fieldInstances": [{ "__identifier": "connectedNodes", "__value": [], "__type": "Array<EntityRef>", "__tile": null, "defUid": 2, "realEditorValues": [] }]
+						},
+						{
+							"__identifier": "StartIndicator",
+							"__grid": [7,15],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": null,
+							"__smartColor": "#94D9B3",
+							"iid": "81707b30-9f30-11ed-ace3-65b9700e7e1b",
+							"width": 16,
+							"height": 16,
+							"defUid": 5,
+							"px": [112,240],
+							"fieldInstances": [{ "__identifier": "StartNode", "__value": {
+								"entityIid": "f1affae0-9f30-11ed-b2c8-a3e9ca36cb5a",
+								"layerIid": "e07964f0-9f30-11ed-b2c8-47ef907f2e4f",
+								"levelIid": "75888860-9f30-11ed-b2c8-dfa72777c7f8",
+								"worldIid": "bcd2b590-9f30-11ed-ace3-55032945347a"
+							}, "__type": "EntityRef", "__tile": null, "defUid": 6, "realEditorValues": [{
+								"id": "V_String",
+								"params": ["f1affae0-9f30-11ed-b2c8-a3e9ca36cb5a"]
+							}] }]
 						}
 					]
 				}
