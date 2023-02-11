@@ -6,7 +6,9 @@ import ReactTooltip from 'react-tooltip';
 import './App.scss';
 import { ReactJSXElement } from '@emotion/react/types/jsx-namespace';
 import NodeMap from './components/node-map';
-import { getNodes } from './config/node-map';
+import useStore from './store';
+import { pick } from 'lodash';
+import { NodeLevel } from './shared/types';
 
 function App() {
   return (
@@ -28,18 +30,20 @@ function App() {
 
 let lastTime: number = Date.now();
 function Content() {
+  const nodes = useStore(s => pick(s.nodes, ['nodes', 'update']))
   useEffect(() => {
     const interval = setInterval(() => {
       const elapsed = Date.now() - lastTime;
       lastTime = Date.now();
-      // update thing
+      
+      nodes.update(elapsed);
     }, 100);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [nodes.update]);
 
   return <div className="content">
-    <NodeMap nodes={getNodes()} />
+    <NodeMap nodes={nodes.nodes[NodeLevel.Internet]} />
   </div>;
 }
 

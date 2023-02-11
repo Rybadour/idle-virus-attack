@@ -5,6 +5,19 @@ export interface INode {
   x: number;
   y: number;
   connections: string[],
+  isComplete: boolean;
+}
+
+export interface INodeProgress {
+  nodeId: string;
+  level: NodeLevel;
+  minedAmount: number;
+}
+
+export enum NodeLevel {
+  Internet = 'internet',
+  Infranet = 'infranet',
+  Computer = 'computer',
 }
 
 export type Lens<T> = [set: StoreApi<T>['setState'], get: StoreApi<T>['getState']];
