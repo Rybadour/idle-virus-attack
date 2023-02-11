@@ -1,6 +1,5 @@
 import { useCallback, useState } from "react";
 import styled from "styled-components";
-import { getNodes } from "../config/node-map";
 import { INode } from "../shared/types";
 
 const NODE_SIZE = 30;
@@ -30,12 +29,12 @@ export default function NodeMap(props: {nodes: Record<string, INode>}) {
     {Object.values(props.nodes).map(node =>
       node.connections.map(otherId => {
         const other = props.nodes[otherId];
-        return <NodeConnection x1={node.x} y1={node.y} x2={other.x} y2={other.y} />;
+        return <NodeConnection key={node.id + '-' + otherId} x1={node.x} y1={node.y} x2={other.x} y2={other.y} />;
       })
     )}
 
     {Object.values(props.nodes).map(node =>
-      <Node cx={node.x} cy={node.y} r={NODE_SIZE/2} />
+      <Node key={node.id} cx={node.x} cy={node.y} r={NODE_SIZE/2} />
     )}
     </g>
   </NodesContainer>;
