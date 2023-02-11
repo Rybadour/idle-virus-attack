@@ -1,6 +1,9 @@
+import { pick } from "lodash";
 import { useCallback, useState } from "react";
 import styled from "styled-components";
-import { INode } from "../shared/types";
+import { ProgressBar } from "../shared/components/progress-bar";
+import { INode, NodeLevel } from "../shared/types";
+import useStore from "../store";
 
 const NODE_SIZE = 30;
 
@@ -10,6 +13,7 @@ interface Coords {
 }
 
 export default function NodeMap(props: {nodes: Record<string, INode>}) {
+  const nodes = useStore(s => pick(s.nodes, ['startMining']));
   const [panOffset, setPanOffset] = useState<Coords>({x: 0, y: 0});
   const [isDragging, setIsDragging] = useState(false);
 
@@ -18,6 +22,9 @@ export default function NodeMap(props: {nodes: Record<string, INode>}) {
       setPanOffset({ x: evt.movementX + panOffset.x, y: evt.movementY + panOffset.y });
     }
   }, [isDragging, panOffset, setPanOffset]);
+  const mineNode = useCallback((nodeId: string) => {
+    nodes.startMining(nodeId, NodeLevel.Internet);
+  }, [nodes.startMining])
 
   return <NodesContainer
     onMouseDown={() => setIsDragging(true)}
@@ -34,7 +41,11 @@ export default function NodeMap(props: {nodes: Record<string, INode>}) {
     )}
 
     {Object.values(props.nodes).map(node =>
-      <Node key={node.id} cx={node.x} cy={node.y} r={NODE_SIZE/2} />
+      <Node
+        key={node.id} cx={node.x} cy={node.y} r={NODE_SIZE/2}
+        isComplete={node.isComplete}
+        onClick={() => mineNode(node.id)}
+      />
     )}
     </g>
   </NodesContainer>;
@@ -48,8 +59,8 @@ const NodesContainer = styled.svg`
   background: black;
 `;
 
-const Node = styled.circle`
-  fill: #5B8FB9;
+const Node = styled.circle<{isComplete: boolean}>`
+  fill: ${props => props.isComplete ? '#5B8FB9;' : '#777'};
 
   &:hover {
     filter: brightness(0.9);

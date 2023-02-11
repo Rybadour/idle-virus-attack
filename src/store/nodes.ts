@@ -2,7 +2,7 @@ import { getNodes } from "../config/node-map";
 import { INode, INodeProgress, MyCreateSlice, NodeLevel } from "../shared/types";
 import { StatsSlice } from "./stats";
 
-const NODE_STRENGTH = 10000;
+export const NODE_STRENGTH = 1000;
 
 export interface NodesSlice {
   nodes: Record<NodeLevel, Record<string, INode>>,
@@ -34,8 +34,9 @@ const createNodesSlice: MyCreateSlice<NodesSlice, [() => StatsSlice]> = (set, ge
     update: (elapsed) => {
       const progress = get().nodeProgress;
       if (progress) {
-        progress.minedAmount += stats().hackingSkill * elapsed/1000;
-        if (progress.minedAmount >= NODE_STRENGTH) {
+        const newProgress = {...progress};
+        newProgress.minedAmount += stats().hackingSkill * elapsed/1000;
+        if (newProgress.minedAmount >= NODE_STRENGTH) {
           set({
             nodes: {
               ...get().nodes,
@@ -50,7 +51,7 @@ const createNodesSlice: MyCreateSlice<NodesSlice, [() => StatsSlice]> = (set, ge
             nodeProgress: undefined
           });
         } else {
-          set({nodeProgress: progress});
+          set({nodeProgress: newProgress});
         }
       }
     }

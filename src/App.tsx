@@ -9,6 +9,8 @@ import NodeMap from './components/node-map';
 import useStore from './store';
 import { pick } from 'lodash';
 import { NodeLevel } from './shared/types';
+import { ProgressBar } from './shared/components/progress-bar';
+import { NODE_STRENGTH } from './store/nodes';
 
 function App() {
   return (
@@ -30,7 +32,7 @@ function App() {
 
 let lastTime: number = Date.now();
 function Content() {
-  const nodes = useStore(s => pick(s.nodes, ['nodes', 'update']))
+  const nodes = useStore(s => pick(s.nodes, ['nodes', 'update', 'nodeProgress']))
   useEffect(() => {
     const interval = setInterval(() => {
       const elapsed = Date.now() - lastTime;
@@ -44,6 +46,9 @@ function Content() {
 
   return <div className="content">
     <NodeMap nodes={nodes.nodes[NodeLevel.Internet]} />
+    {nodes.nodeProgress ? 
+        <ProgressBar progress={nodes.nodeProgress.minedAmount / NODE_STRENGTH} color="white" noBorder />
+    : null}
   </div>;
 }
 
