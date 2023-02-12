@@ -55,3 +55,13 @@ export function mergeSum<T extends {[s: string]: number}>(a: T, b: T): T {
 export function mergeSumPartial<T extends {[s: string]: number}>(a: T, b: Partial<T>): T {
   return mergeWith(a, b, (aVal, bVal) => (aVal ?? 0) + (bVal ?? 0));
 }
+
+export interface Point {
+  x: number;
+  y: number;
+}
+
+export function lerpLineSegment(a: Point, b: Point, inter: number): Point {
+  const delta = {x: b.x - a.x, y: b.y - a.y};
+  return {x: a.x + delta.x * inter, y: a.y + delta.y * inter};
+}

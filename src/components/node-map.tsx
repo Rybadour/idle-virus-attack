@@ -3,6 +3,7 @@ import { useCallback, useState } from "react";
 import styled from "styled-components";
 
 import { INode, NodeLevel } from "../shared/types";
+import { lerpLineSegment } from "../shared/utils";
 import useStore from "../store";
 import { NODE_STRENGTH } from "../store/nodes";
 
@@ -39,15 +40,22 @@ export default function NodeMap(props: {nodes: Record<string, INode>}) {
     {Object.values(props.nodes).map(node =>
       node.connections.map(otherId => {
         const other = props.nodes[otherId];
-        if (nodes.nodeProgress) {
+        let otherLine;
+        if (nodes.nodeProgress && nodes.nodeProgress.nodeId === otherId) {
           const progress = nodes.nodeProgress.minedAmount / NODE_STRENGTH;
-          const progressPoint = lerpLineSegment(node, other);
-        } else {
-          return <NodeConnection
-            key={node.id + '-' + otherId} x1={node.x} y1={node.y} x2={other.x} y2={other.y}
-            isComplete={other.isComplete}
+          const progressPoint = lerpLineSegment(node, other, progress);
+          otherLine = <line
+            key={node.id + '-' + otherId + '-progress'} x1={node.x} y1={node.y} x2={progressPoint.x} y2={progressPoint.y}
+            stroke="white" strokeWidth={3}
           />;
         }
+        return <>
+          <NodeConnection
+            key={node.id + '-' + otherId} x1={node.x} y1={node.y} x2={other.x} y2={other.y}
+            isComplete={other.isComplete}
+          />
+          {otherLine}
+        </>;
       })
     )}
 

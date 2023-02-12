@@ -6,7 +6,7 @@ export interface StatsSlice {
 
 const createStatsSlice: MyCreateSlice<StatsSlice, []> = (set, get) => {
   return {
-    hackingSkill: 10,
+    hackingSkill: 100,
   }
 };
 
