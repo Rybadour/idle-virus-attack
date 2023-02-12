@@ -2,8 +2,6 @@ import { getNodes } from "../config/node-map";
 import { INode, INodeProgress, MyCreateSlice, NodeLevel } from "../shared/types";
 import { StatsSlice } from "./stats";
 
-export const NODE_STRENGTH = 1000;
-
 export interface NodesSlice {
   nodes: Record<NodeLevel, Record<string, INode>>,
   nodeProgress?: INodeProgress;
@@ -25,7 +23,7 @@ const createNodesSlice: MyCreateSlice<NodesSlice, [() => StatsSlice]> = (set, ge
     startMining: (nodeId, level) => {
       set({
         nodeProgress: {
-          nodeId,
+          node: get().nodes[level][nodeId],
           level,
           minedAmount: 0,
         }
@@ -36,16 +34,16 @@ const createNodesSlice: MyCreateSlice<NodesSlice, [() => StatsSlice]> = (set, ge
       const progress = get().nodeProgress;
       if (progress) {
         const newProgress = {...progress};
-        newProgress.minedAmount += stats().hackingSkill * elapsed/1000;
-        stats().useSkill(NODE_STRENGTH, elapsed);
-        if (newProgress.minedAmount >= NODE_STRENGTH) {
+        newProgress.minedAmount += stats().skills[progress.node.requiredSkill] * elapsed/1000;
+        stats().useSkill(progress.node.requirement, progress.node.requiredSkill, elapsed);
+        if (newProgress.minedAmount >= progress.node.requirement) {
           set({
             nodes: {
               ...get().nodes,
               [progress.level]: {
                 ...get().nodes[progress.level],
-                [progress.nodeId]: {
-                  ...get().nodes[progress.level][progress.nodeId],
+                [progress.node.id]: {
+                  ...get().nodes[progress.level][progress.node.id],
                   isComplete: true,
                 }
               }

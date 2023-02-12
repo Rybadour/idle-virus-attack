@@ -9,8 +9,10 @@ import NodeMap from './components/node-map';
 import useStore from './store';
 import { pick } from 'lodash';
 import { NodeLevel } from './shared/types';
-import SkillsContainer from './components/skills';
 import CountdownTimer from './components/countdown';
+import Queue from './components/queue';
+import styled from 'styled-components';
+import Skills from './components/skills';
 
 function App() {
   return (
@@ -46,9 +48,19 @@ function Content() {
 
   return <div className="content">
     <CountdownTimer />
-    <SkillsContainer />
-    <NodeMap nodes={nodes.nodes[NodeLevel.Internet]} />
+    <SideBySidePanels>
+      <Skills />
+      <NodeMap nodes={nodes.nodes[NodeLevel.Internet]} />
+      <Queue />
+    </SideBySidePanels>
   </div>;
 }
+
+const SideBySidePanels = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  gap: 20px;
+`;
 
 export default App;

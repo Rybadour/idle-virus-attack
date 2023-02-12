@@ -5,7 +5,6 @@ import styled from "styled-components";
 import { INode, NodeLevel } from "../shared/types";
 import { lerpLineSegment } from "../shared/utils";
 import useStore from "../store";
-import { NODE_STRENGTH } from "../store/nodes";
 
 const NODE_SIZE = 30;
 
@@ -41,8 +40,8 @@ export default function NodeMap(props: {nodes: Record<string, INode>}) {
       node.connections.map(otherId => {
         const other = props.nodes[otherId];
         let otherLine;
-        if (nodes.nodeProgress && nodes.nodeProgress.nodeId === otherId) {
-          const progress = nodes.nodeProgress.minedAmount / NODE_STRENGTH;
+        if (nodes.nodeProgress && nodes.nodeProgress.node.id === otherId) {
+          const progress = nodes.nodeProgress.minedAmount / nodes.nodeProgress.node.requirement;
           const progressPoint = lerpLineSegment(node, other, progress);
           otherLine = <line
             key={node.id + '-' + otherId + '-progress'} x1={node.x} y1={node.y} x2={progressPoint.x} y2={progressPoint.y}

@@ -24,7 +24,10 @@
 							"levelIid": "75888860-9f30-11ed-b2c8-dfa72777c7f8",
 							"worldIid": "2b1eb720-9f30-11ed-9393-11b8437ce12d"
 						}
-					]
+					],
+					"requiredSkill": "Hacking",
+					"requirement": 0,
+					"name": "Home"
 				}
 			},
 			{
@@ -50,7 +53,10 @@
 							"levelIid": "75888860-9f30-11ed-b2c8-dfa72777c7f8",
 							"worldIid": "2b1eb720-9f30-11ed-9393-11b8437ce12d"
 						}
-					]
+					],
+					"requiredSkill": "Hacking",
+					"requirement": 1000,
+					"name": "Riverside High"
 				}
 			},
 			{
@@ -63,7 +69,10 @@
 				"height": 30,
 				"color": 9755059,
 				"customFields": {
-					"connectedNodes": []
+					"connectedNodes": [],
+					"requiredSkill": "Firewall",
+					"requirement": 32767,
+					"name": "BD Bank Subnet"
 				}
 			},
 			{
@@ -83,7 +92,10 @@
 							"levelIid": "75888860-9f30-11ed-b2c8-dfa72777c7f8",
 							"worldIid": "2b1eb720-9f30-11ed-9393-11b8437ce12d"
 						}
-					]
+					],
+					"requiredSkill": "Firewall",
+					"requirement": 32767,
+					"name": "CIA Boston Subnet"
 				}
 			},
 			{
@@ -96,7 +108,10 @@
 				"height": 30,
 				"color": 9755059,
 				"customFields": {
-					"connectedNodes": []
+					"connectedNodes": [],
+					"requiredSkill": "Firewall",
+					"requirement": 32767,
+					"name": "Illuminati Subnet Alpha"
 				}
 			}
 		],

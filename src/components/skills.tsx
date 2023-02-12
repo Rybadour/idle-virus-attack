@@ -4,23 +4,42 @@ import styled from "styled-components";
 import { formatNumber } from "../shared/utils";
 import useStore from "../store";
 
-export default function SkillsContainer() {
-  const stats = useStore(s => pick(s.stats, ['hackingSkill']));
+export default function Skills() {
+  const stats = useStore(s => pick(s.stats, ['skills']));
 
-  return <Skills>
-    <Skill>
-      <span>Hacking</span>
-      <span>{formatNumber(stats.hackingSkill, 0, 0)}</span>
-    </Skill>
-  </Skills>
+  return <SkillsContainer>
+    <h2>Skills</h2>
+    <SkillList>
+      {Object.entries(stats.skills).map(([skill, amount]) => 
+        <Skill>
+          <span>{skill}</span>
+          <span>{formatNumber(amount, 0, 0)}</span>
+        </Skill>
+      )}
+    </SkillList>
+  </SkillsContainer>
 }
 
-const Skills = styled.div`
-  width: 100%;
+const SkillsContainer = styled.div`
+  width: 260px;
   color: white;
 `;
 
+const SkillList = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+`;
+
 const Skill = styled.div`
-  width: 120px;
   height: 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  background-color: white;
+  border-radius: 5px;
+  color: black;
+  padding: 8px;
 `;

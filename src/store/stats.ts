@@ -1,18 +1,24 @@
-import { MyCreateSlice } from "../shared/types";
+import { MyCreateSlice, SkillType } from "../shared/types";
 
 export interface StatsSlice {
-  hackingSkill: number;
+  skills: Record<SkillType, number>;
 
-  useSkill: (nodeStrength: number, elapsed: number) => void,
+  useSkill: (nodeStrength: number, skill: SkillType, elapsed: number) => void,
 }
 
 const STRENGTH_SKILL_RATIO = 0.01;
 const createStatsSlice: MyCreateSlice<StatsSlice, []> = (set, get) => {
   return {
-    hackingSkill: 100,
+    skills: {
+      [SkillType.Hacking]: 100,
+      [SkillType.Spoofing]: 10,
+      [SkillType.Firewall]: 100,
+    },
 
-    useSkill: (nodeStrength, elapsed) => {
-      set({hackingSkill: get().hackingSkill + nodeStrength * STRENGTH_SKILL_RATIO * elapsed/1000})
+    useSkill: (nodeStrength, skill, elapsed) => {
+      const newSkills = {...get().skills};
+      newSkills[skill] += nodeStrength * STRENGTH_SKILL_RATIO * elapsed/1000;
+      set({ skills: newSkills });
     },
   }
 };

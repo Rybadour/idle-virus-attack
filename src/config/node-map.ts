@@ -1,6 +1,7 @@
 import { first } from 'lodash';
 import internetNodeMap from '../../configs/VirusNodeDesign/simplified/Internet/data.json';
-import { INode, NodeLevel } from '../shared/types';
+import { INode, NodeLevel, SkillType } from '../shared/types';
+import { enumFromKey } from '../shared/utils';
 
 interface INodeMapDesign {
   entities: {
@@ -9,6 +10,9 @@ interface INodeMapDesign {
       x: number,
       y: number,
       customFields: {
+        name: string,
+        requiredSkill: string,
+        requirement: number,
         connectedNodes: {
           entityIid: string,
         }[]
@@ -38,6 +42,9 @@ export function getNodes(level: NodeLevel) {
       id: node.iid,
       x: node.x,
       y: node.y,
+      name: node.customFields.name,
+      requiredSkill: enumFromKey(SkillType, node.customFields.requiredSkill)!,
+      requirement: node.customFields.requirement,
       connections: node.customFields.connectedNodes.map(connection => 
         connection.entityIid
       ),
