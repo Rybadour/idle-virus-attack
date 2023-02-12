@@ -1,4 +1,5 @@
 import classNames from 'classnames';
+
 import './progress-bar.css';
 
 type ProgressBarProps = {

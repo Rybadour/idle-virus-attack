@@ -59,7 +59,6 @@ const createNodesSlice: MyCreateSlice<NodesSlice, [() => StatsSlice]> = (set, ge
 
     isConnectedCompleted: (nodeId, level) => {
       const nodes = get().nodes[level];
-
       
       const found = Object.values(nodes).some((node) => 
         node.isComplete && node.connections.includes(nodeId)

@@ -1,9 +1,10 @@
 import { pick } from "lodash";
 import { useCallback, useState } from "react";
 import styled from "styled-components";
-import { ProgressBar } from "../shared/components/progress-bar";
+
 import { INode, NodeLevel } from "../shared/types";
 import useStore from "../store";
+import { NODE_STRENGTH } from "../store/nodes";
 
 const NODE_SIZE = 30;
 
@@ -13,7 +14,7 @@ interface Coords {
 }
 
 export default function NodeMap(props: {nodes: Record<string, INode>}) {
-  const nodes = useStore(s => pick(s.nodes, ['startMining', 'isConnectedCompleted']));
+  const nodes = useStore(s => pick(s.nodes, ['startMining', 'isConnectedCompleted', 'nodeProgress']));
   const [panOffset, setPanOffset] = useState<Coords>({x: 0, y: 0});
   const [isDragging, setIsDragging] = useState(false);
 
@@ -38,10 +39,15 @@ export default function NodeMap(props: {nodes: Record<string, INode>}) {
     {Object.values(props.nodes).map(node =>
       node.connections.map(otherId => {
         const other = props.nodes[otherId];
-        return <NodeConnection
-          key={node.id + '-' + otherId} x1={node.x} y1={node.y} x2={other.x} y2={other.y}
-          isComplete={other.isComplete}
-        />;
+        if (nodes.nodeProgress) {
+          const progress = nodes.nodeProgress.minedAmount / NODE_STRENGTH;
+          const progressPoint = lerpLineSegment(node, other);
+        } else {
+          return <NodeConnection
+            key={node.id + '-' + otherId} x1={node.x} y1={node.y} x2={other.x} y2={other.y}
+            isComplete={other.isComplete}
+          />;
+        }
       })
     )}
 
