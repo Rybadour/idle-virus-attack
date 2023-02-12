@@ -37,6 +37,7 @@ const createNodesSlice: MyCreateSlice<NodesSlice, [() => StatsSlice]> = (set, ge
       if (progress) {
         const newProgress = {...progress};
         newProgress.minedAmount += stats().hackingSkill * elapsed/1000;
+        stats().useSkill(NODE_STRENGTH, elapsed);
         if (newProgress.minedAmount >= NODE_STRENGTH) {
           set({
             nodes: {

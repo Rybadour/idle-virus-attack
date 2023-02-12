@@ -9,6 +9,8 @@ import NodeMap from './components/node-map';
 import useStore from './store';
 import { pick } from 'lodash';
 import { NodeLevel } from './shared/types';
+import SkillsContainer from './components/skills';
+import CountdownTimer from './components/countdown';
 
 function App() {
   return (
@@ -43,6 +45,8 @@ function Content() {
   }, [nodes.update]);
 
   return <div className="content">
+    <CountdownTimer />
+    <SkillsContainer />
     <NodeMap nodes={nodes.nodes[NodeLevel.Internet]} />
   </div>;
 }
