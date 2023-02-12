@@ -10,6 +10,7 @@ export interface NodesSlice {
 
   startMining: (nodeId: string, level: NodeLevel) => void,
   update: (elapsed: number) => void,
+  isConnectedCompleted: (nodeId: string, level: NodeLevel) => boolean,
 }
 
 const createNodesSlice: MyCreateSlice<NodesSlice, [() => StatsSlice]> = (set, get, stats) => {
@@ -54,8 +55,19 @@ const createNodesSlice: MyCreateSlice<NodesSlice, [() => StatsSlice]> = (set, ge
           set({nodeProgress: newProgress});
         }
       }
+    },
+
+    isConnectedCompleted: (nodeId, level) => {
+      const nodes = get().nodes[level];
+
+      
+      const found = Object.values(nodes).some((node) => 
+        node.isComplete && node.connections.includes(nodeId)
+      );
+
+      return found;
     }
-  }
+  };
 };
 
 export default createNodesSlice;

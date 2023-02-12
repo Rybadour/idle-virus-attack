@@ -5,11 +5,11 @@
 		"doc": "https://ldtk.io/json",
 		"schema": "https://ldtk.io/files/JSON_SCHEMA.json",
 		"appAuthor": "Sebastien 'deepnight' Benard",
-		"appVersion": "1.1.1",
+		"appVersion": "1.1.3",
 		"url": "https://ldtk.io"
 	},
-	"jsonVersion": "1.1.1",
-	"appBuildId": 458076,
+	"jsonVersion": "1.1.3",
+	"appBuildId": 458364,
 	"nextUid": 7,
 	"identifierStyle": "Capitalize",
 	"worldLayout": "Free",
@@ -181,7 +181,7 @@
 	], "tilesets": [], "enums": [], "externalEnums": [], "levelFields": [] },
 	"levels": [
 		{
-			"identifier": "Level_0",
+			"identifier": "Internet",
 			"iid": "75888860-9f30-11ed-b2c8-dfa72777c7f8",
 			"uid": 0,
 			"worldX": 0,
@@ -191,7 +191,7 @@
 			"pxHei": 256,
 			"__bgColor": "#696A79",
 			"bgColor": null,
-			"useAutoIdentifier": true,
+			"useAutoIdentifier": false,
 			"bgRelPath": null,
 			"bgPos": null,
 			"bgPivotX": 0.5,
@@ -227,94 +227,6 @@
 					"entityInstances": [
 						{
 							"__identifier": "HackingNode",
-							"__grid": [2,2],
-							"__pivot": [0.5,0.5],
-							"__tags": ["node"],
-							"__tile": null,
-							"__smartColor": "#94D9B3",
-							"iid": "eee9d600-9f30-11ed-b2c8-af5eb59573c9",
-							"width": 30,
-							"height": 30,
-							"defUid": 1,
-							"px": [40,40],
-							"fieldInstances": [{ "__identifier": "connectedNodes", "__value": [{
-								"entityIid": "efb64dc0-9f30-11ed-b2c8-63e2174ee5fa",
-								"layerIid": "e07964f0-9f30-11ed-b2c8-47ef907f2e4f",
-								"levelIid": "75888860-9f30-11ed-b2c8-dfa72777c7f8",
-								"worldIid": "bcd2b590-9f30-11ed-ace3-55032945347a"
-							}], "__type": "Array<EntityRef>", "__tile": null, "defUid": 2, "realEditorValues": [{
-								"id": "V_String",
-								"params": ["efb64dc0-9f30-11ed-b2c8-63e2174ee5fa"]
-							}] }]
-						},
-						{
-							"__identifier": "HackingNode",
-							"__grid": [10,3],
-							"__pivot": [0.5,0.5],
-							"__tags": ["node"],
-							"__tile": null,
-							"__smartColor": "#94D9B3",
-							"iid": "efb64dc0-9f30-11ed-b2c8-63e2174ee5fa",
-							"width": 30,
-							"height": 30,
-							"defUid": 1,
-							"px": [168,56],
-							"fieldInstances": [{ "__identifier": "connectedNodes", "__value": [{
-								"entityIid": "f07705b0-9f30-11ed-b2c8-b17f2a5f5676",
-								"layerIid": "e07964f0-9f30-11ed-b2c8-47ef907f2e4f",
-								"levelIid": "75888860-9f30-11ed-b2c8-dfa72777c7f8",
-								"worldIid": "bcd2b590-9f30-11ed-ace3-55032945347a"
-							}], "__type": "Array<EntityRef>", "__tile": null, "defUid": 2, "realEditorValues": [{
-								"id": "V_String",
-								"params": ["f07705b0-9f30-11ed-b2c8-b17f2a5f5676"]
-							}] }]
-						},
-						{
-							"__identifier": "HackingNode",
-							"__grid": [4,8],
-							"__pivot": [0.5,0.5],
-							"__tags": ["node"],
-							"__tile": null,
-							"__smartColor": "#94D9B3",
-							"iid": "f07705b0-9f30-11ed-b2c8-b17f2a5f5676",
-							"width": 30,
-							"height": 30,
-							"defUid": 1,
-							"px": [72,136],
-							"fieldInstances": [{ "__identifier": "connectedNodes", "__value": [{
-								"entityIid": "f1008100-9f30-11ed-b2c8-27a587aed514",
-								"layerIid": "e07964f0-9f30-11ed-b2c8-47ef907f2e4f",
-								"levelIid": "75888860-9f30-11ed-b2c8-dfa72777c7f8",
-								"worldIid": "bcd2b590-9f30-11ed-ace3-55032945347a"
-							}], "__type": "Array<EntityRef>", "__tile": null, "defUid": 2, "realEditorValues": [{
-								"id": "V_String",
-								"params": ["f1008100-9f30-11ed-b2c8-27a587aed514"]
-							}] }]
-						},
-						{
-							"__identifier": "HackingNode",
-							"__grid": [11,10],
-							"__pivot": [0.5,0.5],
-							"__tags": ["node"],
-							"__tile": null,
-							"__smartColor": "#94D9B3",
-							"iid": "f1008100-9f30-11ed-b2c8-27a587aed514",
-							"width": 30,
-							"height": 30,
-							"defUid": 1,
-							"px": [184,168],
-							"fieldInstances": [{ "__identifier": "connectedNodes", "__value": [{
-								"entityIid": "f1affae0-9f30-11ed-b2c8-a3e9ca36cb5a",
-								"layerIid": "e07964f0-9f30-11ed-b2c8-47ef907f2e4f",
-								"levelIid": "75888860-9f30-11ed-b2c8-dfa72777c7f8",
-								"worldIid": "bcd2b590-9f30-11ed-ace3-55032945347a"
-							}], "__type": "Array<EntityRef>", "__tile": null, "defUid": 2, "realEditorValues": [{
-								"id": "V_String",
-								"params": ["f1affae0-9f30-11ed-b2c8-a3e9ca36cb5a"]
-							}] }]
-						},
-						{
-							"__identifier": "HackingNode",
 							"__grid": [5,14],
 							"__pivot": [0.5,0.5],
 							"__tags": ["node"],
@@ -325,7 +237,15 @@
 							"height": 30,
 							"defUid": 1,
 							"px": [88,232],
-							"fieldInstances": [{ "__identifier": "connectedNodes", "__value": [], "__type": "Array<EntityRef>", "__tile": null, "defUid": 2, "realEditorValues": [] }]
+							"fieldInstances": [{ "__identifier": "connectedNodes", "__value": [{
+								"entityIid": "5b0e4620-9f30-11ed-9393-3bf5633add20",
+								"layerIid": "e07964f0-9f30-11ed-b2c8-47ef907f2e4f",
+								"levelIid": "75888860-9f30-11ed-b2c8-dfa72777c7f8",
+								"worldIid": "2b1eb720-9f30-11ed-9393-11b8437ce12d"
+							}], "__type": "Array<EntityRef>", "__tile": null, "defUid": 2, "realEditorValues": [{
+								"id": "V_String",
+								"params": ["5b0e4620-9f30-11ed-9393-3bf5633add20"]
+							}] }]
 						},
 						{
 							"__identifier": "StartIndicator",
@@ -343,11 +263,91 @@
 								"entityIid": "f1affae0-9f30-11ed-b2c8-a3e9ca36cb5a",
 								"layerIid": "e07964f0-9f30-11ed-b2c8-47ef907f2e4f",
 								"levelIid": "75888860-9f30-11ed-b2c8-dfa72777c7f8",
-								"worldIid": "bcd2b590-9f30-11ed-ace3-55032945347a"
+								"worldIid": "2b1eb720-9f30-11ed-9393-11b8437ce12d"
 							}, "__type": "EntityRef", "__tile": null, "defUid": 6, "realEditorValues": [{
 								"id": "V_String",
 								"params": ["f1affae0-9f30-11ed-b2c8-a3e9ca36cb5a"]
 							}] }]
+						},
+						{
+							"__identifier": "HackingNode",
+							"__grid": [9,10],
+							"__pivot": [0.5,0.5],
+							"__tags": ["node"],
+							"__tile": null,
+							"__smartColor": "#94D9B3",
+							"iid": "5b0e4620-9f30-11ed-9393-3bf5633add20",
+							"width": 30,
+							"height": 30,
+							"defUid": 1,
+							"px": [152,168],
+							"fieldInstances": [{ "__identifier": "connectedNodes", "__value": [ {
+								"entityIid": "67f86550-9f30-11ed-9393-257d87688490",
+								"layerIid": "e07964f0-9f30-11ed-b2c8-47ef907f2e4f",
+								"levelIid": "75888860-9f30-11ed-b2c8-dfa72777c7f8",
+								"worldIid": "2b1eb720-9f30-11ed-9393-11b8437ce12d"
+							}, {
+								"entityIid": "640be8e0-9f30-11ed-9393-111d1d11d219",
+								"layerIid": "e07964f0-9f30-11ed-b2c8-47ef907f2e4f",
+								"levelIid": "75888860-9f30-11ed-b2c8-dfa72777c7f8",
+								"worldIid": "2b1eb720-9f30-11ed-9393-11b8437ce12d"
+							} ], "__type": "Array<EntityRef>", "__tile": null, "defUid": 2, "realEditorValues": [ {
+								"id": "V_String",
+								"params": ["67f86550-9f30-11ed-9393-257d87688490"]
+							}, {
+								"id": "V_String",
+								"params": ["640be8e0-9f30-11ed-9393-111d1d11d219"]
+							} ] }]
+						},
+						{
+							"__identifier": "HackingNode",
+							"__grid": [4,6],
+							"__pivot": [0.5,0.5],
+							"__tags": ["node"],
+							"__tile": null,
+							"__smartColor": "#94D9B3",
+							"iid": "640be8e0-9f30-11ed-9393-111d1d11d219",
+							"width": 30,
+							"height": 30,
+							"defUid": 1,
+							"px": [72,104],
+							"fieldInstances": [{ "__identifier": "connectedNodes", "__value": [], "__type": "Array<EntityRef>", "__tile": null, "defUid": 2, "realEditorValues": [] }]
+						},
+						{
+							"__identifier": "HackingNode",
+							"__grid": [10,5],
+							"__pivot": [0.5,0.5],
+							"__tags": ["node"],
+							"__tile": null,
+							"__smartColor": "#94D9B3",
+							"iid": "67f86550-9f30-11ed-9393-257d87688490",
+							"width": 30,
+							"height": 30,
+							"defUid": 1,
+							"px": [168,88],
+							"fieldInstances": [{ "__identifier": "connectedNodes", "__value": [{
+								"entityIid": "68ba07a0-9f30-11ed-9393-3d7129b4f7dd",
+								"layerIid": "e07964f0-9f30-11ed-b2c8-47ef907f2e4f",
+								"levelIid": "75888860-9f30-11ed-b2c8-dfa72777c7f8",
+								"worldIid": "2b1eb720-9f30-11ed-9393-11b8437ce12d"
+							}], "__type": "Array<EntityRef>", "__tile": null, "defUid": 2, "realEditorValues": [{
+								"id": "V_String",
+								"params": ["68ba07a0-9f30-11ed-9393-3d7129b4f7dd"]
+							}] }]
+						},
+						{
+							"__identifier": "HackingNode",
+							"__grid": [13,8],
+							"__pivot": [0.5,0.5],
+							"__tags": ["node"],
+							"__tile": null,
+							"__smartColor": "#94D9B3",
+							"iid": "68ba07a0-9f30-11ed-9393-3d7129b4f7dd",
+							"width": 30,
+							"height": 30,
+							"defUid": 1,
+							"px": [216,136],
+							"fieldInstances": [{ "__identifier": "connectedNodes", "__value": [], "__type": "Array<EntityRef>", "__tile": null, "defUid": 2, "realEditorValues": [] }]
 						}
 					]
 				}

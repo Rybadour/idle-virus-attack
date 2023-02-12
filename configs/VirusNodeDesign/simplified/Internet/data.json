@@ -9,69 +9,29 @@
 		"HackingNode": [
 			{
 				"id": "HackingNode",
-				"iid": "eee9d600-9f30-11ed-b2c8-af5eb59573c9",
+				"iid": "f1affae0-9f30-11ed-b2c8-a3e9ca36cb5a",
 				"layer": "Nodes",
-				"x": 40,
-				"y": 40,
+				"x": 88,
+				"y": 232,
 				"width": 30,
 				"height": 30,
 				"color": 9755059,
 				"customFields": {
 					"connectedNodes": [
 						{
-							"entityIid": "efb64dc0-9f30-11ed-b2c8-63e2174ee5fa",
+							"entityIid": "5b0e4620-9f30-11ed-9393-3bf5633add20",
 							"layerIid": "e07964f0-9f30-11ed-b2c8-47ef907f2e4f",
 							"levelIid": "75888860-9f30-11ed-b2c8-dfa72777c7f8",
-							"worldIid": "bcd2b590-9f30-11ed-ace3-55032945347a"
+							"worldIid": "2b1eb720-9f30-11ed-9393-11b8437ce12d"
 						}
 					]
 				}
 			},
 			{
 				"id": "HackingNode",
-				"iid": "efb64dc0-9f30-11ed-b2c8-63e2174ee5fa",
+				"iid": "5b0e4620-9f30-11ed-9393-3bf5633add20",
 				"layer": "Nodes",
-				"x": 168,
-				"y": 56,
-				"width": 30,
-				"height": 30,
-				"color": 9755059,
-				"customFields": {
-					"connectedNodes": [
-						{
-							"entityIid": "f07705b0-9f30-11ed-b2c8-b17f2a5f5676",
-							"layerIid": "e07964f0-9f30-11ed-b2c8-47ef907f2e4f",
-							"levelIid": "75888860-9f30-11ed-b2c8-dfa72777c7f8",
-							"worldIid": "bcd2b590-9f30-11ed-ace3-55032945347a"
-						}
-					]
-				}
-			},
-			{
-				"id": "HackingNode",
-				"iid": "f07705b0-9f30-11ed-b2c8-b17f2a5f5676",
-				"layer": "Nodes",
-				"x": 72,
-				"y": 136,
-				"width": 30,
-				"height": 30,
-				"color": 9755059,
-				"customFields": {
-					"connectedNodes": [
-						{
-							"entityIid": "f1008100-9f30-11ed-b2c8-27a587aed514",
-							"layerIid": "e07964f0-9f30-11ed-b2c8-47ef907f2e4f",
-							"levelIid": "75888860-9f30-11ed-b2c8-dfa72777c7f8",
-							"worldIid": "bcd2b590-9f30-11ed-ace3-55032945347a"
-						}
-					]
-				}
-			},
-			{
-				"id": "HackingNode",
-				"iid": "f1008100-9f30-11ed-b2c8-27a587aed514",
-				"layer": "Nodes",
-				"x": 184,
+				"x": 152,
 				"y": 168,
 				"width": 30,
 				"height": 30,
@@ -79,20 +39,59 @@
 				"customFields": {
 					"connectedNodes": [
 						{
-							"entityIid": "f1affae0-9f30-11ed-b2c8-a3e9ca36cb5a",
+							"entityIid": "67f86550-9f30-11ed-9393-257d87688490",
 							"layerIid": "e07964f0-9f30-11ed-b2c8-47ef907f2e4f",
 							"levelIid": "75888860-9f30-11ed-b2c8-dfa72777c7f8",
-							"worldIid": "bcd2b590-9f30-11ed-ace3-55032945347a"
+							"worldIid": "2b1eb720-9f30-11ed-9393-11b8437ce12d"
+						},
+						{
+							"entityIid": "640be8e0-9f30-11ed-9393-111d1d11d219",
+							"layerIid": "e07964f0-9f30-11ed-b2c8-47ef907f2e4f",
+							"levelIid": "75888860-9f30-11ed-b2c8-dfa72777c7f8",
+							"worldIid": "2b1eb720-9f30-11ed-9393-11b8437ce12d"
 						}
 					]
 				}
 			},
 			{
 				"id": "HackingNode",
-				"iid": "f1affae0-9f30-11ed-b2c8-a3e9ca36cb5a",
+				"iid": "640be8e0-9f30-11ed-9393-111d1d11d219",
 				"layer": "Nodes",
-				"x": 88,
-				"y": 232,
+				"x": 72,
+				"y": 104,
+				"width": 30,
+				"height": 30,
+				"color": 9755059,
+				"customFields": {
+					"connectedNodes": []
+				}
+			},
+			{
+				"id": "HackingNode",
+				"iid": "67f86550-9f30-11ed-9393-257d87688490",
+				"layer": "Nodes",
+				"x": 168,
+				"y": 88,
+				"width": 30,
+				"height": 30,
+				"color": 9755059,
+				"customFields": {
+					"connectedNodes": [
+						{
+							"entityIid": "68ba07a0-9f30-11ed-9393-3d7129b4f7dd",
+							"layerIid": "e07964f0-9f30-11ed-b2c8-47ef907f2e4f",
+							"levelIid": "75888860-9f30-11ed-b2c8-dfa72777c7f8",
+							"worldIid": "2b1eb720-9f30-11ed-9393-11b8437ce12d"
+						}
+					]
+				}
+			},
+			{
+				"id": "HackingNode",
+				"iid": "68ba07a0-9f30-11ed-9393-3d7129b4f7dd",
+				"layer": "Nodes",
+				"x": 216,
+				"y": 136,
 				"width": 30,
 				"height": 30,
 				"color": 9755059,
@@ -116,7 +115,7 @@
 						"entityIid": "f1affae0-9f30-11ed-b2c8-a3e9ca36cb5a",
 						"layerIid": "e07964f0-9f30-11ed-b2c8-47ef907f2e4f",
 						"levelIid": "75888860-9f30-11ed-b2c8-dfa72777c7f8",
-						"worldIid": "bcd2b590-9f30-11ed-ace3-55032945347a"
+						"worldIid": "2b1eb720-9f30-11ed-9393-11b8437ce12d"
 					}
 				}
 			}

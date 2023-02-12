@@ -13,7 +13,7 @@ interface Coords {
 }
 
 export default function NodeMap(props: {nodes: Record<string, INode>}) {
-  const nodes = useStore(s => pick(s.nodes, ['startMining']));
+  const nodes = useStore(s => pick(s.nodes, ['startMining', 'isConnectedCompleted']));
   const [panOffset, setPanOffset] = useState<Coords>({x: 0, y: 0});
   const [isDragging, setIsDragging] = useState(false);
 
@@ -23,8 +23,10 @@ export default function NodeMap(props: {nodes: Record<string, INode>}) {
     }
   }, [isDragging, panOffset, setPanOffset]);
   const mineNode = useCallback((nodeId: string) => {
-    nodes.startMining(nodeId, NodeLevel.Internet);
-  }, [nodes.startMining])
+    if (nodes.isConnectedCompleted(nodeId, NodeLevel.Internet)) {
+      nodes.startMining(nodeId, NodeLevel.Internet);
+    }
+  }, [nodes])
 
   return <NodesContainer
     onMouseDown={() => setIsDragging(true)}
@@ -36,7 +38,10 @@ export default function NodeMap(props: {nodes: Record<string, INode>}) {
     {Object.values(props.nodes).map(node =>
       node.connections.map(otherId => {
         const other = props.nodes[otherId];
-        return <NodeConnection key={node.id + '-' + otherId} x1={node.x} y1={node.y} x2={other.x} y2={other.y} />;
+        return <NodeConnection
+          key={node.id + '-' + otherId} x1={node.x} y1={node.y} x2={other.x} y2={other.y}
+          isComplete={other.isComplete}
+        />;
       })
     )}
 
@@ -69,7 +74,7 @@ const Node = styled.circle<{isComplete: boolean}>`
   }
 `;
 
-const NodeConnection = styled.line`
-  stroke: white;
+const NodeConnection = styled.line<{isComplete: boolean}>`
+  stroke: ${p => p.isComplete ? 'white': 'grey'};
   stroke-width: 3px;
 `;
