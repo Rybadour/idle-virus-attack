@@ -29,6 +29,28 @@ export enum SkillType {
   Firewall = 'Firewall',
 }
 
+export interface ConsumableConfig {
+  name: string,
+  description: string,
+  requirement: number,
+  requiredSkill: SkillType,
+  protectionProvided: number,
+}
+
+export enum ActionType {
+  Consumable = 'Consumable',
+  Node = 'Node',
+}
+
+export interface IAction {
+  name: string,
+  requiredSkill: SkillType,
+  requirement: number,
+  current: number,
+  type: ActionType,
+  relatedId: string,
+}
+
 export type Lens<T> = [set: StoreApi<T>['setState'], get: StoreApi<T>['getState']];
 
 export type MyCreateSlice<T, A extends (() => any)[]> =

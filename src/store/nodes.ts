@@ -1,5 +1,6 @@
 import { getNodes } from "../config/node-map";
-import { INode, INodeProgress, MyCreateSlice, NodeLevel } from "../shared/types";
+import { ActionType, INode, INodeProgress, MyCreateSlice, NodeLevel } from "../shared/types";
+import { ActionsSlice } from "./actions";
 import { StatsSlice } from "./stats";
 
 export interface NodesSlice {
@@ -11,7 +12,8 @@ export interface NodesSlice {
   isConnectedCompleted: (nodeId: string, level: NodeLevel) => boolean,
 }
 
-const createNodesSlice: MyCreateSlice<NodesSlice, [() => StatsSlice]> = (set, get, stats) => {
+const createNodesSlice: MyCreateSlice<NodesSlice, [() => StatsSlice, () => ActionsSlice]>
+= (set, get, stats, actions) => {
   return {
     nodes: {
       [NodeLevel.Internet]: getNodes(NodeLevel.Internet),
@@ -21,12 +23,21 @@ const createNodesSlice: MyCreateSlice<NodesSlice, [() => StatsSlice]> = (set, ge
     nodeProgress: undefined,
 
     startMining: (nodeId, level) => {
+      const node = get().nodes[level][nodeId];
       set({
         nodeProgress: {
-          node: get().nodes[level][nodeId],
+          node,
           level,
           minedAmount: 0,
         }
+      });
+      actions().queueAction({
+        name: "Node - " + node.name,
+        type: ActionType.Node,
+        requiredSkill: node.requiredSkill,
+        current: 0,
+        requirement: node.requirement,
+        relatedId: node.id,
       })
     },
 
