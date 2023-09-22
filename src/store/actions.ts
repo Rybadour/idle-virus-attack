@@ -1,4 +1,4 @@
-import { IAction, MyCreateSlice } from "../shared/types";
+import { ActionType, IAction, MyCreateSlice } from "../shared/types";
 import { StatsSlice } from "./stats";
 
 export interface ActionsSlice {
@@ -14,13 +14,16 @@ const createActionsSlice: MyCreateSlice<ActionsSlice, [() => StatsSlice]> = (set
 
     update: (elapsed) => {
       const actions = get().queuedActions;
-      if (actions.length <= 0) return;
+      if (actions.length <= 0 || actions[0].type === ActionType.Node) return;
 
-      stats().doAction(actions[1], elapsed);
+      const newAction = {...actions[0]};
+      newAction.current += stats().skills[newAction.requiredSkill] * elapsed/1000;
+      actions[0] = newAction;
+      set({ queuedActions: [...actions] });
     },
 
     queueAction: (action) => {
-      set({queuedActions: [...get().queuedActions, action]})
+      set({ queuedActions: [...get().queuedActions, action] })
     }
   }
 };

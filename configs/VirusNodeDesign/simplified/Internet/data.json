@@ -1,9 +1,13 @@
 {
+	"identifier": "Internet",
+	"uniqueIdentifer": "75888860-9f30-11ed-b2c8-dfa72777c7f8",
 	"x": 0,
 	"y": 0,
 	"width": 256,
 	"height": 256,
-	"iid": "75888860-9f30-11ed-b2c8-dfa72777c7f8",
+	"bgColor": "#696A79",
+	"neighbourLevels": [],
+	"customFields" : {},
 	"layers": [],
 	"entities": {
 		"HackingNode": [
@@ -22,7 +26,7 @@
 							"entityIid": "5b0e4620-9f30-11ed-9393-3bf5633add20",
 							"layerIid": "e07964f0-9f30-11ed-b2c8-47ef907f2e4f",
 							"levelIid": "75888860-9f30-11ed-b2c8-dfa72777c7f8",
-							"worldIid": "2b1eb720-9f30-11ed-9393-11b8437ce12d"
+							"worldIid": "7ed02c10-3b70-11ee-9856-f1dc713f2431"
 						}
 					],
 					"requiredSkill": "Hacking",
@@ -45,13 +49,13 @@
 							"entityIid": "67f86550-9f30-11ed-9393-257d87688490",
 							"layerIid": "e07964f0-9f30-11ed-b2c8-47ef907f2e4f",
 							"levelIid": "75888860-9f30-11ed-b2c8-dfa72777c7f8",
-							"worldIid": "2b1eb720-9f30-11ed-9393-11b8437ce12d"
+							"worldIid": "7ed02c10-3b70-11ee-9856-f1dc713f2431"
 						},
 						{
 							"entityIid": "640be8e0-9f30-11ed-9393-111d1d11d219",
 							"layerIid": "e07964f0-9f30-11ed-b2c8-47ef907f2e4f",
 							"levelIid": "75888860-9f30-11ed-b2c8-dfa72777c7f8",
-							"worldIid": "2b1eb720-9f30-11ed-9393-11b8437ce12d"
+							"worldIid": "7ed02c10-3b70-11ee-9856-f1dc713f2431"
 						}
 					],
 					"requiredSkill": "Hacking",
@@ -71,7 +75,7 @@
 				"customFields": {
 					"connectedNodes": [],
 					"requiredSkill": "Firewall",
-					"requirement": 32767,
+					"requirement": 2000,
 					"name": "BD Bank Subnet"
 				}
 			},
@@ -90,11 +94,11 @@
 							"entityIid": "68ba07a0-9f30-11ed-9393-3d7129b4f7dd",
 							"layerIid": "e07964f0-9f30-11ed-b2c8-47ef907f2e4f",
 							"levelIid": "75888860-9f30-11ed-b2c8-dfa72777c7f8",
-							"worldIid": "2b1eb720-9f30-11ed-9393-11b8437ce12d"
+							"worldIid": "7ed02c10-3b70-11ee-9856-f1dc713f2431"
 						}
 					],
-					"requiredSkill": "Firewall",
-					"requirement": 32767,
+					"requiredSkill": "Hacking",
+					"requirement": 2000,
 					"name": "CIA Boston Subnet"
 				}
 			},
@@ -109,8 +113,8 @@
 				"color": 9755059,
 				"customFields": {
 					"connectedNodes": [],
-					"requiredSkill": "Firewall",
-					"requirement": 32767,
+					"requiredSkill": "Hacking",
+					"requirement": 4000,
 					"name": "Illuminati Subnet Alpha"
 				}
 			}
@@ -130,7 +134,7 @@
 						"entityIid": "f1affae0-9f30-11ed-b2c8-a3e9ca36cb5a",
 						"layerIid": "e07964f0-9f30-11ed-b2c8-47ef907f2e4f",
 						"levelIid": "75888860-9f30-11ed-b2c8-dfa72777c7f8",
-						"worldIid": "2b1eb720-9f30-11ed-9393-11b8437ce12d"
+						"worldIid": "7ed02c10-3b70-11ee-9856-f1dc713f2431"
 					}
 				}
 			}

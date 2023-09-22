@@ -6,10 +6,11 @@ export interface StatsSlice {
   maxProtection: number;
   antiVirusStrength: number;
 
-  doAction: (action: IAction, elapsed: number) => IAction,
+  update: (elapsed: number) => void,
+  useSkill: (requirement: number, skill: SkillType, elapsed: number) => void,
 }
 
-const STRENGTH_SKILL_RATIO = 0.01;
+const IMPROVEMENT_SKILL_RATIO = 0.01;
 const ANTI_VIRUS_STRENGTH_INCREASE = 0.01;
 const createStatsSlice: MyCreateSlice<StatsSlice, []> = (set, get) => {
   return {
@@ -22,12 +23,14 @@ const createStatsSlice: MyCreateSlice<StatsSlice, []> = (set, get) => {
     maxProtection: 1000,
     antiVirusStrength: 2,
 
-    doAction: (action, elapsed) => {
+    update: (elapsed) => {
+
+    },
+
+    useSkill: (requirement: number, skill: SkillType, elapsed: number) => {
       const newSkills = {...get().skills};
-      const newAction = {...action};
-      const progress = newSkills[action.requiredSkill] * STRENGTH_SKILL_RATIO * elapsed/1000;
-      newSkills[action.requiredSkill] += progress;
-      newAction.current += progress;
+      const improvement = newSkills[skill] * IMPROVEMENT_SKILL_RATIO * elapsed/1000;
+      newSkills[skill] += improvement;
 
       const avStr = get().antiVirusStrength * (1 + ANTI_VIRUS_STRENGTH_INCREASE * elapsed/1000);
       set({
@@ -35,8 +38,6 @@ const createStatsSlice: MyCreateSlice<StatsSlice, []> = (set, get) => {
         protection: get().protection - avStr * elapsed/1000,
         antiVirusStrength: avStr,
       });
-
-      return newAction;
     },
   }
 };

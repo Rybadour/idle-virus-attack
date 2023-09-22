@@ -1,3 +1,4 @@
+import {shallow} from 'zustand/shallow';
 import React, { useEffect } from 'react';
 import ReactDOM from "react-dom";
 
@@ -34,8 +35,8 @@ function App() {
 
 let lastTime: number = Date.now();
 function Content() {
-  const nodes = useStore(s => pick(s.nodes, ['nodes', 'update', 'nodeProgress']))
-  const stats = useStore(s => pick(s.stats, ['update']))
+  const nodes = useStore(s => pick(s.nodes, ['nodes', 'update', 'nodeProgress']), shallow)
+  const stats = useStore(s => pick(s.stats, ['update']), shallow)
   useEffect(() => {
     const interval = setInterval(() => {
       const elapsed = Date.now() - lastTime;
