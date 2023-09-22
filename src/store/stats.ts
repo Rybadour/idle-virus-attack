@@ -6,7 +6,6 @@ export interface StatsSlice {
   maxProtection: number;
   antiVirusStrength: number;
 
-  update: (elapsed: number) => void,
   useSkill: (requirement: number, skill: SkillType, elapsed: number) => void,
 }
 
@@ -22,10 +21,6 @@ const createStatsSlice: MyCreateSlice<StatsSlice, []> = (set, get) => {
     protection: 1000,
     maxProtection: 1000,
     antiVirusStrength: 2,
-
-    update: (elapsed) => {
-
-    },
 
     useSkill: (requirement: number, skill: SkillType, elapsed: number) => {
       const newSkills = {...get().skills};

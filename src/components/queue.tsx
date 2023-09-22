@@ -7,6 +7,8 @@ export default function Queue() {
   const actions = useStore(s => pick(s.actions, ['queuedActions']), shallow)
 
   return <QueueContainer>
+    <Title>Queue</Title>
+    <QueueList>
     {actions.queuedActions.map(action =>
       <Action>
         <div>{action.name}</div>
@@ -14,19 +16,28 @@ export default function Queue() {
         <progress value={action.current} max={action.requirement}></progress>
       </Action>
     )}
+    </QueueList>
   </QueueContainer>
 }
 
+const Title = styled.h2`
+  margin-top: 0;
+  color: white;
+`;
+
 const QueueContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
   width: 100%;
   min-width: 200px;
   max-width: 300px;
   background-color: grey;
   border-radius: 10px;
   padding: 10px;
+`;
+
+const QueueList = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 `;
 
 const Action = styled.div`

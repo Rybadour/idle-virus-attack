@@ -14,6 +14,7 @@ import CountdownTimer from './components/countdown';
 import Queue from './components/queue';
 import styled from 'styled-components';
 import Skills from './components/skills';
+import Consumables from './components/consumables';
 
 function App() {
   return (
@@ -36,14 +37,14 @@ function App() {
 let lastTime: number = Date.now();
 function Content() {
   const nodes = useStore(s => pick(s.nodes, ['nodes', 'update', 'nodeProgress']), shallow)
-  const stats = useStore(s => pick(s.stats, ['update']), shallow)
+  const actions = useStore(s => pick(s.actions, ['update']), shallow)
   useEffect(() => {
     const interval = setInterval(() => {
       const elapsed = Date.now() - lastTime;
       lastTime = Date.now();
       
       nodes.update(elapsed);
-      stats.update(elapsed);
+      actions.update(elapsed);
     }, 100);
 
     return () => clearInterval(interval);
@@ -52,7 +53,10 @@ function Content() {
   return <div className="content">
     <CountdownTimer />
     <SideBySidePanels>
-      <Skills />
+      <Column>
+        <Skills />
+        <Consumables />
+      </Column>
       <NodeMap nodes={nodes.nodes[NodeLevel.Internet]} />
       <Queue />
     </SideBySidePanels>
@@ -64,6 +68,10 @@ const SideBySidePanels = styled.div`
   height: 100%;
   display: flex;
   gap: 20px;
+`;
+
+const Column = styled.div`
+  width: 100%;
 `;
 
 export default App;

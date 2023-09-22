@@ -48,7 +48,7 @@ export interface IAction {
   requirement: number,
   current: number,
   type: ActionType,
-  relatedId: string,
+  relatedId?: string,
 }
 
 export type Lens<T> = [set: StoreApi<T>['setState'], get: StoreApi<T>['getState']];
