@@ -11,7 +11,7 @@ export default function Skills() {
     <h2>Skills</h2>
     <SkillList>
       {Object.entries(stats.skills).map(([skill, amount]) => 
-        <Skill>
+        <Skill key={skill}>
           <span>{skill}</span>
           <span>{formatNumber(amount, 0, 0)}</span>
         </Skill>

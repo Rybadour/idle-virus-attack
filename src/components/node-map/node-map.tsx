@@ -1,13 +1,12 @@
 import { pick } from "lodash";
 import { useCallback, useState } from "react";
 import styled from "styled-components";
-
-import { INode, NodeLevel, NodeType } from "../shared/types";
-import { lerpLineSegment, lineSegmentBetweenCircles } from "../shared/utils";
-import useStore from "../store";
 import { shallow } from "zustand/shallow";
 
-const NODE_SIZE = 30;
+import { INode, NodeType } from "../../shared/types";
+import { lerpLineSegment, lineSegmentBetweenCircles } from "../../shared/utils";
+import useStore from "../../store";
+import { NODE_SIZE, Node } from "./node";
 
 interface Coords {
   x: number;
@@ -70,14 +69,10 @@ export default function NodeMap() {
     )}
 
     {Object.values(nodeMap).map(node =>
-      <>
-        <Node
-          key={node.id} cx={node.x} cy={node.y} r={NODE_SIZE/2}
-          isComplete={node.isComplete}
-          onClick={() => clickNode(node)}
-        ></Node>
-        <NodeIcon x={node.x} y={node.y} icon={node.icon}></NodeIcon>
-      </>
+      <Node
+        key={node.id} node={node}
+        onClick={() => clickNode(node)}
+      ></Node>
     )}
     </g>
   </NodesContainer>;
@@ -91,29 +86,7 @@ const NodesContainer = styled.svg`
   background: black;
 `;
 
-const Node = styled.circle<{isComplete: boolean}>`
-  fill: ${props => props.isComplete ? '#5B8FB9;' : '#777'};
-
-  &:hover {
-    filter: brightness(0.9);
-    stroke: white;
-    stroke-width: 2px;
-  }
-`;
-
 const NodeConnection = styled.line<{isComplete: boolean}>`
   stroke: ${p => p.isComplete ? 'white': 'grey'};
   stroke-width: 3px;
 `;
-
-function NodeIcon(props: {x: number, y: number, icon: string}) {
-  const iconSize = 18;
-  return <image
-    x={props.x - iconSize/2}
-    y={props.y - iconSize/2}
-    width={iconSize}
-    height={iconSize}
-    href={`icons/${props.icon}.png`}
-    style={{pointerEvents: "none"}}
-  />;
-}

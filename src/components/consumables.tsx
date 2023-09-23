@@ -21,7 +21,7 @@ export default function Consumables() {
     <h2>Consumables</h2>
     <ConsumableList>
       {Object.values(consumablesConfig).map((con) => 
-        <Consumable onClick={() => queueConsumable(con)}>
+        <Consumable key={con.id} onClick={() => queueConsumable(con)}>
           <span>{con.name}</span>
           <span>{con.description}</span>
         </Consumable>

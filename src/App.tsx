@@ -5,10 +5,9 @@ import ReactDOM from "react-dom";
 import ReactTooltip from 'react-tooltip';
 
 import './App.scss';
-import NodeMap from './components/node-map';
+import NodeMap from './components/node-map/node-map';
 import useStore from './store';
 import { pick } from 'lodash';
-import { NodeLevel } from './shared/types';
 import CountdownTimer from './components/countdown';
 import Queue from './components/queue';
 import styled from 'styled-components';
@@ -53,12 +52,16 @@ function Content() {
   return <div className="content">
     <CountdownTimer />
     <SideBySidePanels>
-      <Column>
+      <SidePanel>
         <Skills />
         <Consumables />
-      </Column>
-      <NodeMap />
-      <Queue />
+      </SidePanel>
+      <CenterPanel>
+        <NodeMap />
+      </CenterPanel>
+      <SidePanel>
+        <Queue />
+      </SidePanel>
     </SideBySidePanels>
   </div>;
 }
@@ -70,8 +73,13 @@ const SideBySidePanels = styled.div`
   gap: 20px;
 `;
 
-const Column = styled.div`
+const SidePanel = styled.div`
+  width: 260px;
+`;
+
+const CenterPanel = styled.div`
   width: 100%;
+  height: 100%;
 `;
 
 export default App;
