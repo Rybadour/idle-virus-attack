@@ -18,8 +18,8 @@ const useStore = create<FullStore>((set, get) => {
 
   return {
     stats: createStatsSlice(...stats),
-    actions: createActionsSlice(...actions, stats[1]),
-    nodes: createNodesSlice(...nodes, stats[1], actions[1]),
+    actions: createActionsSlice(...actions, stats[1], nodes[1]),
+    nodes: createNodesSlice(...nodes, actions[1]),
   }
 });
 

@@ -14,7 +14,6 @@ export interface INode {
 export interface INodeProgress {
   node: INode;
   level: NodeLevel;
-  minedAmount: number;
 }
 
 export enum NodeLevel {

@@ -36,19 +36,18 @@ function App() {
 
 let lastTime: number = Date.now();
 function Content() {
-  const nodes = useStore(s => pick(s.nodes, ['nodes', 'update', 'nodeProgress']), shallow)
+  const nodes = useStore(s => pick(s.nodes, ['nodes', 'nodeProgress']), shallow)
   const actions = useStore(s => pick(s.actions, ['update']), shallow)
   useEffect(() => {
     const interval = setInterval(() => {
       const elapsed = Date.now() - lastTime;
       lastTime = Date.now();
       
-      nodes.update(elapsed);
       actions.update(elapsed);
     }, 100);
 
     return () => clearInterval(interval);
-  }, [nodes.update]);
+  }, [actions.update]);
 
   return <div className="content">
     <CountdownTimer />

@@ -1,70 +1,67 @@
+import _, { cloneDeep } from "lodash";
 import { getNodes } from "../config/node-map";
 import { ActionType, INode, INodeProgress, MyCreateSlice, NodeLevel } from "../shared/types";
 import { ActionsSlice } from "./actions";
-import { StatsSlice } from "./stats";
+import { enumFromKey } from "../shared/utils";
 
 export interface NodesSlice {
   nodes: Record<NodeLevel, Record<string, INode>>,
-  nodeProgress?: INodeProgress;
+  nodeProgress?: INodeProgress,
 
-  startMining: (nodeId: string, level: NodeLevel) => void,
-  update: (elapsed: number) => void,
+  queueMining: (nodeId: string, level: NodeLevel) => void,
+  startNodeAction: (combinedNodeId: string) => void,
+  completeNode: (combinedNodeId: string) => void,
   isConnectedCompleted: (nodeId: string, level: NodeLevel) => boolean,
 }
 
-const createNodesSlice: MyCreateSlice<NodesSlice, [() => StatsSlice, () => ActionsSlice]>
-= (set, get, stats, actions) => {
+const defaultNodes = {
+  [NodeLevel.Internet]: getNodes(NodeLevel.Internet),
+  [NodeLevel.Infranet]: getNodes(NodeLevel.Infranet),
+  [NodeLevel.Computer]: getNodes(NodeLevel.Computer),
+};
+
+const nodeActionIdMapping: Record<string, [NodeLevel, string]> = {};
+Object.entries(defaultNodes).map(([level, nodes]) => {
+  Object.keys(nodes).forEach((nodeId) => {
+    nodeActionIdMapping[level + '-' + nodeId] = [enumFromKey(NodeLevel, level)!, nodeId];
+  });
+});
+
+const createNodesSlice: MyCreateSlice<NodesSlice, [() => ActionsSlice]>
+= (set, get, actions) => {
   return {
-    nodes: {
-      [NodeLevel.Internet]: getNodes(NodeLevel.Internet),
-      [NodeLevel.Infranet]: getNodes(NodeLevel.Infranet),
-      [NodeLevel.Computer]: getNodes(NodeLevel.Computer),
-    },
+    nodes: defaultNodes,
     nodeProgress: undefined,
 
-    startMining: (nodeId, level) => {
+    queueMining: (nodeId, level) => {
       const node = get().nodes[level][nodeId];
-      set({
-        nodeProgress: {
-          node,
-          level,
-          minedAmount: 0,
-        }
-      });
       actions().queueAction({
         name: "Node - " + node.name,
         type: ActionType.Node,
         requiredSkill: node.requiredSkill,
         current: 0,
         requirement: node.requirement,
-        relatedId: node.id,
+        relatedId: level + '-' + nodeId,
       })
     },
 
-    update: (elapsed) => {
-      const progress = get().nodeProgress;
-      if (progress) {
-        const newProgress = {...progress};
-        newProgress.minedAmount += stats().skills[progress.node.requiredSkill] * elapsed/1000;
-        stats().useSkill(progress.node.requirement, progress.node.requiredSkill, elapsed);
-        if (newProgress.minedAmount >= progress.node.requirement) {
-          set({
-            nodes: {
-              ...get().nodes,
-              [progress.level]: {
-                ...get().nodes[progress.level],
-                [progress.node.id]: {
-                  ...get().nodes[progress.level][progress.node.id],
-                  isComplete: true,
-                }
-              }
-            },
-            nodeProgress: undefined
-          });
-        } else {
-          set({nodeProgress: newProgress});
+    completeNode: (nodeCombinedId: string) => {
+      const newNodes = cloneDeep(get().nodes);
+      const [level, nodeId] = nodeActionIdMapping[nodeCombinedId];
+      _.set(newNodes, `${level}.${nodeId}.isComplete`, true);
+
+      set({ nodes: newNodes, nodeProgress: undefined });
+    },
+
+    startNodeAction: (nodeCombinedId: string) => {
+      const [level, nodeId] = nodeActionIdMapping[nodeCombinedId];
+      const node = get().nodes[level][nodeId];
+      set({
+        nodeProgress: {
+          node,
+          level,
         }
-      }
+      });
     },
 
     isConnectedCompleted: (nodeId, level) => {

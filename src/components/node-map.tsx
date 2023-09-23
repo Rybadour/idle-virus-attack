@@ -5,6 +5,7 @@ import styled from "styled-components";
 import { INode, NodeLevel } from "../shared/types";
 import { lerpLineSegment } from "../shared/utils";
 import useStore from "../store";
+import { shallow } from "zustand/shallow";
 
 const NODE_SIZE = 30;
 
@@ -14,9 +15,12 @@ interface Coords {
 }
 
 export default function NodeMap(props: {nodes: Record<string, INode>}) {
-  const nodes = useStore(s => pick(s.nodes, ['startMining', 'isConnectedCompleted', 'nodeProgress']));
+  const nodes = useStore(s => pick(s.nodes, ['queueMining', 'isConnectedCompleted', 'nodeProgress']), shallow);
+  const actions = useStore(s => pick(s.actions, ['queuedActions']), shallow);
   const [panOffset, setPanOffset] = useState<Coords>({x: 0, y: 0});
   const [isDragging, setIsDragging] = useState(false);
+
+  const nodeAction = actions.queuedActions[0];
 
   const moveMouse = useCallback((evt: React.MouseEvent<SVGSVGElement, MouseEvent>) => {
     if (isDragging) {
@@ -24,9 +28,9 @@ export default function NodeMap(props: {nodes: Record<string, INode>}) {
     }
   }, [isDragging, panOffset, setPanOffset]);
   const mineNode = useCallback((nodeId: string) => {
-    if (nodes.isConnectedCompleted(nodeId, NodeLevel.Internet)) {
-      nodes.startMining(nodeId, NodeLevel.Internet);
-    }
+    //if (nodes.isConnectedCompleted(nodeId, NodeLevel.Internet)) {
+      nodes.queueMining(nodeId, NodeLevel.Internet);
+    //}
   }, [nodes])
 
   return <NodesContainer
@@ -41,7 +45,7 @@ export default function NodeMap(props: {nodes: Record<string, INode>}) {
         const other = props.nodes[otherId];
         let otherLine;
         if (nodes.nodeProgress && nodes.nodeProgress.node.id === otherId) {
-          const progress = nodes.nodeProgress.minedAmount / nodes.nodeProgress.node.requirement;
+          const progress = nodeAction.current / nodeAction.requirement;
           const progressPoint = lerpLineSegment(node, other, progress);
           otherLine = <line
             key={node.id + '-' + otherId + '-progress'} x1={node.x} y1={node.y} x2={progressPoint.x} y2={progressPoint.y}
