@@ -1,5 +1,4 @@
-import { ConsumableId } from "../config/consumables";
-import { IAction, MyCreateSlice, SkillType } from "../shared/types";
+import { MyCreateSlice, SkillType } from "../shared/types";
 
 export interface StatsSlice {
   skills: Record<SkillType, number>;
