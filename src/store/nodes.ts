@@ -1,6 +1,6 @@
 import _, { cloneDeep } from "lodash";
 import { getNodes } from "../config/node-map";
-import { ActionType, INode, INodeProgress, MyCreateSlice, NodeLevel } from "../shared/types";
+import { ActionType, INode, INodeProgress, MyCreateSlice, NodeLevel, NodePathId } from "../shared/types";
 import { ActionsSlice } from "./actions";
 import { enumFromKey } from "../shared/utils";
 
@@ -9,8 +9,8 @@ export interface NodesSlice {
   nodeProgress?: INodeProgress,
 
   queueMining: (nodeId: string, level: NodeLevel) => void,
-  startNodeAction: (combinedNodeId: string) => void,
-  completeNode: (combinedNodeId: string) => void,
+  startNodeAction: (nodePath: NodePathId) => void,
+  completeNode: (nodePath: NodePathId) => void,
   isConnectedCompleted: (nodeId: string, level: NodeLevel) => boolean,
 }
 
@@ -37,24 +37,21 @@ const createNodesSlice: MyCreateSlice<NodesSlice, [() => ActionsSlice]>
       const node = get().nodes[level][nodeId];
       actions().queueAction({
         name: "Node - " + node.name,
-        type: ActionType.Node,
+        typeId: {type: ActionType.Node, id: [level, nodeId]},
         requiredSkill: node.requiredSkill,
         current: 0,
         requirement: node.requirement,
-        relatedId: level + '-' + nodeId,
       })
     },
 
-    completeNode: (nodeCombinedId: string) => {
+    completeNode: ([level, nodeId]) => {
       const newNodes = cloneDeep(get().nodes);
-      const [level, nodeId] = nodeActionIdMapping[nodeCombinedId];
       _.set(newNodes, `${level}.${nodeId}.isComplete`, true);
 
       set({ nodes: newNodes, nodeProgress: undefined });
     },
 
-    startNodeAction: (nodeCombinedId: string) => {
-      const [level, nodeId] = nodeActionIdMapping[nodeCombinedId];
+    startNodeAction: ([level, nodeId]) => {
       const node = get().nodes[level][nodeId];
       set({
         nodeProgress: {

@@ -1,6 +1,7 @@
+import { mapValues } from "lodash";
 import { ConsumableConfig, SkillType } from "../shared/types";
 
-const consumablesConfig: Record<string, ConsumableConfig> = {
+const consumablesConfig = {
   decoys: {
     name: 'Decoy Executables',
     description: '',
@@ -8,6 +9,17 @@ const consumablesConfig: Record<string, ConsumableConfig> = {
     requiredSkill: SkillType.Spoofing,
     protectionProvided: 10,
   }
-};
+} satisfies Record<string, Omit<ConsumableConfig, "id">>;;
 
-export default consumablesConfig;
+export type ConsumableId = keyof typeof consumablesConfig;
+
+const consumablesWithIds: Record<ConsumableId, ConsumableConfig> = mapValues(consumablesConfig, (consumable, key) => {
+  const id = key as ConsumableId;
+
+  return {
+    ...consumable,
+    id,
+  }
+});
+
+export default consumablesWithIds;

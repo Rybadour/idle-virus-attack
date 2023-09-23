@@ -1,3 +1,4 @@
+import { ConsumableId } from "../config/consumables";
 import { IAction, MyCreateSlice, SkillType } from "../shared/types";
 
 export interface StatsSlice {
@@ -7,6 +8,7 @@ export interface StatsSlice {
   antiVirusStrength: number;
 
   useSkill: (requirement: number, skill: SkillType, elapsed: number) => void,
+  addProtection: (protection: number) => void,
 }
 
 const IMPROVEMENT_SKILL_RATIO = 0.01;
@@ -18,8 +20,8 @@ const createStatsSlice: MyCreateSlice<StatsSlice, []> = (set, get) => {
       [SkillType.Spoofing]: 10,
       [SkillType.Firewall]: 100,
     },
-    protection: 100,
-    maxProtection: 100,
+    protection: 200,
+    maxProtection: 200,
     antiVirusStrength: 2,
 
     useSkill: (requirement: number, skill: SkillType, elapsed: number) => {
@@ -35,6 +37,10 @@ const createStatsSlice: MyCreateSlice<StatsSlice, []> = (set, get) => {
         antiVirusStrength: avStr,
       });
     },
+
+    addProtection: (protection: number) => {
+      set({ protection: Math.min(get().protection + protection, get().maxProtection) });
+    }
   }
 };
 

@@ -2,6 +2,7 @@ import { start } from "repl";
 import { ActionType, IAction, MyCreateSlice } from "../shared/types";
 import { NodesSlice } from "./nodes";
 import { StatsSlice } from "./stats";
+import consumablesWithIds, { ConsumableId } from "../config/consumables";
 
 export interface ActionsSlice {
   queuedActions: IAction[],
@@ -13,9 +14,14 @@ export interface ActionsSlice {
 const createActionsSlice: MyCreateSlice<ActionsSlice, [() => StatsSlice, () => NodesSlice]> = (set, get, stats, nodes) => {
 
   function startAction(action: IAction) {
-    if (action.type === ActionType.Node && action.relatedId) {
-      nodes().startNodeAction(action.relatedId);
+    if (action.typeId.type === ActionType.Node) {
+      nodes().startNodeAction(action.typeId.id);
     }
+  }
+
+  function applyConsumable(c: ConsumableId, elapsed: number) {
+    const consumable = consumablesWithIds[c];
+    stats().addProtection(consumable.protectionProvided * elapsed/1000);
   }
 
   return {
@@ -28,10 +34,13 @@ const createActionsSlice: MyCreateSlice<ActionsSlice, [() => StatsSlice, () => N
       const newAction = {...actions[0]};
       newAction.current += stats().skills[newAction.requiredSkill] * elapsed/1000;
       stats().useSkill(newAction.requirement, newAction.requiredSkill, elapsed);
+      if (newAction.typeId.type === ActionType.Consumable) {
+        applyConsumable(newAction.typeId.id, elapsed);
+      }
       
       if (newAction.current >= newAction.requirement) {
-        if (newAction.type === ActionType.Node && newAction.relatedId) {
-          nodes().completeNode(newAction.relatedId);
+        if (newAction.typeId.type === ActionType.Node) {
+          nodes().completeNode(newAction.typeId.id);
         }
         actions.splice(0, 1);
         if (actions.length > 0) {

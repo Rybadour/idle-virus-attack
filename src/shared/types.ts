@@ -1,4 +1,5 @@
 import { StoreApi } from "zustand";
+import { ConsumableId } from "../config/consumables";
 
 export interface INode {
   id: string;
@@ -11,6 +12,8 @@ export interface INode {
   connections: string[],
   isComplete: boolean;
 }
+
+export type NodePathId = [NodeLevel, string];
 
 export interface INodeProgress {
   node: INode;
@@ -30,6 +33,7 @@ export enum SkillType {
 }
 
 export interface ConsumableConfig {
+  id: ConsumableId,
   name: string,
   description: string,
   requirement: number,
@@ -47,8 +51,13 @@ export interface IAction {
   requiredSkill: SkillType,
   requirement: number,
   current: number,
-  type: ActionType,
-  relatedId?: string,
+  typeId: {
+    type: ActionType.Node,
+    id: NodePathId,
+  } | {
+    type: ActionType.Consumable,
+    id: ConsumableId,
+  }
 }
 
 export type Lens<T> = [set: StoreApi<T>['setState'], get: StoreApi<T>['getState']];

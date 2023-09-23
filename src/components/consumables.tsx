@@ -10,7 +10,7 @@ export default function Consumables() {
 
   const queueConsumable = useCallback((con: ConsumableConfig) => {
     actions.queueAction({
-      type: ActionType.Consumable,
+      typeId: {type: ActionType.Consumable, id: con.id},
       current: 0,
       ...con,
       name: 'Consumable - ' + con.name,
