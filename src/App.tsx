@@ -34,7 +34,6 @@ function App() {
 }
 
 function Content() {
-  const nodes = useStore(s => pick(s.nodes, ['nodes', 'nodeProgress']), shallow)
   const actions = useStore(s => pick(s.actions, ['update']), shallow)
 
   useEffect(() => {
@@ -58,7 +57,7 @@ function Content() {
         <Skills />
         <Consumables />
       </Column>
-      <NodeMap nodes={nodes.nodes[NodeLevel.Internet]} />
+      <NodeMap />
       <Queue />
     </SideBySidePanels>
   </div>;

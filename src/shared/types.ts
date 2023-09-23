@@ -6,11 +6,13 @@ export interface INode {
   x: number;
   y: number;
   name: string;
+  type: NodeType;
   requirement: number;
   requiredSkill: SkillType,
   icon: string;
   connections: string[],
   isComplete: boolean;
+  subnet?: NodeLevel;
 }
 
 export type NodePathId = [NodeLevel, string];
@@ -20,10 +22,14 @@ export interface INodeProgress {
   level: NodeLevel;
 }
 
+export enum NodeType {
+  Subnet = "Subnet",
+  Normal = "Normal",
+}
+
 export enum NodeLevel {
-  Internet = 'internet',
-  Infranet = 'infranet',
-  Computer = 'computer',
+  Internet = 'Internet',
+  HighSchool = 'Highschool',
 }
 
 export enum SkillType {

@@ -2,11 +2,10 @@ import { pick } from "lodash";
 import { useCallback, useState } from "react";
 import styled from "styled-components";
 
-import { INode, NodeLevel } from "../shared/types";
+import { INode, NodeLevel, NodeType } from "../shared/types";
 import { lerpLineSegment, lineSegmentBetweenCircles } from "../shared/utils";
 import useStore from "../store";
 import { shallow } from "zustand/shallow";
-import Icon from "../shared/components/icon";
 
 const NODE_SIZE = 30;
 
@@ -15,8 +14,8 @@ interface Coords {
   y: number;
 }
 
-export default function NodeMap(props: {nodes: Record<string, INode>}) {
-  const nodes = useStore(s => pick(s.nodes, ['queueMining', 'isConnectedCompleted', 'nodeProgress']), shallow);
+export default function NodeMap() {
+  const nodes = useStore(s => s.nodes);
   const actions = useStore(s => pick(s.actions, ['queuedActions']), shallow);
   const [panOffset, setPanOffset] = useState<Coords>({x: 0, y: 0});
   const [isDragging, setIsDragging] = useState(false);
@@ -28,11 +27,17 @@ export default function NodeMap(props: {nodes: Record<string, INode>}) {
       setPanOffset({ x: evt.movementX + panOffset.x, y: evt.movementY + panOffset.y });
     }
   }, [isDragging, panOffset, setPanOffset]);
-  const mineNode = useCallback((nodeId: string) => {
-    //if (nodes.isConnectedCompleted(nodeId, NodeLevel.Internet)) {
-      nodes.queueMining(nodeId, NodeLevel.Internet);
-    //}
+  const clickNode = useCallback((node: INode) => {
+    if (node.isComplete && node.type === NodeType.Subnet) {
+      nodes.switchToSubnet(node.subnet);
+    } else {
+      //if (nodes.isConnectedCompleted(nodeId, NodeLevel.Internet)) {
+        nodes.queueMining(node.id, nodes.currentMap);
+      //}
+    }
   }, [nodes])
+
+  const nodeMap = nodes.nodes[nodes.currentMap];
 
   return <NodesContainer
     onMouseDown={() => setIsDragging(true)}
@@ -41,9 +46,9 @@ export default function NodeMap(props: {nodes: Record<string, INode>}) {
   >
     <g transform={`translate(${panOffset.x} ${panOffset.y})`}>
 
-    {Object.values(props.nodes).map(node =>
+    {Object.values(nodeMap).map(node =>
       node.connections.map(otherId => {
-        const other = props.nodes[otherId];
+        const other = nodeMap[otherId];
         let otherLine;
         if (nodes.nodeProgress && nodes.nodeProgress.node.id === otherId) {
           const progress = nodeAction.current / nodeAction.requirement;
@@ -64,12 +69,12 @@ export default function NodeMap(props: {nodes: Record<string, INode>}) {
       })
     )}
 
-    {Object.values(props.nodes).map(node =>
+    {Object.values(nodeMap).map(node =>
       <>
         <Node
           key={node.id} cx={node.x} cy={node.y} r={NODE_SIZE/2}
           isComplete={node.isComplete}
-          onClick={() => mineNode(node.id)}
+          onClick={() => clickNode(node)}
         ></Node>
         <NodeIcon x={node.x} y={node.y} icon={node.icon}></NodeIcon>
       </>

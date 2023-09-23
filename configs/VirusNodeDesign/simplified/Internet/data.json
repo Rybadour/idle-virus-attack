@@ -32,7 +32,9 @@
 					"requiredSkill": "Hacking",
 					"requirement": 0,
 					"name": "Home",
-					"icon": "House"
+					"icon": "House",
+					"type": "Normal",
+					"subnet": null
 				}
 			},
 			{
@@ -60,9 +62,11 @@
 						}
 					],
 					"requiredSkill": "Hacking",
-					"requirement": 1000,
+					"requirement": 400,
 					"name": "Riverside High",
-					"icon": "Pc"
+					"icon": "Graduate_cap",
+					"type": "Subnet",
+					"subnet": "Highschool"
 				}
 			},
 			{
@@ -79,7 +83,9 @@
 					"requiredSkill": "Firewall",
 					"requirement": 2000,
 					"name": "BD Bank Subnet",
-					"icon": "Bank"
+					"icon": "Bank",
+					"type": "Normal",
+					"subnet": null
 				}
 			},
 			{
@@ -103,7 +109,9 @@
 					"requiredSkill": "Hacking",
 					"requirement": 2000,
 					"name": "CIA Boston Subnet",
-					"icon": "Control_tower"
+					"icon": "Wifi_router",
+					"type": "Normal",
+					"subnet": null
 				}
 			},
 			{
@@ -120,7 +128,9 @@
 					"requiredSkill": "Hacking",
 					"requirement": 4000,
 					"name": "Illuminati Subnet Alpha",
-					"icon": "Bank"
+					"icon": "Bank",
+					"type": "Normal",
+					"subnet": null
 				}
 			}
 		],

@@ -2,35 +2,29 @@ import _, { cloneDeep } from "lodash";
 import { getNodes } from "../config/node-map";
 import { ActionType, INode, INodeProgress, MyCreateSlice, NodeLevel, NodePathId } from "../shared/types";
 import { ActionsSlice } from "./actions";
-import { enumFromKey } from "../shared/utils";
 
 export interface NodesSlice {
   nodes: Record<NodeLevel, Record<string, INode>>,
+  currentMap: NodeLevel,
   nodeProgress?: INodeProgress,
 
   queueMining: (nodeId: string, level: NodeLevel) => void,
   startNodeAction: (nodePath: NodePathId) => void,
   completeNode: (nodePath: NodePathId) => void,
   isConnectedCompleted: (nodeId: string, level: NodeLevel) => boolean,
+  switchToSubnet: (subnet?: NodeLevel) => void,
 }
 
 const defaultNodes = {
   [NodeLevel.Internet]: getNodes(NodeLevel.Internet),
-  [NodeLevel.Infranet]: getNodes(NodeLevel.Infranet),
-  [NodeLevel.Computer]: getNodes(NodeLevel.Computer),
+  [NodeLevel.HighSchool]: getNodes(NodeLevel.HighSchool),
 };
-
-const nodeActionIdMapping: Record<string, [NodeLevel, string]> = {};
-Object.entries(defaultNodes).map(([level, nodes]) => {
-  Object.keys(nodes).forEach((nodeId) => {
-    nodeActionIdMapping[level + '-' + nodeId] = [enumFromKey(NodeLevel, level)!, nodeId];
-  });
-});
 
 const createNodesSlice: MyCreateSlice<NodesSlice, [() => ActionsSlice]>
 = (set, get, actions) => {
   return {
     nodes: defaultNodes,
+    currentMap: NodeLevel.Internet,
     nodeProgress: undefined,
 
     queueMining: (nodeId, level) => {
@@ -69,7 +63,11 @@ const createNodesSlice: MyCreateSlice<NodesSlice, [() => ActionsSlice]>
       );
 
       return found;
-    }
+    },
+
+    switchToSubnet: (subnet) => {
+      set({ currentMap: subnet });
+    },
   };
 };
 

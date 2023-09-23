@@ -1,0 +1,107 @@
+{
+	"identifier": "Highschool",
+	"uniqueIdentifer": "7a2396a0-3b70-11ee-a8cb-a54be0773ee2",
+	"x": 0,
+	"y": 272,
+	"width": 256,
+	"height": 256,
+	"bgColor": "#696A79",
+	"neighbourLevels": [],
+	"customFields" : {},
+	"layers": [],
+	"entities": {
+		"HackingNode": [
+			{
+				"id": "HackingNode",
+				"iid": "7cc3e400-3b70-11ee-a8cb-5bc9dc08a31c",
+				"layer": "Nodes",
+				"x": 56,
+				"y": 56,
+				"width": 30,
+				"height": 30,
+				"color": 9755059,
+				"customFields": {
+					"connectedNodes": [
+						{
+							"entityIid": "7e2c4da0-3b70-11ee-a8cb-77f32f58df9d",
+							"layerIid": "7a23e4c0-3b70-11ee-a8cb-c181e542c619",
+							"levelIid": "7a2396a0-3b70-11ee-a8cb-a54be0773ee2",
+							"worldIid": "20779c20-3b70-11ee-a8cb-35cf8f801f13"
+						}
+					],
+					"requiredSkill": "Firewall",
+					"requirement": 0,
+					"name": "Modem T-100",
+					"icon": "Server_rack",
+					"type": "Normal",
+					"subnet": null
+				}
+			},
+			{
+				"id": "HackingNode",
+				"iid": "7e2c4da0-3b70-11ee-a8cb-77f32f58df9d",
+				"layer": "Nodes",
+				"x": 120,
+				"y": 104,
+				"width": 30,
+				"height": 30,
+				"color": 9755059,
+				"customFields": {
+					"connectedNodes": [
+						{
+							"entityIid": "fae837f0-3b70-11ee-a8cb-5397af709dea",
+							"layerIid": "7a23e4c0-3b70-11ee-a8cb-c181e542c619",
+							"levelIid": "7a2396a0-3b70-11ee-a8cb-a54be0773ee2",
+							"worldIid": "20779c20-3b70-11ee-a8cb-35cf8f801f13"
+						}
+					],
+					"requiredSkill": "Firewall",
+					"requirement": 200,
+					"name": "Router_4b 192.168.10.23",
+					"icon": "Wifi_router",
+					"type": "Normal",
+					"subnet": null
+				}
+			},
+			{
+				"id": "HackingNode",
+				"iid": "fae837f0-3b70-11ee-a8cb-5397af709dea",
+				"layer": "Nodes",
+				"x": 168,
+				"y": 40,
+				"width": 30,
+				"height": 30,
+				"color": 9755059,
+				"customFields": {
+					"connectedNodes": [],
+					"requiredSkill": "Hacking",
+					"requirement": 0,
+					"name": "Mr. Garrison's IPhone4",
+					"icon": "Smartphone",
+					"type": "Normal",
+					"subnet": null
+				}
+			}
+		],
+		"StartIndicator": [
+			{
+				"id": "StartIndicator",
+				"iid": "a99fced0-3b70-11ee-a8cb-dbaf12523401",
+				"layer": "Nodes",
+				"x": 32,
+				"y": 80,
+				"width": 16,
+				"height": 16,
+				"color": 9755059,
+				"customFields": {
+					"StartNode": {
+						"entityIid": "7cc3e400-3b70-11ee-a8cb-5bc9dc08a31c",
+						"layerIid": "7a23e4c0-3b70-11ee-a8cb-c181e542c619",
+						"levelIid": "7a2396a0-3b70-11ee-a8cb-a54be0773ee2",
+						"worldIid": "20779c20-3b70-11ee-a8cb-35cf8f801f13"
+					}
+				}
+			}
+		]
+	}
+}
