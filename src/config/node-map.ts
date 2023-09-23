@@ -13,6 +13,7 @@ interface INodeMapDesign {
         name: string,
         requiredSkill: string,
         requirement: number,
+        icon: string,
         connectedNodes: {
           entityIid: string,
         }[]
@@ -45,6 +46,7 @@ export function getNodes(level: NodeLevel) {
       name: node.customFields.name,
       requiredSkill: enumFromKey(SkillType, node.customFields.requiredSkill)!,
       requirement: node.customFields.requirement,
+      icon: node.customFields.icon.toLowerCase().replace('_', '-'),
       connections: node.customFields.connectedNodes.map(connection => 
         connection.entityIid
       ),

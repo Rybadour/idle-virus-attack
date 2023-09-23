@@ -7,6 +7,7 @@ export interface INode {
   name: string;
   requirement: number;
   requiredSkill: SkillType,
+  icon: string;
   connections: string[],
   isComplete: boolean;
 }

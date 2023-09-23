@@ -6,6 +6,7 @@ import { INode, NodeLevel } from "../shared/types";
 import { lerpLineSegment } from "../shared/utils";
 import useStore from "../store";
 import { shallow } from "zustand/shallow";
+import Icon from "../shared/components/icon";
 
 const NODE_SIZE = 30;
 
@@ -37,7 +38,7 @@ export default function NodeMap(props: {nodes: Record<string, INode>}) {
     onMouseDown={() => setIsDragging(true)}
     onMouseUp={() => setIsDragging(false)}
     onMouseMove={(evt) => moveMouse(evt)}
-    >
+  >
     <g transform={`translate(${panOffset.x} ${panOffset.y})`}>
 
     {Object.values(props.nodes).map(node =>
@@ -63,11 +64,14 @@ export default function NodeMap(props: {nodes: Record<string, INode>}) {
     )}
 
     {Object.values(props.nodes).map(node =>
-      <Node
-        key={node.id} cx={node.x} cy={node.y} r={NODE_SIZE/2}
-        isComplete={node.isComplete}
-        onClick={() => mineNode(node.id)}
-      />
+      <>
+        <Node
+          key={node.id} cx={node.x} cy={node.y} r={NODE_SIZE/2}
+          isComplete={node.isComplete}
+          onClick={() => mineNode(node.id)}
+        ></Node>
+        <NodeIcon x={node.x} y={node.y} icon={node.icon}></NodeIcon>
+      </>
     )}
     </g>
   </NodesContainer>;
@@ -95,3 +99,15 @@ const NodeConnection = styled.line<{isComplete: boolean}>`
   stroke: ${p => p.isComplete ? 'white': 'grey'};
   stroke-width: 3px;
 `;
+
+function NodeIcon(props: {x: number, y: number, icon: string}) {
+  const iconSize = 18;
+  return <image
+    x={props.x - iconSize/2}
+    y={props.y - iconSize/2}
+    width={iconSize}
+    height={iconSize}
+    href={`icons/${props.icon}.png`}
+    style={{pointerEvents: "none"}}
+  />;
+}

@@ -26,12 +26,13 @@
 							"entityIid": "5b0e4620-9f30-11ed-9393-3bf5633add20",
 							"layerIid": "e07964f0-9f30-11ed-b2c8-47ef907f2e4f",
 							"levelIid": "75888860-9f30-11ed-b2c8-dfa72777c7f8",
-							"worldIid": "7ed02c10-3b70-11ee-9856-f1dc713f2431"
+							"worldIid": "20779c20-3b70-11ee-a8cb-35cf8f801f13"
 						}
 					],
 					"requiredSkill": "Hacking",
 					"requirement": 0,
-					"name": "Home"
+					"name": "Home",
+					"icon": "House"
 				}
 			},
 			{
@@ -49,18 +50,19 @@
 							"entityIid": "67f86550-9f30-11ed-9393-257d87688490",
 							"layerIid": "e07964f0-9f30-11ed-b2c8-47ef907f2e4f",
 							"levelIid": "75888860-9f30-11ed-b2c8-dfa72777c7f8",
-							"worldIid": "7ed02c10-3b70-11ee-9856-f1dc713f2431"
+							"worldIid": "20779c20-3b70-11ee-a8cb-35cf8f801f13"
 						},
 						{
 							"entityIid": "640be8e0-9f30-11ed-9393-111d1d11d219",
 							"layerIid": "e07964f0-9f30-11ed-b2c8-47ef907f2e4f",
 							"levelIid": "75888860-9f30-11ed-b2c8-dfa72777c7f8",
-							"worldIid": "7ed02c10-3b70-11ee-9856-f1dc713f2431"
+							"worldIid": "20779c20-3b70-11ee-a8cb-35cf8f801f13"
 						}
 					],
 					"requiredSkill": "Hacking",
 					"requirement": 1000,
-					"name": "Riverside High"
+					"name": "Riverside High",
+					"icon": "Pc"
 				}
 			},
 			{
@@ -76,7 +78,8 @@
 					"connectedNodes": [],
 					"requiredSkill": "Firewall",
 					"requirement": 2000,
-					"name": "BD Bank Subnet"
+					"name": "BD Bank Subnet",
+					"icon": "Bank"
 				}
 			},
 			{
@@ -94,12 +97,13 @@
 							"entityIid": "68ba07a0-9f30-11ed-9393-3d7129b4f7dd",
 							"layerIid": "e07964f0-9f30-11ed-b2c8-47ef907f2e4f",
 							"levelIid": "75888860-9f30-11ed-b2c8-dfa72777c7f8",
-							"worldIid": "7ed02c10-3b70-11ee-9856-f1dc713f2431"
+							"worldIid": "20779c20-3b70-11ee-a8cb-35cf8f801f13"
 						}
 					],
 					"requiredSkill": "Hacking",
 					"requirement": 2000,
-					"name": "CIA Boston Subnet"
+					"name": "CIA Boston Subnet",
+					"icon": "Control_tower"
 				}
 			},
 			{
@@ -115,7 +119,8 @@
 					"connectedNodes": [],
 					"requiredSkill": "Hacking",
 					"requirement": 4000,
-					"name": "Illuminati Subnet Alpha"
+					"name": "Illuminati Subnet Alpha",
+					"icon": "Bank"
 				}
 			}
 		],
@@ -134,7 +139,7 @@
 						"entityIid": "f1affae0-9f30-11ed-b2c8-a3e9ca36cb5a",
 						"layerIid": "e07964f0-9f30-11ed-b2c8-47ef907f2e4f",
 						"levelIid": "75888860-9f30-11ed-b2c8-dfa72777c7f8",
-						"worldIid": "7ed02c10-3b70-11ee-9856-f1dc713f2431"
+						"worldIid": "20779c20-3b70-11ee-a8cb-35cf8f801f13"
 					}
 				}
 			}

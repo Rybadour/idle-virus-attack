@@ -11,7 +11,7 @@
 	"iid": "7ecf1aa0-3b70-11ee-9856-1f1fad47cf9e",
 	"jsonVersion": "1.2.5",
 	"appBuildId": 464870,
-	"nextUid": 11,
+	"nextUid": 13,
 	"identifierStyle": "Capitalize",
 	"toc": [],
 	"worldLayout": "Free",
@@ -222,6 +222,38 @@
 					"allowedRefs": "OnlySame",
 					"allowedRefTags": [],
 					"tilesetUid": null
+				},
+				{
+					"identifier": "icon",
+					"doc": null,
+					"__type": "LocalEnum.Icon",
+					"uid": 12,
+					"type": "F_Enum(11)",
+					"isArray": false,
+					"canBeNull": false,
+					"arrayMinLength": null,
+					"arrayMaxLength": null,
+					"editorDisplayMode": "Hidden",
+					"editorDisplayPos": "Above",
+					"editorLinkStyle": "StraightArrow",
+					"editorAlwaysShow": false,
+					"editorShowInWorld": true,
+					"editorCutLongValues": true,
+					"editorTextSuffix": null,
+					"editorTextPrefix": null,
+					"useForSmartColor": false,
+					"min": null,
+					"max": null,
+					"regex": null,
+					"acceptFileTypes": null,
+					"defaultOverride": null,
+					"textLanguageMode": null,
+					"symmetricalRef": false,
+					"autoChainRef": true,
+					"allowOutOfLevelRef": true,
+					"allowedRefs": "OnlySame",
+					"allowedRefTags": [],
+					"tilesetUid": null
 				}
 			]
 		},
@@ -287,11 +319,23 @@
 				}
 			]
 		}
-	], "tilesets": [], "enums": [{ "identifier": "SkillType", "uid": 7, "values": [
-		{ "id": "Hacking", "tileId": null, "color": 0, "__tileSrcRect": null },
-		{ "id": "Spoofing", "tileId": null, "color": 0, "__tileSrcRect": null },
-		{ "id": "Firewall", "tileId": null, "color": 0, "__tileSrcRect": null }
-	], "iconTilesetUid": null, "externalRelPath": null, "externalFileChecksum": null, "tags": [] }], "externalEnums": [], "levelFields": [] },
+	], "tilesets": [], "enums": [
+		{ "identifier": "SkillType", "uid": 7, "values": [
+			{ "id": "Hacking", "tileId": null, "color": 0, "__tileSrcRect": null },
+			{ "id": "Spoofing", "tileId": null, "color": 0, "__tileSrcRect": null },
+			{ "id": "Firewall", "tileId": null, "color": 0, "__tileSrcRect": null }
+		], "iconTilesetUid": null, "externalRelPath": null, "externalFileChecksum": null, "tags": [] },
+		{ "identifier": "Icon", "uid": 11, "values": [
+			{ "id": "House", "tileId": null, "color": 12470831, "__tileSrcRect": null },
+			{ "id": "Pc", "tileId": null, "color": 14120515, "__tileSrcRect": null },
+			{ "id": "Bank", "tileId": null, "color": 15389866, "__tileSrcRect": null },
+			{ "id": "Capitol", "tileId": null, "color": 14984818, "__tileSrcRect": null },
+			{ "id": "Control_tower", "tileId": null, "color": 7552569, "__tileSrcRect": null },
+			{ "id": "Hospital", "tileId": null, "color": 4073265, "__tileSrcRect": null },
+			{ "id": "Server_rack", "tileId": null, "color": 16690740, "__tileSrcRect": null },
+			{ "id": "Shop", "tileId": null, "color": 16705377, "__tileSrcRect": null }
+		], "iconTilesetUid": null, "externalRelPath": null, "externalFileChecksum": null, "tags": [] }
+	], "externalEnums": [], "levelFields": [] },
 	"levels": [
 		{
 			"identifier": "Internet",
@@ -355,7 +399,7 @@
 									"entityIid": "5b0e4620-9f30-11ed-9393-3bf5633add20",
 									"layerIid": "e07964f0-9f30-11ed-b2c8-47ef907f2e4f",
 									"levelIid": "75888860-9f30-11ed-b2c8-dfa72777c7f8",
-									"worldIid": "7ed02c10-3b70-11ee-9856-f1dc713f2431"
+									"worldIid": "20779c20-3b70-11ee-a8cb-35cf8f801f13"
 								}], "__type": "Array<EntityRef>", "__tile": null, "defUid": 2, "realEditorValues": [{
 									"id": "V_String",
 									"params": ["5b0e4620-9f30-11ed-9393-3bf5633add20"]
@@ -368,6 +412,10 @@
 								{ "__identifier": "name", "__value": "Home", "__type": "String", "__tile": null, "defUid": 10, "realEditorValues": [{
 									"id": "V_String",
 									"params": ["Home"]
+								}] },
+								{ "__identifier": "icon", "__value": "House", "__type": "LocalEnum.Icon", "__tile": null, "defUid": 12, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["House"]
 								}] }
 							]
 						},
@@ -387,7 +435,7 @@
 								"entityIid": "f1affae0-9f30-11ed-b2c8-a3e9ca36cb5a",
 								"layerIid": "e07964f0-9f30-11ed-b2c8-47ef907f2e4f",
 								"levelIid": "75888860-9f30-11ed-b2c8-dfa72777c7f8",
-								"worldIid": "7ed02c10-3b70-11ee-9856-f1dc713f2431"
+								"worldIid": "20779c20-3b70-11ee-a8cb-35cf8f801f13"
 							}, "__type": "EntityRef", "__tile": null, "defUid": 6, "realEditorValues": [{
 								"id": "V_String",
 								"params": ["f1affae0-9f30-11ed-b2c8-a3e9ca36cb5a"]
@@ -410,12 +458,12 @@
 									"entityIid": "67f86550-9f30-11ed-9393-257d87688490",
 									"layerIid": "e07964f0-9f30-11ed-b2c8-47ef907f2e4f",
 									"levelIid": "75888860-9f30-11ed-b2c8-dfa72777c7f8",
-									"worldIid": "7ed02c10-3b70-11ee-9856-f1dc713f2431"
+									"worldIid": "20779c20-3b70-11ee-a8cb-35cf8f801f13"
 								}, {
 									"entityIid": "640be8e0-9f30-11ed-9393-111d1d11d219",
 									"layerIid": "e07964f0-9f30-11ed-b2c8-47ef907f2e4f",
 									"levelIid": "75888860-9f30-11ed-b2c8-dfa72777c7f8",
-									"worldIid": "7ed02c10-3b70-11ee-9856-f1dc713f2431"
+									"worldIid": "20779c20-3b70-11ee-a8cb-35cf8f801f13"
 								} ], "__type": "Array<EntityRef>", "__tile": null, "defUid": 2, "realEditorValues": [ {
 									"id": "V_String",
 									"params": ["67f86550-9f30-11ed-9393-257d87688490"]
@@ -431,6 +479,10 @@
 								{ "__identifier": "name", "__value": "Riverside High", "__type": "String", "__tile": null, "defUid": 10, "realEditorValues": [{
 									"id": "V_String",
 									"params": ["Riverside High"]
+								}] },
+								{ "__identifier": "icon", "__value": "Pc", "__type": "LocalEnum.Icon", "__tile": null, "defUid": 12, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["Pc"]
 								}] }
 							]
 						},
@@ -456,6 +508,10 @@
 								{ "__identifier": "name", "__value": "BD Bank Subnet", "__type": "String", "__tile": null, "defUid": 10, "realEditorValues": [{
 									"id": "V_String",
 									"params": ["BD Bank Subnet"]
+								}] },
+								{ "__identifier": "icon", "__value": "Bank", "__type": "LocalEnum.Icon", "__tile": null, "defUid": 12, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["Bank"]
 								}] }
 							]
 						},
@@ -476,7 +532,7 @@
 									"entityIid": "68ba07a0-9f30-11ed-9393-3d7129b4f7dd",
 									"layerIid": "e07964f0-9f30-11ed-b2c8-47ef907f2e4f",
 									"levelIid": "75888860-9f30-11ed-b2c8-dfa72777c7f8",
-									"worldIid": "7ed02c10-3b70-11ee-9856-f1dc713f2431"
+									"worldIid": "20779c20-3b70-11ee-a8cb-35cf8f801f13"
 								}], "__type": "Array<EntityRef>", "__tile": null, "defUid": 2, "realEditorValues": [{
 									"id": "V_String",
 									"params": ["68ba07a0-9f30-11ed-9393-3d7129b4f7dd"]
@@ -489,6 +545,10 @@
 								{ "__identifier": "name", "__value": "CIA Boston Subnet", "__type": "String", "__tile": null, "defUid": 10, "realEditorValues": [{
 									"id": "V_String",
 									"params": ["CIA Boston Subnet"]
+								}] },
+								{ "__identifier": "icon", "__value": "Control_tower", "__type": "LocalEnum.Icon", "__tile": null, "defUid": 12, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["Control_tower"]
 								}] }
 							]
 						},
@@ -514,6 +574,10 @@
 								{ "__identifier": "name", "__value": "Illuminati Subnet Alpha", "__type": "String", "__tile": null, "defUid": 10, "realEditorValues": [{
 									"id": "V_String",
 									"params": ["Illuminati Subnet Alpha"]
+								}] },
+								{ "__identifier": "icon", "__value": "Bank", "__type": "LocalEnum.Icon", "__tile": null, "defUid": 12, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["Bank"]
 								}] }
 							]
 						}
