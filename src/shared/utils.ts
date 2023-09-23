@@ -65,3 +65,29 @@ export function lerpLineSegment(a: Point, b: Point, inter: number): Point {
   const delta = {x: b.x - a.x, y: b.y - a.y};
   return {x: a.x + delta.x * inter, y: a.y + delta.y * inter};
 }
+
+export function getMagnitude(v: Point) {
+  return Math.sqrt(v.x*v.x + v.y*v.y);
+}
+
+export function subtractVector(a: Point, b: Point) {
+  return {x: b.x - a.x, y: b.y - a.y};
+}
+
+export function normalizeVector(v: Point): Point {
+  const mag = getMagnitude(v);
+  return {x: v.x / mag, y: v.y / mag};
+}
+
+export function scaleVector(v: Point, scalar: number) {
+  return {x: v.x * scalar, y: v.y * scalar};
+}
+
+export function lineSegmentBetweenCircles(ca: Point, cb: Point, radius: number): [Point, Point] {
+  const deltaVector = normalizeVector(subtractVector(ca, cb));
+
+  return [
+    subtractVector(scaleVector(deltaVector, -radius), ca),
+    subtractVector(scaleVector(deltaVector, radius), cb),
+  ];
+}

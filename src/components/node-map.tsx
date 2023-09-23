@@ -3,7 +3,7 @@ import { useCallback, useState } from "react";
 import styled from "styled-components";
 
 import { INode, NodeLevel } from "../shared/types";
-import { lerpLineSegment } from "../shared/utils";
+import { lerpLineSegment, lineSegmentBetweenCircles } from "../shared/utils";
 import useStore from "../store";
 import { shallow } from "zustand/shallow";
 import Icon from "../shared/components/icon";
@@ -47,9 +47,10 @@ export default function NodeMap(props: {nodes: Record<string, INode>}) {
         let otherLine;
         if (nodes.nodeProgress && nodes.nodeProgress.node.id === otherId) {
           const progress = nodeAction.current / nodeAction.requirement;
-          const progressPoint = lerpLineSegment(node, other, progress);
+          const progressLine = lineSegmentBetweenCircles(node, other, NODE_SIZE/2);
+          const progressPoint = lerpLineSegment(progressLine[0], progressLine[1], progress);
           otherLine = <line
-            key={node.id + '-' + otherId + '-progress'} x1={node.x} y1={node.y} x2={progressPoint.x} y2={progressPoint.y}
+            key={node.id + '-' + otherId + '-progress'} x1={progressLine[0].x} y1={progressLine[0].y} x2={progressPoint.x} y2={progressPoint.y}
             stroke="white" strokeWidth={3}
           />;
         }
