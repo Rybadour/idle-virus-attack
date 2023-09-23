@@ -5,7 +5,6 @@ import ReactDOM from "react-dom";
 import ReactTooltip from 'react-tooltip';
 
 import './App.scss';
-import { ReactJSXElement } from '@emotion/react/types/jsx-namespace';
 import NodeMap from './components/node-map';
 import useStore from './store';
 import { pick } from 'lodash';
@@ -34,19 +33,22 @@ function App() {
   );
 }
 
-let lastTime: number = Date.now();
 function Content() {
   const nodes = useStore(s => pick(s.nodes, ['nodes', 'nodeProgress']), shallow)
   const actions = useStore(s => pick(s.actions, ['update']), shallow)
+
   useEffect(() => {
-    const interval = setInterval(() => {
-      const elapsed = Date.now() - lastTime;
-      lastTime = Date.now();
+    let requestId = requestAnimationFrame(loop);
+    let lastTime: number = Date.now();
+    function loop(timeStamp: number) {
+      const elapsed = timeStamp - lastTime;
+      lastTime = timeStamp;
       
       actions.update(elapsed);
-    }, 100);
+      requestId = requestAnimationFrame(loop);
+    }
 
-    return () => clearInterval(interval);
+    return () => cancelAnimationFrame(requestId);
   }, [actions.update]);
 
   return <div className="content">
