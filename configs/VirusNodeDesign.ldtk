@@ -497,27 +497,27 @@
 					"entityInstances": [
 						{
 							"__identifier": "HackingNode",
-							"__grid": [5,14],
+							"__grid": [2,12],
 							"__pivot": [0.5,0.5],
 							"__tags": ["node"],
 							"__tile": null,
 							"__smartColor": "#94D9B3",
-							"__worldX": 88,
-							"__worldY": 232,
+							"__worldX": 40,
+							"__worldY": 200,
 							"iid": "f1affae0-9f30-11ed-b2c8-a3e9ca36cb5a",
 							"width": 30,
 							"height": 30,
 							"defUid": 1,
-							"px": [88,232],
+							"px": [40,200],
 							"fieldInstances": [
 								{ "__identifier": "connectedNodes", "__type": "Array<EntityRef>", "__value": [{
-									"entityIid": "5b0e4620-9f30-11ed-9393-3bf5633add20",
+									"entityIid": "216f34f0-3b70-11ee-a13c-abeba6fda528",
 									"layerIid": "e07964f0-9f30-11ed-b2c8-47ef907f2e4f",
 									"levelIid": "75888860-9f30-11ed-b2c8-dfa72777c7f8",
 									"worldIid": "fe9602d0-3b70-11ee-a13c-f976eb9049e8"
 								}], "__tile": null, "defUid": 2, "realEditorValues": [{
 									"id": "V_String",
-									"params": ["5b0e4620-9f30-11ed-9393-3bf5633add20"]
+									"params": ["216f34f0-3b70-11ee-a13c-abeba6fda528"]
 								}] },
 								{ "__identifier": "requiredSkill", "__type": "LocalEnum.SkillType", "__value": "Hacking", "__tile": null, "defUid": 8, "realEditorValues": [{
 									"id": "V_String",
@@ -541,18 +541,18 @@
 						},
 						{
 							"__identifier": "StartIndicator",
-							"__grid": [7,15],
+							"__grid": [3,14],
 							"__pivot": [0,0],
 							"__tags": [],
 							"__tile": null,
 							"__smartColor": "#94D9B3",
-							"__worldX": 112,
-							"__worldY": 240,
+							"__worldX": 48,
+							"__worldY": 224,
 							"iid": "81707b30-9f30-11ed-ace3-65b9700e7e1b",
 							"width": 16,
 							"height": 16,
 							"defUid": 5,
-							"px": [112,240],
+							"px": [48,224],
 							"fieldInstances": [{ "__identifier": "StartNode", "__type": "EntityRef", "__value": {
 								"entityIid": "f1affae0-9f30-11ed-b2c8-a3e9ca36cb5a",
 								"layerIid": "e07964f0-9f30-11ed-b2c8-47ef907f2e4f",
@@ -565,48 +565,28 @@
 						},
 						{
 							"__identifier": "HackingNode",
-							"__grid": [9,10],
+							"__grid": [12,12],
 							"__pivot": [0.5,0.5],
 							"__tags": ["node"],
 							"__tile": null,
 							"__smartColor": "#94D9B3",
-							"__worldX": 152,
-							"__worldY": 168,
+							"__worldX": 200,
+							"__worldY": 200,
 							"iid": "5b0e4620-9f30-11ed-9393-3bf5633add20",
 							"width": 30,
 							"height": 30,
 							"defUid": 1,
-							"px": [152,168],
+							"px": [200,200],
 							"fieldInstances": [
-								{ "__identifier": "connectedNodes", "__type": "Array<EntityRef>", "__value": [
-									{
-										"entityIid": "f1affae0-9f30-11ed-b2c8-a3e9ca36cb5a",
-										"layerIid": "e07964f0-9f30-11ed-b2c8-47ef907f2e4f",
-										"levelIid": "75888860-9f30-11ed-b2c8-dfa72777c7f8",
-										"worldIid": "fe9602d0-3b70-11ee-a13c-f976eb9049e8"
-									},
-									{
-										"entityIid": "640be8e0-9f30-11ed-9393-111d1d11d219",
-										"layerIid": "e07964f0-9f30-11ed-b2c8-47ef907f2e4f",
-										"levelIid": "75888860-9f30-11ed-b2c8-dfa72777c7f8",
-										"worldIid": "fe9602d0-3b70-11ee-a13c-f976eb9049e8"
-									},
-									{
-										"entityIid": "67f86550-9f30-11ed-9393-257d87688490",
-										"layerIid": "e07964f0-9f30-11ed-b2c8-47ef907f2e4f",
-										"levelIid": "75888860-9f30-11ed-b2c8-dfa72777c7f8",
-										"worldIid": "fe9602d0-3b70-11ee-a13c-f976eb9049e8"
-									}
-								], "__tile": null, "defUid": 2, "realEditorValues": [ {
+								{ "__identifier": "connectedNodes", "__type": "Array<EntityRef>", "__value": [{
+									"entityIid": "216f34f0-3b70-11ee-a13c-abeba6fda528",
+									"layerIid": "e07964f0-9f30-11ed-b2c8-47ef907f2e4f",
+									"levelIid": "75888860-9f30-11ed-b2c8-dfa72777c7f8",
+									"worldIid": "fe9602d0-3b70-11ee-a13c-f976eb9049e8"
+								}], "__tile": null, "defUid": 2, "realEditorValues": [{
 									"id": "V_String",
-									"params": ["f1affae0-9f30-11ed-b2c8-a3e9ca36cb5a"]
-								}, {
-									"id": "V_String",
-									"params": ["640be8e0-9f30-11ed-9393-111d1d11d219"]
-								}, {
-									"id": "V_String",
-									"params": ["67f86550-9f30-11ed-9393-257d87688490"]
-								} ] },
+									"params": ["216f34f0-3b70-11ee-a13c-abeba6fda528"]
+								}] },
 								{ "__identifier": "requiredSkill", "__type": "LocalEnum.SkillType", "__value": "Firewall", "__tile": null, "defUid": 8, "realEditorValues": [{
 									"id": "V_String",
 									"params": ["Firewall"]
@@ -632,27 +612,27 @@
 						},
 						{
 							"__identifier": "HackingNode",
-							"__grid": [4,6],
+							"__grid": [2,2],
 							"__pivot": [0.5,0.5],
 							"__tags": ["node"],
 							"__tile": null,
 							"__smartColor": "#94D9B3",
-							"__worldX": 72,
-							"__worldY": 104,
+							"__worldX": 40,
+							"__worldY": 40,
 							"iid": "640be8e0-9f30-11ed-9393-111d1d11d219",
 							"width": 30,
 							"height": 30,
 							"defUid": 1,
-							"px": [72,104],
+							"px": [40,40],
 							"fieldInstances": [
 								{ "__identifier": "connectedNodes", "__type": "Array<EntityRef>", "__value": [{
-									"entityIid": "5b0e4620-9f30-11ed-9393-3bf5633add20",
+									"entityIid": "216f34f0-3b70-11ee-a13c-abeba6fda528",
 									"layerIid": "e07964f0-9f30-11ed-b2c8-47ef907f2e4f",
 									"levelIid": "75888860-9f30-11ed-b2c8-dfa72777c7f8",
 									"worldIid": "fe9602d0-3b70-11ee-a13c-f976eb9049e8"
 								}], "__tile": null, "defUid": 2, "realEditorValues": [{
 									"id": "V_String",
-									"params": ["5b0e4620-9f30-11ed-9393-3bf5633add20"]
+									"params": ["216f34f0-3b70-11ee-a13c-abeba6fda528"]
 								}] },
 								{ "__identifier": "requiredSkill", "__type": "LocalEnum.SkillType", "__value": "Firewall", "__tile": null, "defUid": 8, "realEditorValues": [{
 									"id": "V_String",
@@ -673,36 +653,28 @@
 						},
 						{
 							"__identifier": "HackingNode",
-							"__grid": [10,5],
+							"__grid": [8,1],
 							"__pivot": [0.5,0.5],
 							"__tags": ["node"],
 							"__tile": null,
 							"__smartColor": "#94D9B3",
-							"__worldX": 168,
-							"__worldY": 88,
+							"__worldX": 136,
+							"__worldY": 24,
 							"iid": "67f86550-9f30-11ed-9393-257d87688490",
 							"width": 30,
 							"height": 30,
 							"defUid": 1,
-							"px": [168,88],
+							"px": [136,24],
 							"fieldInstances": [
-								{ "__identifier": "connectedNodes", "__type": "Array<EntityRef>", "__value": [ {
-									"entityIid": "5b0e4620-9f30-11ed-9393-3bf5633add20",
+								{ "__identifier": "connectedNodes", "__type": "Array<EntityRef>", "__value": [{
+									"entityIid": "216f34f0-3b70-11ee-a13c-abeba6fda528",
 									"layerIid": "e07964f0-9f30-11ed-b2c8-47ef907f2e4f",
 									"levelIid": "75888860-9f30-11ed-b2c8-dfa72777c7f8",
 									"worldIid": "fe9602d0-3b70-11ee-a13c-f976eb9049e8"
-								}, {
-									"entityIid": "68ba07a0-9f30-11ed-9393-3d7129b4f7dd",
-									"layerIid": "e07964f0-9f30-11ed-b2c8-47ef907f2e4f",
-									"levelIid": "75888860-9f30-11ed-b2c8-dfa72777c7f8",
-									"worldIid": "fe9602d0-3b70-11ee-a13c-f976eb9049e8"
-								} ], "__tile": null, "defUid": 2, "realEditorValues": [ {
+								}], "__tile": null, "defUid": 2, "realEditorValues": [{
 									"id": "V_String",
-									"params": ["5b0e4620-9f30-11ed-9393-3bf5633add20"]
-								}, {
-									"id": "V_String",
-									"params": ["68ba07a0-9f30-11ed-9393-3d7129b4f7dd"]
-								} ] },
+									"params": ["216f34f0-3b70-11ee-a13c-abeba6fda528"]
+								}] },
 								{ "__identifier": "requiredSkill", "__type": "LocalEnum.SkillType", "__value": "Firewall", "__tile": null, "defUid": 8, "realEditorValues": [{
 									"id": "V_String",
 									"params": ["Firewall"]
@@ -725,27 +697,27 @@
 						},
 						{
 							"__identifier": "HackingNode",
-							"__grid": [13,8],
+							"__grid": [13,5],
 							"__pivot": [0.5,0.5],
 							"__tags": ["node"],
 							"__tile": null,
 							"__smartColor": "#94D9B3",
 							"__worldX": 216,
-							"__worldY": 136,
+							"__worldY": 88,
 							"iid": "68ba07a0-9f30-11ed-9393-3d7129b4f7dd",
 							"width": 30,
 							"height": 30,
 							"defUid": 1,
-							"px": [216,136],
+							"px": [216,88],
 							"fieldInstances": [
 								{ "__identifier": "connectedNodes", "__type": "Array<EntityRef>", "__value": [{
-									"entityIid": "67f86550-9f30-11ed-9393-257d87688490",
+									"entityIid": "216f34f0-3b70-11ee-a13c-abeba6fda528",
 									"layerIid": "e07964f0-9f30-11ed-b2c8-47ef907f2e4f",
 									"levelIid": "75888860-9f30-11ed-b2c8-dfa72777c7f8",
 									"worldIid": "fe9602d0-3b70-11ee-a13c-f976eb9049e8"
 								}], "__tile": null, "defUid": 2, "realEditorValues": [{
 									"id": "V_String",
-									"params": ["67f86550-9f30-11ed-9393-257d87688490"]
+									"params": ["216f34f0-3b70-11ee-a13c-abeba6fda528"]
 								}] },
 								{ "__identifier": "requiredSkill", "__type": "LocalEnum.SkillType", "__value": "Firewall", "__tile": null, "defUid": 8, "realEditorValues": [{
 									"id": "V_String",
@@ -759,6 +731,91 @@
 								{ "__identifier": "icon", "__type": "LocalEnum.Icon", "__value": "Bank", "__tile": null, "defUid": 12, "realEditorValues": [{
 									"id": "V_String",
 									"params": ["Bank"]
+								}] },
+								{ "__identifier": "type", "__type": "LocalEnum.NodeType", "__value": "Normal", "__tile": null, "defUid": 14, "realEditorValues": [] },
+								{ "__identifier": "subnet", "__type": "LocalEnum.LevelNode", "__value": null, "__tile": null, "defUid": 16, "realEditorValues": [] }
+							]
+						},
+						{
+							"__identifier": "HackingNode",
+							"__grid": [8,9],
+							"__pivot": [0.5,0.5],
+							"__tags": ["node"],
+							"__tile": null,
+							"__smartColor": "#94D9B3",
+							"__worldX": 136,
+							"__worldY": 152,
+							"iid": "216f34f0-3b70-11ee-a13c-abeba6fda528",
+							"width": 30,
+							"height": 30,
+							"defUid": 1,
+							"px": [136,152],
+							"fieldInstances": [
+								{ "__identifier": "connectedNodes", "__type": "Array<EntityRef>", "__value": [
+									{
+										"entityIid": "f1affae0-9f30-11ed-b2c8-a3e9ca36cb5a",
+										"layerIid": "e07964f0-9f30-11ed-b2c8-47ef907f2e4f",
+										"levelIid": "75888860-9f30-11ed-b2c8-dfa72777c7f8",
+										"worldIid": "fe9602d0-3b70-11ee-a13c-f976eb9049e8"
+									},
+									{
+										"entityIid": "5b0e4620-9f30-11ed-9393-3bf5633add20",
+										"layerIid": "e07964f0-9f30-11ed-b2c8-47ef907f2e4f",
+										"levelIid": "75888860-9f30-11ed-b2c8-dfa72777c7f8",
+										"worldIid": "fe9602d0-3b70-11ee-a13c-f976eb9049e8"
+									},
+									{
+										"entityIid": "68ba07a0-9f30-11ed-9393-3d7129b4f7dd",
+										"layerIid": "e07964f0-9f30-11ed-b2c8-47ef907f2e4f",
+										"levelIid": "75888860-9f30-11ed-b2c8-dfa72777c7f8",
+										"worldIid": "fe9602d0-3b70-11ee-a13c-f976eb9049e8"
+									},
+									{
+										"entityIid": "67f86550-9f30-11ed-9393-257d87688490",
+										"layerIid": "e07964f0-9f30-11ed-b2c8-47ef907f2e4f",
+										"levelIid": "75888860-9f30-11ed-b2c8-dfa72777c7f8",
+										"worldIid": "fe9602d0-3b70-11ee-a13c-f976eb9049e8"
+									},
+									{
+										"entityIid": "640be8e0-9f30-11ed-9393-111d1d11d219",
+										"layerIid": "e07964f0-9f30-11ed-b2c8-47ef907f2e4f",
+										"levelIid": "75888860-9f30-11ed-b2c8-dfa72777c7f8",
+										"worldIid": "fe9602d0-3b70-11ee-a13c-f976eb9049e8"
+									}
+								], "__tile": null, "defUid": 2, "realEditorValues": [
+									{
+										"id": "V_String",
+										"params": ["f1affae0-9f30-11ed-b2c8-a3e9ca36cb5a"]
+									},
+									{
+										"id": "V_String",
+										"params": ["5b0e4620-9f30-11ed-9393-3bf5633add20"]
+									},
+									{
+										"id": "V_String",
+										"params": ["68ba07a0-9f30-11ed-9393-3d7129b4f7dd"]
+									},
+									{
+										"id": "V_String",
+										"params": ["67f86550-9f30-11ed-9393-257d87688490"]
+									},
+									{
+										"id": "V_String",
+										"params": ["640be8e0-9f30-11ed-9393-111d1d11d219"]
+									}
+								] },
+								{ "__identifier": "requiredSkill", "__type": "LocalEnum.SkillType", "__value": "Firewall", "__tile": null, "defUid": 8, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["Firewall"]
+								}] },
+								{ "__identifier": "requirement", "__type": "Int", "__value": 50, "__tile": null, "defUid": 9, "realEditorValues": [{ "id": "V_Int", "params": [50] }] },
+								{ "__identifier": "name", "__type": "String", "__value": "DNS-BOS-76db2640-a3ef", "__tile": null, "defUid": 10, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["DNS-BOS-76db2640-a3ef"]
+								}] },
+								{ "__identifier": "icon", "__type": "LocalEnum.Icon", "__value": "Server_rack", "__tile": null, "defUid": 12, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["Server_rack"]
 								}] },
 								{ "__identifier": "type", "__type": "LocalEnum.NodeType", "__value": "Normal", "__tile": null, "defUid": 14, "realEditorValues": [] },
 								{ "__identifier": "subnet", "__type": "LocalEnum.LevelNode", "__value": null, "__tile": null, "defUid": 16, "realEditorValues": [] }

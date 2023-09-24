@@ -3,7 +3,7 @@ import { useCallback, useState } from "react";
 import styled, { css } from "styled-components";
 import { shallow } from "zustand/shallow";
 
-import { INode, NodeLevel, NodeType } from "../../shared/types";
+import { IAction, INode, INodeProgress, NodeLevel, NodeType } from "../../shared/types";
 import { lerpLineSegment, lineSegmentBetweenCircles } from "../../shared/utils";
 import useStore from "../../store";
 import { NODE_SIZE, Node } from "./node";
@@ -54,43 +54,61 @@ export default function NodeMap() {
       onMouseMove={(evt) => moveMouse(evt)}
     >
       <g transform={`translate(${panOffset.x} ${panOffset.y})`}>
+      {Object.values(nodeMap)
+        .filter(node => node.isComplete)
+        .map(node => 
+          <NodeConnections
+            key={'connections_' + node.id}
+            {...{nodeMap, node, nodeProgress: nodes.nodeProgress, nodeAction}}
+          />
+        )}
 
-      {Object.values(nodeMap).map(node =>
-        node.connections.map(otherId => {
-          const other = nodeMap[otherId];
-          // Don't render lines from target node
-          if (nodes.nodeProgress && nodes.nodeProgress.node.id === node.id) return;
-
-          let progressLine;
-          // Since connections are bidirectional only draw from complete nodes
-          if (node.isComplete && nodes.nodeProgress && nodes.nodeProgress.node.id === otherId) {
-            const progress = nodeAction.current / nodeAction.requirement;
-            const edgeToEdge = lineSegmentBetweenCircles(node, other, NODE_SIZE/2);
-            const progressPoint = lerpLineSegment(edgeToEdge[0], edgeToEdge[1], progress);
-            progressLine = <line
-              key={node.id + '-' + otherId + '-progress'} x1={edgeToEdge[0].x} y1={edgeToEdge[0].y} x2={progressPoint.x} y2={progressPoint.y}
-              stroke="white" strokeWidth={3}
-            />;
-          }
-          return <>
-            <NodeConnection
-              key={node.id + '-' + otherId} x1={node.x} y1={node.y} x2={other.x} y2={other.y}
-              isComplete={node.isComplete && other.isComplete}
-            />
-            {progressLine}
-          </>;
-        })
-      )}
-
-      {Object.values(nodeMap).map(node =>
-        <Node
-          key={node.id} node={node} isTarget={node.id === nodes.nodeProgress?.node.id}
-          onClick={() => clickNode(node)}
-        ></Node>
-      )}
+      {Object.values(nodeMap)
+        .filter(node => node.isComplete || node.connections.some(otherId => nodeMap[otherId]?.isComplete))
+        .map(node => 
+          <Node
+            key={node.id} node={node} isTarget={node.id === nodes.nodeProgress?.node.id}
+            onClick={() => clickNode(node)}
+          ></Node>
+        )}
       </g>
     </NodesContainer>;
   </NodeMapPanel>;
+}
+
+interface INodeConnectionsProps {
+  nodeMap: Record<string, INode>,
+  node: INode,
+  nodeProgress?: INodeProgress,
+  nodeAction: IAction,
+}
+function NodeConnections({nodeMap, node, nodeProgress, nodeAction}: INodeConnectionsProps) {
+  return <>
+    {node.connections.map(otherId => {
+      const other = nodeMap[otherId];
+      // Don't render lines from target node
+      if (nodeProgress && nodeProgress.node.id === node.id) return;
+
+      let progressLine;
+      // Since connections are bidirectional only draw from complete nodes
+      if (node.isComplete && nodeProgress && nodeProgress.node.id === otherId) {
+        const progress = nodeAction.current / nodeAction.requirement;
+        const edgeToEdge = lineSegmentBetweenCircles(node, other, NODE_SIZE/2);
+        const progressPoint = lerpLineSegment(edgeToEdge[0], edgeToEdge[1], progress);
+        progressLine = <line
+          key={node.id + '-' + otherId + '-progress'} x1={edgeToEdge[0].x} y1={edgeToEdge[0].y} x2={progressPoint.x} y2={progressPoint.y}
+          stroke="white" strokeWidth={3}
+        />;
+      }
+      return <>
+        <NodeConnection
+          key={node.id + '-' + otherId} x1={node.x} y1={node.y} x2={other.x} y2={other.y}
+          isComplete={node.isComplete && other.isComplete}
+        />
+        {progressLine}
+      </>;
+    })}
+  </>;
 }
 
 const NodeMapPanel = styled.div`
