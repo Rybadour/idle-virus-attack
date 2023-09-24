@@ -20,7 +20,7 @@ const createActionsSlice: MyCreateSlice<ActionsSlice, [() => StatsSlice, () => N
 
   function applyProgram(c: ProgramId, elapsed: number) {
     const program = programsWithIds[c];
-    const skillPower = stats().skills[program.requiredSkill];
+    const skillPower = stats().getSkill(program.requiredSkill);
     stats().addProtection(program.protectionProvided * skillPower * elapsed/1000);
   }
 
@@ -32,7 +32,7 @@ const createActionsSlice: MyCreateSlice<ActionsSlice, [() => StatsSlice, () => N
       if (actions.length <= 0) return;
 
       const newAction = {...actions[0]};
-      newAction.current += stats().skills[newAction.requiredSkill] * elapsed/1000;
+      newAction.current += stats().getSkill(newAction.requiredSkill) * elapsed/1000;
       stats().useSkill(newAction.requirement, newAction.requiredSkill, elapsed);
       if (newAction.typeId.type === ActionType.Program) {
         applyProgram(newAction.typeId.id, elapsed);
