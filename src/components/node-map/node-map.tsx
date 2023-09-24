@@ -29,10 +29,8 @@ export default function NodeMap() {
   const clickNode = useCallback((node: INode) => {
     if (node.isComplete && node.type === NodeType.Subnet) {
       nodes.switchToSubnet(node.subnet);
-    } else {
-      //if (nodes.isConnectedCompleted(nodeId, NodeLevel.Internet)) {
-        nodes.queueMining(node.id, nodes.currentMap);
-      //}
+    } else if (node.isQueueable) {
+      nodes.queueMining(node.id, nodes.currentMap);
     }
   }, [nodes]);
   const backToInternet = useCallback(() => {

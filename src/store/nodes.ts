@@ -15,15 +15,34 @@ export interface NodesSlice {
   switchToSubnet: (subnet?: NodeLevel) => void,
 }
 
-const defaultNodes = {
-  [NodeLevel.Internet]: getNodes(NodeLevel.Internet),
-  [NodeLevel.HighSchool]: getNodes(NodeLevel.HighSchool),
-};
+function preprocessLevel(level: NodeLevel) {
+  const nodes = getNodes(level);
+  const startNode = Object.entries(nodes).find(([_, node]) => node.isStart);
+  if (!startNode) throw "Could not find a start node for " + level;
+
+  markConnectionsAsQueueable(nodes, startNode[0]);
+  return nodes;
+}
+
+function markConnectionsAsQueueable(nodes: Record<string, INode>, nodeId: string) {
+  if (!nodes[nodeId]) return;
+
+  nodes[nodeId].isQueueable = false;
+  nodes[nodeId].connections.forEach((connecting) => {
+    if (nodes[connecting]) {
+      nodes[connecting].isQueueable = true;
+    }
+  });
+}
 
 const createNodesSlice: MyCreateSlice<NodesSlice, [() => ActionsSlice]>
 = (set, get, actions) => {
+
   return {
-    nodes: defaultNodes,
+    nodes: {
+      [NodeLevel.Internet]: preprocessLevel(NodeLevel.Internet),
+      [NodeLevel.HighSchool]: preprocessLevel(NodeLevel.HighSchool),
+    },
     currentMap: NodeLevel.Internet,
     nodeProgress: undefined,
 
@@ -35,7 +54,11 @@ const createNodesSlice: MyCreateSlice<NodesSlice, [() => ActionsSlice]>
         requiredSkill: node.requiredSkill,
         current: 0,
         requirement: node.requirement,
-      })
+      });
+
+      const newNodes = cloneDeep(get().nodes);
+      markConnectionsAsQueueable(newNodes[level], nodeId);
+      set({ nodes: newNodes });
     },
 
     completeNode: ([level, nodeId]) => {

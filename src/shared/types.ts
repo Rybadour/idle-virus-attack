@@ -11,6 +11,8 @@ export interface INode {
   requiredSkill: SkillType,
   icon: string;
   connections: string[],
+  isStart: boolean;
+  isQueueable: boolean;
   isComplete: boolean;
   subnet?: NodeLevel;
 }

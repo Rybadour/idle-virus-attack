@@ -54,9 +54,11 @@ export function getNodes(level: NodeLevel) {
       connections: node.customFields.connectedNodes.map(connection => 
         connection.entityIid
       ),
-      isComplete: node.iid === startId,
+      isStart: node.iid === startId,
+      isQueueable: false,
+      isComplete: node.iid == startId,
       subnet: enumFromKey(NodeLevel, node.customFields.subnet ?? ''),
-    }
+    };
   })
 
   return nodes;
