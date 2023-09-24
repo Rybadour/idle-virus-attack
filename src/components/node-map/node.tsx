@@ -22,6 +22,7 @@ export function Node(props: {node: INode, isTarget: boolean, onClick: () => void
       <TooltipContent>
         <TooltipContainer>
           <TooltipTitle>{props.node.name}</TooltipTitle>
+          <TooltipStrength>Strength: {props.node.requirement}</TooltipStrength>
         </TooltipContainer>
       </TooltipContent>
     </Tooltip>
@@ -65,4 +66,8 @@ const TooltipContainer = styled.div`
 `;
 
 const TooltipTitle = styled.strong`
+`;
+
+const TooltipStrength = styled.div`
+
 `;

@@ -30,7 +30,7 @@ function markConnectionsAsQueueable(nodes: Record<string, INode>, nodeId: string
 
   nodes[nodeId].isQueueable = false;
   nodes[nodeId].connections.forEach((connecting) => {
-    if (nodes[connecting]) {
+    if (nodes[connecting] && !nodes[connecting].isComplete) {
       nodes[connecting].isQueueable = true;
     }
   });
@@ -64,7 +64,8 @@ const createNodesSlice: MyCreateSlice<NodesSlice, [() => ActionsSlice]>
 
     completeNode: ([level, nodeId]) => {
       const newNodes = cloneDeep(get().nodes);
-      _.set(newNodes, `${level}.${nodeId}.isComplete`, true);
+      newNodes[level][nodeId].isComplete = true;
+      newNodes[level][nodeId].isQueueable = false;
 
       set({ nodes: newNodes, nodeProgress: undefined });
     },
