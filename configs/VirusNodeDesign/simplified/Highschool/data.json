@@ -15,8 +15,8 @@
 				"id": "HackingNode",
 				"iid": "7cc3e400-3b70-11ee-a8cb-5bc9dc08a31c",
 				"layer": "Nodes",
-				"x": 56,
-				"y": 56,
+				"x": 264,
+				"y": 24,
 				"width": 30,
 				"height": 30,
 				"color": 9755059,
@@ -26,13 +26,13 @@
 							"entityIid": "7e2c4da0-3b70-11ee-a8cb-77f32f58df9d",
 							"layerIid": "7a23e4c0-3b70-11ee-a8cb-c181e542c619",
 							"levelIid": "7a2396a0-3b70-11ee-a8cb-a54be0773ee2",
-							"worldIid": "20779c20-3b70-11ee-a8cb-35cf8f801f13"
+							"worldIid": "fe9602d0-3b70-11ee-a13c-f976eb9049e8"
 						},
 						{
 							"entityIid": "7e2c4da0-3b70-11ee-a8cb-77f32f58df9d",
 							"layerIid": "7a23e4c0-3b70-11ee-a8cb-c181e542c619",
 							"levelIid": "7a2396a0-3b70-11ee-a8cb-a54be0773ee2",
-							"worldIid": "20779c20-3b70-11ee-a8cb-35cf8f801f13"
+							"worldIid": "fe9602d0-3b70-11ee-a13c-f976eb9049e8"
 						}
 					],
 					"requiredSkill": "Firewall",
@@ -47,8 +47,8 @@
 				"id": "HackingNode",
 				"iid": "7e2c4da0-3b70-11ee-a8cb-77f32f58df9d",
 				"layer": "Nodes",
-				"x": 120,
-				"y": 104,
+				"x": 264,
+				"y": 120,
 				"width": 30,
 				"height": 30,
 				"color": 9755059,
@@ -58,25 +58,43 @@
 							"entityIid": "370f89e0-3b70-11ee-a8cb-477c5ba41472",
 							"layerIid": "7a23e4c0-3b70-11ee-a8cb-c181e542c619",
 							"levelIid": "7a2396a0-3b70-11ee-a8cb-a54be0773ee2",
-							"worldIid": "20779c20-3b70-11ee-a8cb-35cf8f801f13"
+							"worldIid": "fe9602d0-3b70-11ee-a13c-f976eb9049e8"
 						},
 						{
 							"entityIid": "fae837f0-3b70-11ee-a8cb-5397af709dea",
 							"layerIid": "7a23e4c0-3b70-11ee-a8cb-c181e542c619",
 							"levelIid": "7a2396a0-3b70-11ee-a8cb-a54be0773ee2",
-							"worldIid": "20779c20-3b70-11ee-a8cb-35cf8f801f13"
+							"worldIid": "fe9602d0-3b70-11ee-a13c-f976eb9049e8"
 						},
 						{
 							"entityIid": "7cc3e400-3b70-11ee-a8cb-5bc9dc08a31c",
 							"layerIid": "7a23e4c0-3b70-11ee-a8cb-c181e542c619",
 							"levelIid": "7a2396a0-3b70-11ee-a8cb-a54be0773ee2",
-							"worldIid": "20779c20-3b70-11ee-a8cb-35cf8f801f13"
+							"worldIid": "fe9602d0-3b70-11ee-a13c-f976eb9049e8"
 						},
 						{
 							"entityIid": "a1b1f850-3b70-11ee-a8cb-1d0477444535",
 							"layerIid": "7a23e4c0-3b70-11ee-a8cb-c181e542c619",
 							"levelIid": "7a2396a0-3b70-11ee-a8cb-a54be0773ee2",
-							"worldIid": "20779c20-3b70-11ee-a8cb-35cf8f801f13"
+							"worldIid": "fe9602d0-3b70-11ee-a13c-f976eb9049e8"
+						},
+						{
+							"entityIid": "21dbb460-3b70-11ee-a13c-2bfca3aea540",
+							"layerIid": "7a23e4c0-3b70-11ee-a8cb-c181e542c619",
+							"levelIid": "7a2396a0-3b70-11ee-a8cb-a54be0773ee2",
+							"worldIid": "fe9602d0-3b70-11ee-a13c-f976eb9049e8"
+						},
+						{
+							"entityIid": "bfd3c4a0-3b70-11ee-a13c-d182ec74934b",
+							"layerIid": "7a23e4c0-3b70-11ee-a8cb-c181e542c619",
+							"levelIid": "7a2396a0-3b70-11ee-a8cb-a54be0773ee2",
+							"worldIid": "fe9602d0-3b70-11ee-a13c-f976eb9049e8"
+						},
+						{
+							"entityIid": "db832ba0-3b70-11ee-a13c-f78f43f3b71a",
+							"layerIid": "7a23e4c0-3b70-11ee-a8cb-c181e542c619",
+							"levelIid": "7a2396a0-3b70-11ee-a8cb-a54be0773ee2",
+							"worldIid": "fe9602d0-3b70-11ee-a13c-f976eb9049e8"
 						}
 					],
 					"requiredSkill": "Firewall",
@@ -91,7 +109,7 @@
 				"id": "HackingNode",
 				"iid": "fae837f0-3b70-11ee-a8cb-5397af709dea",
 				"layer": "Nodes",
-				"x": 168,
+				"x": 120,
 				"y": 40,
 				"width": 30,
 				"height": 30,
@@ -102,13 +120,13 @@
 							"entityIid": "7e2c4da0-3b70-11ee-a8cb-77f32f58df9d",
 							"layerIid": "7a23e4c0-3b70-11ee-a8cb-c181e542c619",
 							"levelIid": "7a2396a0-3b70-11ee-a8cb-a54be0773ee2",
-							"worldIid": "20779c20-3b70-11ee-a8cb-35cf8f801f13"
+							"worldIid": "fe9602d0-3b70-11ee-a13c-f976eb9049e8"
 						},
 						{
 							"entityIid": "7e2c4da0-3b70-11ee-a8cb-77f32f58df9d",
 							"layerIid": "7a23e4c0-3b70-11ee-a8cb-c181e542c619",
 							"levelIid": "7a2396a0-3b70-11ee-a8cb-a54be0773ee2",
-							"worldIid": "20779c20-3b70-11ee-a8cb-35cf8f801f13"
+							"worldIid": "fe9602d0-3b70-11ee-a13c-f976eb9049e8"
 						}
 					],
 					"requiredSkill": "Hacking",
@@ -123,8 +141,8 @@
 				"id": "HackingNode",
 				"iid": "370f89e0-3b70-11ee-a8cb-477c5ba41472",
 				"layer": "Nodes",
-				"x": 216,
-				"y": 184,
+				"x": 264,
+				"y": 280,
 				"width": 30,
 				"height": 30,
 				"color": 9755059,
@@ -134,13 +152,13 @@
 							"entityIid": "370f89e0-3b70-11ee-a8cb-477c5ba41472",
 							"layerIid": "7a23e4c0-3b70-11ee-a8cb-c181e542c619",
 							"levelIid": "7a2396a0-3b70-11ee-a8cb-a54be0773ee2",
-							"worldIid": "20779c20-3b70-11ee-a8cb-35cf8f801f13"
+							"worldIid": "fe9602d0-3b70-11ee-a13c-f976eb9049e8"
 						},
 						{
 							"entityIid": "7e2c4da0-3b70-11ee-a8cb-77f32f58df9d",
 							"layerIid": "7a23e4c0-3b70-11ee-a8cb-c181e542c619",
 							"levelIid": "7a2396a0-3b70-11ee-a8cb-a54be0773ee2",
-							"worldIid": "20779c20-3b70-11ee-a8cb-35cf8f801f13"
+							"worldIid": "fe9602d0-3b70-11ee-a13c-f976eb9049e8"
 						}
 					],
 					"requiredSkill": "Firewall",
@@ -155,8 +173,8 @@
 				"id": "HackingNode",
 				"iid": "a1b1f850-3b70-11ee-a8cb-1d0477444535",
 				"layer": "Nodes",
-				"x": 200,
-				"y": 72,
+				"x": 40,
+				"y": 56,
 				"width": 30,
 				"height": 30,
 				"color": 9755059,
@@ -166,13 +184,155 @@
 							"entityIid": "7e2c4da0-3b70-11ee-a8cb-77f32f58df9d",
 							"layerIid": "7a23e4c0-3b70-11ee-a8cb-c181e542c619",
 							"levelIid": "7a2396a0-3b70-11ee-a8cb-a54be0773ee2",
-							"worldIid": "20779c20-3b70-11ee-a8cb-35cf8f801f13"
+							"worldIid": "fe9602d0-3b70-11ee-a13c-f976eb9049e8"
 						}
 					],
 					"requiredSkill": "Hacking",
 					"requirement": 300,
 					"name": "desk_room_108",
 					"icon": "Pc",
+					"type": "Normal",
+					"subnet": null
+				}
+			},
+			{
+				"id": "HackingNode",
+				"iid": "21dbb460-3b70-11ee-a13c-2bfca3aea540",
+				"layer": "Nodes",
+				"x": 120,
+				"y": 120,
+				"width": 30,
+				"height": 30,
+				"color": 9755059,
+				"customFields": {
+					"connectedNodes": [
+						{
+							"entityIid": "7e2c4da0-3b70-11ee-a8cb-77f32f58df9d",
+							"layerIid": "7a23e4c0-3b70-11ee-a8cb-c181e542c619",
+							"levelIid": "7a2396a0-3b70-11ee-a8cb-a54be0773ee2",
+							"worldIid": "fe9602d0-3b70-11ee-a13c-f976eb9049e8"
+						},
+						{
+							"entityIid": "4a3e2500-3b70-11ee-a13c-499b6c70edbd",
+							"layerIid": "7a23e4c0-3b70-11ee-a8cb-c181e542c619",
+							"levelIid": "7a2396a0-3b70-11ee-a8cb-a54be0773ee2",
+							"worldIid": "fe9602d0-3b70-11ee-a13c-f976eb9049e8"
+						},
+						{
+							"entityIid": "77ed6560-3b70-11ee-a13c-b509308aab14",
+							"layerIid": "7a23e4c0-3b70-11ee-a8cb-c181e542c619",
+							"levelIid": "7a2396a0-3b70-11ee-a8cb-a54be0773ee2",
+							"worldIid": "fe9602d0-3b70-11ee-a13c-f976eb9049e8"
+						}
+					],
+					"requiredSkill": "Hacking",
+					"requirement": 100,
+					"name": "sallys_samsing_5g",
+					"icon": "Smartphone",
+					"type": "Normal",
+					"subnet": null
+				}
+			},
+			{
+				"id": "HackingNode",
+				"iid": "4a3e2500-3b70-11ee-a13c-499b6c70edbd",
+				"layer": "Nodes",
+				"x": 88,
+				"y": 136,
+				"width": 30,
+				"height": 30,
+				"color": 9755059,
+				"customFields": {
+					"connectedNodes": [
+						{
+							"entityIid": "21dbb460-3b70-11ee-a13c-2bfca3aea540",
+							"layerIid": "7a23e4c0-3b70-11ee-a8cb-c181e542c619",
+							"levelIid": "7a2396a0-3b70-11ee-a8cb-a54be0773ee2",
+							"worldIid": "fe9602d0-3b70-11ee-a13c-f976eb9049e8"
+						}
+					],
+					"requiredSkill": "Hacking",
+					"requirement": 200,
+					"name": "Sally's Amazing.com Account",
+					"icon": "Shop",
+					"type": "Normal",
+					"subnet": null
+				}
+			},
+			{
+				"id": "HackingNode",
+				"iid": "77ed6560-3b70-11ee-a13c-b509308aab14",
+				"layer": "Nodes",
+				"x": 120,
+				"y": 152,
+				"width": 30,
+				"height": 30,
+				"color": 9755059,
+				"customFields": {
+					"connectedNodes": [
+						{
+							"entityIid": "21dbb460-3b70-11ee-a13c-2bfca3aea540",
+							"layerIid": "7a23e4c0-3b70-11ee-a8cb-c181e542c619",
+							"levelIid": "7a2396a0-3b70-11ee-a8cb-a54be0773ee2",
+							"worldIid": "fe9602d0-3b70-11ee-a13c-f976eb9049e8"
+						}
+					],
+					"requiredSkill": "Hacking",
+					"requirement": 100,
+					"name": "SexyBabe69's Twotter Account",
+					"icon": "Shop",
+					"type": "Normal",
+					"subnet": null
+				}
+			},
+			{
+				"id": "HackingNode",
+				"iid": "bfd3c4a0-3b70-11ee-a13c-d182ec74934b",
+				"layer": "Nodes",
+				"x": 168,
+				"y": 152,
+				"width": 30,
+				"height": 30,
+				"color": 9755059,
+				"customFields": {
+					"connectedNodes": [
+						{
+							"entityIid": "7e2c4da0-3b70-11ee-a8cb-77f32f58df9d",
+							"layerIid": "7a23e4c0-3b70-11ee-a8cb-c181e542c619",
+							"levelIid": "7a2396a0-3b70-11ee-a8cb-a54be0773ee2",
+							"worldIid": "fe9602d0-3b70-11ee-a13c-f976eb9049e8"
+						}
+					],
+					"requiredSkill": "Hacking",
+					"requirement": 50,
+					"name": "Johnny's Windows Phone",
+					"icon": "Smartphone",
+					"type": "Normal",
+					"subnet": null
+				}
+			},
+			{
+				"id": "HackingNode",
+				"iid": "db832ba0-3b70-11ee-a13c-f78f43f3b71a",
+				"layer": "Nodes",
+				"x": 104,
+				"y": 200,
+				"width": 30,
+				"height": 30,
+				"color": 9755059,
+				"customFields": {
+					"connectedNodes": [
+						{
+							"entityIid": "7e2c4da0-3b70-11ee-a8cb-77f32f58df9d",
+							"layerIid": "7a23e4c0-3b70-11ee-a8cb-c181e542c619",
+							"levelIid": "7a2396a0-3b70-11ee-a8cb-a54be0773ee2",
+							"worldIid": "fe9602d0-3b70-11ee-a13c-f976eb9049e8"
+						}
+					],
+					"requiredSkill": "Hacking",
+					"requirement": 200,
+					"name": "Cody's PSP",
+					"icon": "Smartphone",
 					"type": "Normal",
 					"subnet": null
 				}
@@ -183,8 +343,8 @@
 				"id": "StartIndicator",
 				"iid": "a99fced0-3b70-11ee-a8cb-dbaf12523401",
 				"layer": "Nodes",
-				"x": 32,
-				"y": 80,
+				"x": 288,
+				"y": 16,
 				"width": 16,
 				"height": 16,
 				"color": 9755059,
@@ -193,7 +353,7 @@
 						"entityIid": "7cc3e400-3b70-11ee-a8cb-5bc9dc08a31c",
 						"layerIid": "7a23e4c0-3b70-11ee-a8cb-c181e542c619",
 						"levelIid": "7a2396a0-3b70-11ee-a8cb-a54be0773ee2",
-						"worldIid": "20779c20-3b70-11ee-a8cb-35cf8f801f13"
+						"worldIid": "fe9602d0-3b70-11ee-a13c-f976eb9049e8"
 					}
 				}
 			}

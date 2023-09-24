@@ -5,12 +5,12 @@
 		"doc": "https://ldtk.io/json",
 		"schema": "https://ldtk.io/files/JSON_SCHEMA.json",
 		"appAuthor": "Sebastien 'deepnight' Benard",
-		"appVersion": "1.2.5",
+		"appVersion": "1.4.0",
 		"url": "https://ldtk.io"
 	},
 	"iid": "7ecf1aa0-3b70-11ee-9856-1f1fad47cf9e",
-	"jsonVersion": "1.2.5",
-	"appBuildId": 464870,
+	"jsonVersion": "1.4.0",
+	"appBuildId": 470941,
 	"nextUid": 18,
 	"identifierStyle": "Capitalize",
 	"toc": [],
@@ -22,6 +22,8 @@
 	"defaultPivotX": 0,
 	"defaultPivotY": 0,
 	"defaultGridSize": 16,
+	"defaultEntityWidth": 16,
+	"defaultEntityHeight": 16,
 	"bgColor": "#40465B",
 	"defaultLevelBgColor": "#696A79",
 	"minifyJson": false,
@@ -33,6 +35,7 @@
 	"pngFilePattern": null,
 	"backupOnSave": false,
 	"backupLimit": 10,
+	"backupRelPath": null,
 	"levelNamePattern": "Level_%idx",
 	"tutorialDesc": null,
 	"customCommands": [],
@@ -44,6 +47,7 @@
 			"type": "Entities",
 			"uid": 3,
 			"doc": null,
+			"uiColor": null,
 			"gridSize": 16,
 			"guideGridWid": 0,
 			"guideGridHei": 0,
@@ -52,6 +56,7 @@
 			"hideInList": false,
 			"hideFieldsWhenInactive": true,
 			"canSelectWhenInactive": true,
+			"renderInWorldView": true,
 			"pxOffsetX": 0,
 			"pxOffsetY": 0,
 			"parallaxFactorX": 0,
@@ -60,6 +65,7 @@
 			"requiredTags": [],
 			"excludedTags": [],
 			"intGridValues": [],
+			"intGridValuesGroups": [],
 			"autoRuleGroups": [],
 			"autoSourceLayerDefUid": null,
 			"tilesetDefUid": null,
@@ -77,6 +83,10 @@
 			"height": 30,
 			"resizableX": false,
 			"resizableY": false,
+			"minWidth": null,
+			"maxWidth": null,
+			"minHeight": null,
+			"maxHeight": null,
 			"keepAspectRatio": false,
 			"tileOpacity": 1,
 			"fillOpacity": 1,
@@ -88,6 +98,7 @@
 			"tilesetId": null,
 			"tileRenderMode": "FitInside",
 			"tileRect": null,
+			"uiTileRect": null,
 			"nineSliceBorders": [],
 			"maxCount": 0,
 			"limitScope": "PerLevel",
@@ -106,8 +117,10 @@
 					"arrayMinLength": null,
 					"arrayMaxLength": null,
 					"editorDisplayMode": "RefLinkBetweenCenters",
+					"editorDisplayScale": 1,
 					"editorDisplayPos": "Above",
 					"editorLinkStyle": "CurvedArrow",
+					"editorDisplayColor": null,
 					"editorAlwaysShow": true,
 					"editorShowInWorld": true,
 					"editorCutLongValues": true,
@@ -124,6 +137,7 @@
 					"autoChainRef": true,
 					"allowOutOfLevelRef": false,
 					"allowedRefs": "OnlySame",
+					"allowedRefsEntityUid": null,
 					"allowedRefTags": [],
 					"tilesetUid": null
 				},
@@ -138,8 +152,10 @@
 					"arrayMinLength": null,
 					"arrayMaxLength": null,
 					"editorDisplayMode": "Hidden",
+					"editorDisplayScale": 1,
 					"editorDisplayPos": "Above",
 					"editorLinkStyle": "StraightArrow",
+					"editorDisplayColor": null,
 					"editorAlwaysShow": false,
 					"editorShowInWorld": true,
 					"editorCutLongValues": true,
@@ -156,6 +172,7 @@
 					"autoChainRef": true,
 					"allowOutOfLevelRef": true,
 					"allowedRefs": "OnlySame",
+					"allowedRefsEntityUid": null,
 					"allowedRefTags": [],
 					"tilesetUid": null
 				},
@@ -170,8 +187,10 @@
 					"arrayMinLength": null,
 					"arrayMaxLength": null,
 					"editorDisplayMode": "Hidden",
+					"editorDisplayScale": 1,
 					"editorDisplayPos": "Above",
 					"editorLinkStyle": "StraightArrow",
+					"editorDisplayColor": null,
 					"editorAlwaysShow": false,
 					"editorShowInWorld": true,
 					"editorCutLongValues": true,
@@ -188,6 +207,7 @@
 					"autoChainRef": true,
 					"allowOutOfLevelRef": true,
 					"allowedRefs": "OnlySame",
+					"allowedRefsEntityUid": null,
 					"allowedRefTags": [],
 					"tilesetUid": null
 				},
@@ -202,8 +222,10 @@
 					"arrayMinLength": null,
 					"arrayMaxLength": null,
 					"editorDisplayMode": "Hidden",
+					"editorDisplayScale": 1,
 					"editorDisplayPos": "Above",
 					"editorLinkStyle": "StraightArrow",
+					"editorDisplayColor": null,
 					"editorAlwaysShow": false,
 					"editorShowInWorld": true,
 					"editorCutLongValues": true,
@@ -220,6 +242,7 @@
 					"autoChainRef": true,
 					"allowOutOfLevelRef": true,
 					"allowedRefs": "OnlySame",
+					"allowedRefsEntityUid": null,
 					"allowedRefTags": [],
 					"tilesetUid": null
 				},
@@ -234,8 +257,10 @@
 					"arrayMinLength": null,
 					"arrayMaxLength": null,
 					"editorDisplayMode": "Hidden",
+					"editorDisplayScale": 1,
 					"editorDisplayPos": "Above",
 					"editorLinkStyle": "StraightArrow",
+					"editorDisplayColor": null,
 					"editorAlwaysShow": false,
 					"editorShowInWorld": true,
 					"editorCutLongValues": true,
@@ -252,6 +277,7 @@
 					"autoChainRef": true,
 					"allowOutOfLevelRef": true,
 					"allowedRefs": "OnlySame",
+					"allowedRefsEntityUid": null,
 					"allowedRefTags": [],
 					"tilesetUid": null
 				},
@@ -266,8 +292,10 @@
 					"arrayMinLength": null,
 					"arrayMaxLength": null,
 					"editorDisplayMode": "Hidden",
+					"editorDisplayScale": 1,
 					"editorDisplayPos": "Above",
 					"editorLinkStyle": "StraightArrow",
+					"editorDisplayColor": null,
 					"editorAlwaysShow": false,
 					"editorShowInWorld": true,
 					"editorCutLongValues": true,
@@ -287,6 +315,7 @@
 					"autoChainRef": true,
 					"allowOutOfLevelRef": true,
 					"allowedRefs": "OnlySame",
+					"allowedRefsEntityUid": null,
 					"allowedRefTags": [],
 					"tilesetUid": null
 				},
@@ -301,8 +330,10 @@
 					"arrayMinLength": null,
 					"arrayMaxLength": null,
 					"editorDisplayMode": "Hidden",
+					"editorDisplayScale": 1,
 					"editorDisplayPos": "Above",
 					"editorLinkStyle": "StraightArrow",
+					"editorDisplayColor": null,
 					"editorAlwaysShow": false,
 					"editorShowInWorld": true,
 					"editorCutLongValues": true,
@@ -319,6 +350,7 @@
 					"autoChainRef": true,
 					"allowOutOfLevelRef": true,
 					"allowedRefs": "OnlySame",
+					"allowedRefsEntityUid": null,
 					"allowedRefTags": [],
 					"tilesetUid": null
 				}
@@ -334,6 +366,10 @@
 			"height": 16,
 			"resizableX": false,
 			"resizableY": false,
+			"minWidth": null,
+			"maxWidth": null,
+			"minHeight": null,
+			"maxHeight": null,
 			"keepAspectRatio": false,
 			"tileOpacity": 1,
 			"fillOpacity": 1,
@@ -345,6 +381,7 @@
 			"tilesetId": null,
 			"tileRenderMode": "FitInside",
 			"tileRect": null,
+			"uiTileRect": null,
 			"nineSliceBorders": [],
 			"maxCount": 0,
 			"limitScope": "PerLevel",
@@ -363,8 +400,10 @@
 					"arrayMinLength": null,
 					"arrayMaxLength": null,
 					"editorDisplayMode": "RefLinkBetweenCenters",
+					"editorDisplayScale": 1,
 					"editorDisplayPos": "Above",
 					"editorLinkStyle": "CurvedArrow",
+					"editorDisplayColor": null,
 					"editorAlwaysShow": false,
 					"editorShowInWorld": true,
 					"editorCutLongValues": true,
@@ -381,6 +420,7 @@
 					"autoChainRef": true,
 					"allowOutOfLevelRef": true,
 					"allowedRefs": "OnlyTags",
+					"allowedRefsEntityUid": null,
 					"allowedRefTags": ["node"],
 					"tilesetUid": null
 				}
@@ -388,26 +428,26 @@
 		}
 	], "tilesets": [], "enums": [
 		{ "identifier": "SkillType", "uid": 7, "values": [
-			{ "id": "Hacking", "tileId": null, "color": 0, "__tileSrcRect": null },
-			{ "id": "Spoofing", "tileId": null, "color": 0, "__tileSrcRect": null },
-			{ "id": "Firewall", "tileId": null, "color": 0, "__tileSrcRect": null }
+			{ "id": "Hacking", "tileRect": null, "color": 0 },
+			{ "id": "Spoofing", "tileRect": null, "color": 0 },
+			{ "id": "Firewall", "tileRect": null, "color": 0 }
 		], "iconTilesetUid": null, "externalRelPath": null, "externalFileChecksum": null, "tags": [] },
 		{ "identifier": "Icon", "uid": 11, "values": [
-			{ "id": "House", "tileId": null, "color": 12470831, "__tileSrcRect": null },
-			{ "id": "Pc", "tileId": null, "color": 14120515, "__tileSrcRect": null },
-			{ "id": "Bank", "tileId": null, "color": 15389866, "__tileSrcRect": null },
-			{ "id": "Capitol", "tileId": null, "color": 14984818, "__tileSrcRect": null },
-			{ "id": "Control_tower", "tileId": null, "color": 7552569, "__tileSrcRect": null },
-			{ "id": "Hospital", "tileId": null, "color": 4073265, "__tileSrcRect": null },
-			{ "id": "Server_rack", "tileId": null, "color": 16690740, "__tileSrcRect": null },
-			{ "id": "Shop", "tileId": null, "color": 16705377, "__tileSrcRect": null },
-			{ "id": "Graduate_cap", "tileId": null, "color": 6539085, "__tileSrcRect": null },
-			{ "id": "Smartphone", "tileId": null, "color": 4098376, "__tileSrcRect": null },
-			{ "id": "Laptop", "tileId": null, "color": 1199753, "__tileSrcRect": null },
-			{ "id": "Wifi_router", "tileId": null, "color": 39387, "__tileSrcRect": null }
+			{ "id": "House", "tileRect": null, "color": 12470831 },
+			{ "id": "Pc", "tileRect": null, "color": 14120515 },
+			{ "id": "Bank", "tileRect": null, "color": 15389866 },
+			{ "id": "Capitol", "tileRect": null, "color": 14984818 },
+			{ "id": "Control_tower", "tileRect": null, "color": 7552569 },
+			{ "id": "Hospital", "tileRect": null, "color": 4073265 },
+			{ "id": "Server_rack", "tileRect": null, "color": 16690740 },
+			{ "id": "Shop", "tileRect": null, "color": 16705377 },
+			{ "id": "Graduate_cap", "tileRect": null, "color": 6539085 },
+			{ "id": "Smartphone", "tileRect": null, "color": 4098376 },
+			{ "id": "Laptop", "tileRect": null, "color": 1199753 },
+			{ "id": "Wifi_router", "tileRect": null, "color": 39387 }
 		], "iconTilesetUid": null, "externalRelPath": null, "externalFileChecksum": null, "tags": [] },
-		{ "identifier": "NodeType", "uid": 13, "values": [ { "id": "Normal", "tileId": null, "color": 14120515, "__tileSrcRect": null }, { "id": "Subnet", "tileId": null, "color": 12470831, "__tileSrcRect": null } ], "iconTilesetUid": null, "externalRelPath": null, "externalFileChecksum": null, "tags": [] },
-		{ "identifier": "LevelNode", "uid": 15, "values": [ { "id": "Internet", "tileId": null, "color": 12470831, "__tileSrcRect": null }, { "id": "Highschool", "tileId": null, "color": 14120515, "__tileSrcRect": null } ], "iconTilesetUid": null, "externalRelPath": null, "externalFileChecksum": null, "tags": [] }
+		{ "identifier": "NodeType", "uid": 13, "values": [ { "id": "Normal", "tileRect": null, "color": 14120515 }, { "id": "Subnet", "tileRect": null, "color": 12470831 } ], "iconTilesetUid": null, "externalRelPath": null, "externalFileChecksum": null, "tags": [] },
+		{ "identifier": "LevelNode", "uid": 15, "values": [ { "id": "Internet", "tileRect": null, "color": 12470831 }, { "id": "Highschool", "tileRect": null, "color": 14120515 } ], "iconTilesetUid": null, "externalRelPath": null, "externalFileChecksum": null, "tags": [] }
 	], "externalEnums": [], "levelFields": [] },
 	"levels": [
 		{
@@ -462,39 +502,41 @@
 							"__tags": ["node"],
 							"__tile": null,
 							"__smartColor": "#94D9B3",
+							"__worldX": 88,
+							"__worldY": 232,
 							"iid": "f1affae0-9f30-11ed-b2c8-a3e9ca36cb5a",
 							"width": 30,
 							"height": 30,
 							"defUid": 1,
 							"px": [88,232],
 							"fieldInstances": [
-								{ "__identifier": "connectedNodes", "__value": [{
+								{ "__identifier": "connectedNodes", "__type": "Array<EntityRef>", "__value": [{
 									"entityIid": "5b0e4620-9f30-11ed-9393-3bf5633add20",
 									"layerIid": "e07964f0-9f30-11ed-b2c8-47ef907f2e4f",
 									"levelIid": "75888860-9f30-11ed-b2c8-dfa72777c7f8",
-									"worldIid": "20779c20-3b70-11ee-a8cb-35cf8f801f13"
-								}], "__type": "Array<EntityRef>", "__tile": null, "defUid": 2, "realEditorValues": [{
+									"worldIid": "fe9602d0-3b70-11ee-a13c-f976eb9049e8"
+								}], "__tile": null, "defUid": 2, "realEditorValues": [{
 									"id": "V_String",
 									"params": ["5b0e4620-9f30-11ed-9393-3bf5633add20"]
 								}] },
-								{ "__identifier": "requiredSkill", "__value": "Hacking", "__type": "LocalEnum.SkillType", "__tile": null, "defUid": 8, "realEditorValues": [{
+								{ "__identifier": "requiredSkill", "__type": "LocalEnum.SkillType", "__value": "Hacking", "__tile": null, "defUid": 8, "realEditorValues": [{
 									"id": "V_String",
 									"params": ["Hacking"]
 								}] },
-								{ "__identifier": "requirement", "__value": 0, "__type": "Int", "__tile": null, "defUid": 9, "realEditorValues": [{ "id": "V_Int", "params": [0] }] },
-								{ "__identifier": "name", "__value": "Home", "__type": "String", "__tile": null, "defUid": 10, "realEditorValues": [{
+								{ "__identifier": "requirement", "__type": "Int", "__value": 0, "__tile": null, "defUid": 9, "realEditorValues": [{ "id": "V_Int", "params": [0] }] },
+								{ "__identifier": "name", "__type": "String", "__value": "Home", "__tile": null, "defUid": 10, "realEditorValues": [{
 									"id": "V_String",
 									"params": ["Home"]
 								}] },
-								{ "__identifier": "icon", "__value": "House", "__type": "LocalEnum.Icon", "__tile": null, "defUid": 12, "realEditorValues": [{
+								{ "__identifier": "icon", "__type": "LocalEnum.Icon", "__value": "House", "__tile": null, "defUid": 12, "realEditorValues": [{
 									"id": "V_String",
 									"params": ["House"]
 								}] },
-								{ "__identifier": "type", "__value": "Normal", "__type": "LocalEnum.NodeType", "__tile": null, "defUid": 14, "realEditorValues": [{
+								{ "__identifier": "type", "__type": "LocalEnum.NodeType", "__value": "Normal", "__tile": null, "defUid": 14, "realEditorValues": [{
 									"id": "V_String",
 									"params": ["Normal"]
 								}] },
-								{ "__identifier": "subnet", "__value": null, "__type": "LocalEnum.LevelNode", "__tile": null, "defUid": 16, "realEditorValues": [null] }
+								{ "__identifier": "subnet", "__type": "LocalEnum.LevelNode", "__value": null, "__tile": null, "defUid": 16, "realEditorValues": [null] }
 							]
 						},
 						{
@@ -504,17 +546,19 @@
 							"__tags": [],
 							"__tile": null,
 							"__smartColor": "#94D9B3",
+							"__worldX": 112,
+							"__worldY": 240,
 							"iid": "81707b30-9f30-11ed-ace3-65b9700e7e1b",
 							"width": 16,
 							"height": 16,
 							"defUid": 5,
 							"px": [112,240],
-							"fieldInstances": [{ "__identifier": "StartNode", "__value": {
+							"fieldInstances": [{ "__identifier": "StartNode", "__type": "EntityRef", "__value": {
 								"entityIid": "f1affae0-9f30-11ed-b2c8-a3e9ca36cb5a",
 								"layerIid": "e07964f0-9f30-11ed-b2c8-47ef907f2e4f",
 								"levelIid": "75888860-9f30-11ed-b2c8-dfa72777c7f8",
-								"worldIid": "20779c20-3b70-11ee-a8cb-35cf8f801f13"
-							}, "__type": "EntityRef", "__tile": null, "defUid": 6, "realEditorValues": [{
+								"worldIid": "fe9602d0-3b70-11ee-a13c-f976eb9049e8"
+							}, "__tile": null, "defUid": 6, "realEditorValues": [{
 								"id": "V_String",
 								"params": ["f1affae0-9f30-11ed-b2c8-a3e9ca36cb5a"]
 							}] }]
@@ -526,32 +570,34 @@
 							"__tags": ["node"],
 							"__tile": null,
 							"__smartColor": "#94D9B3",
+							"__worldX": 152,
+							"__worldY": 168,
 							"iid": "5b0e4620-9f30-11ed-9393-3bf5633add20",
 							"width": 30,
 							"height": 30,
 							"defUid": 1,
 							"px": [152,168],
 							"fieldInstances": [
-								{ "__identifier": "connectedNodes", "__value": [
+								{ "__identifier": "connectedNodes", "__type": "Array<EntityRef>", "__value": [
 									{
 										"entityIid": "f1affae0-9f30-11ed-b2c8-a3e9ca36cb5a",
 										"layerIid": "e07964f0-9f30-11ed-b2c8-47ef907f2e4f",
 										"levelIid": "75888860-9f30-11ed-b2c8-dfa72777c7f8",
-										"worldIid": "20779c20-3b70-11ee-a8cb-35cf8f801f13"
+										"worldIid": "fe9602d0-3b70-11ee-a13c-f976eb9049e8"
 									},
 									{
 										"entityIid": "640be8e0-9f30-11ed-9393-111d1d11d219",
 										"layerIid": "e07964f0-9f30-11ed-b2c8-47ef907f2e4f",
 										"levelIid": "75888860-9f30-11ed-b2c8-dfa72777c7f8",
-										"worldIid": "20779c20-3b70-11ee-a8cb-35cf8f801f13"
+										"worldIid": "fe9602d0-3b70-11ee-a13c-f976eb9049e8"
 									},
 									{
 										"entityIid": "67f86550-9f30-11ed-9393-257d87688490",
 										"layerIid": "e07964f0-9f30-11ed-b2c8-47ef907f2e4f",
 										"levelIid": "75888860-9f30-11ed-b2c8-dfa72777c7f8",
-										"worldIid": "20779c20-3b70-11ee-a8cb-35cf8f801f13"
+										"worldIid": "fe9602d0-3b70-11ee-a13c-f976eb9049e8"
 									}
-								], "__type": "Array<EntityRef>", "__tile": null, "defUid": 2, "realEditorValues": [ {
+								], "__tile": null, "defUid": 2, "realEditorValues": [ {
 									"id": "V_String",
 									"params": ["f1affae0-9f30-11ed-b2c8-a3e9ca36cb5a"]
 								}, {
@@ -561,24 +607,24 @@
 									"id": "V_String",
 									"params": ["67f86550-9f30-11ed-9393-257d87688490"]
 								} ] },
-								{ "__identifier": "requiredSkill", "__value": "Firewall", "__type": "LocalEnum.SkillType", "__tile": null, "defUid": 8, "realEditorValues": [{
+								{ "__identifier": "requiredSkill", "__type": "LocalEnum.SkillType", "__value": "Firewall", "__tile": null, "defUid": 8, "realEditorValues": [{
 									"id": "V_String",
 									"params": ["Firewall"]
 								}] },
-								{ "__identifier": "requirement", "__value": 100, "__type": "Int", "__tile": null, "defUid": 9, "realEditorValues": [{ "id": "V_Int", "params": [100] }] },
-								{ "__identifier": "name", "__value": "Riverside High", "__type": "String", "__tile": null, "defUid": 10, "realEditorValues": [{
+								{ "__identifier": "requirement", "__type": "Int", "__value": 100, "__tile": null, "defUid": 9, "realEditorValues": [{ "id": "V_Int", "params": [100] }] },
+								{ "__identifier": "name", "__type": "String", "__value": "Riverside High", "__tile": null, "defUid": 10, "realEditorValues": [{
 									"id": "V_String",
 									"params": ["Riverside High"]
 								}] },
-								{ "__identifier": "icon", "__value": "Graduate_cap", "__type": "LocalEnum.Icon", "__tile": null, "defUid": 12, "realEditorValues": [{
+								{ "__identifier": "icon", "__type": "LocalEnum.Icon", "__value": "Graduate_cap", "__tile": null, "defUid": 12, "realEditorValues": [{
 									"id": "V_String",
 									"params": ["Graduate_cap"]
 								}] },
-								{ "__identifier": "type", "__value": "Subnet", "__type": "LocalEnum.NodeType", "__tile": null, "defUid": 14, "realEditorValues": [{
+								{ "__identifier": "type", "__type": "LocalEnum.NodeType", "__value": "Subnet", "__tile": null, "defUid": 14, "realEditorValues": [{
 									"id": "V_String",
 									"params": ["Subnet"]
 								}] },
-								{ "__identifier": "subnet", "__value": "Highschool", "__type": "LocalEnum.LevelNode", "__tile": null, "defUid": 16, "realEditorValues": [{
+								{ "__identifier": "subnet", "__type": "LocalEnum.LevelNode", "__value": "Highschool", "__tile": null, "defUid": 16, "realEditorValues": [{
 									"id": "V_String",
 									"params": ["Highschool"]
 								}] }
@@ -591,36 +637,38 @@
 							"__tags": ["node"],
 							"__tile": null,
 							"__smartColor": "#94D9B3",
+							"__worldX": 72,
+							"__worldY": 104,
 							"iid": "640be8e0-9f30-11ed-9393-111d1d11d219",
 							"width": 30,
 							"height": 30,
 							"defUid": 1,
 							"px": [72,104],
 							"fieldInstances": [
-								{ "__identifier": "connectedNodes", "__value": [{
+								{ "__identifier": "connectedNodes", "__type": "Array<EntityRef>", "__value": [{
 									"entityIid": "5b0e4620-9f30-11ed-9393-3bf5633add20",
 									"layerIid": "e07964f0-9f30-11ed-b2c8-47ef907f2e4f",
 									"levelIid": "75888860-9f30-11ed-b2c8-dfa72777c7f8",
-									"worldIid": "20779c20-3b70-11ee-a8cb-35cf8f801f13"
-								}], "__type": "Array<EntityRef>", "__tile": null, "defUid": 2, "realEditorValues": [{
+									"worldIid": "fe9602d0-3b70-11ee-a13c-f976eb9049e8"
+								}], "__tile": null, "defUid": 2, "realEditorValues": [{
 									"id": "V_String",
 									"params": ["5b0e4620-9f30-11ed-9393-3bf5633add20"]
 								}] },
-								{ "__identifier": "requiredSkill", "__value": "Firewall", "__type": "LocalEnum.SkillType", "__tile": null, "defUid": 8, "realEditorValues": [{
+								{ "__identifier": "requiredSkill", "__type": "LocalEnum.SkillType", "__value": "Firewall", "__tile": null, "defUid": 8, "realEditorValues": [{
 									"id": "V_String",
 									"params": ["Firewall"]
 								}] },
-								{ "__identifier": "requirement", "__value": 2000, "__type": "Int", "__tile": null, "defUid": 9, "realEditorValues": [{ "id": "V_Int", "params": [2000] }] },
-								{ "__identifier": "name", "__value": "BD Bank Subnet", "__type": "String", "__tile": null, "defUid": 10, "realEditorValues": [{
+								{ "__identifier": "requirement", "__type": "Int", "__value": 2000, "__tile": null, "defUid": 9, "realEditorValues": [{ "id": "V_Int", "params": [2000] }] },
+								{ "__identifier": "name", "__type": "String", "__value": "BD Bank Subnet", "__tile": null, "defUid": 10, "realEditorValues": [{
 									"id": "V_String",
 									"params": ["BD Bank Subnet"]
 								}] },
-								{ "__identifier": "icon", "__value": "Bank", "__type": "LocalEnum.Icon", "__tile": null, "defUid": 12, "realEditorValues": [{
+								{ "__identifier": "icon", "__type": "LocalEnum.Icon", "__value": "Bank", "__tile": null, "defUid": 12, "realEditorValues": [{
 									"id": "V_String",
 									"params": ["Bank"]
 								}] },
-								{ "__identifier": "type", "__value": "Normal", "__type": "LocalEnum.NodeType", "__tile": null, "defUid": 14, "realEditorValues": [] },
-								{ "__identifier": "subnet", "__value": null, "__type": "LocalEnum.LevelNode", "__tile": null, "defUid": 16, "realEditorValues": [] }
+								{ "__identifier": "type", "__type": "LocalEnum.NodeType", "__value": "Normal", "__tile": null, "defUid": 14, "realEditorValues": [] },
+								{ "__identifier": "subnet", "__type": "LocalEnum.LevelNode", "__value": null, "__tile": null, "defUid": 16, "realEditorValues": [] }
 							]
 						},
 						{
@@ -630,47 +678,49 @@
 							"__tags": ["node"],
 							"__tile": null,
 							"__smartColor": "#94D9B3",
+							"__worldX": 168,
+							"__worldY": 88,
 							"iid": "67f86550-9f30-11ed-9393-257d87688490",
 							"width": 30,
 							"height": 30,
 							"defUid": 1,
 							"px": [168,88],
 							"fieldInstances": [
-								{ "__identifier": "connectedNodes", "__value": [ {
+								{ "__identifier": "connectedNodes", "__type": "Array<EntityRef>", "__value": [ {
 									"entityIid": "5b0e4620-9f30-11ed-9393-3bf5633add20",
 									"layerIid": "e07964f0-9f30-11ed-b2c8-47ef907f2e4f",
 									"levelIid": "75888860-9f30-11ed-b2c8-dfa72777c7f8",
-									"worldIid": "20779c20-3b70-11ee-a8cb-35cf8f801f13"
+									"worldIid": "fe9602d0-3b70-11ee-a13c-f976eb9049e8"
 								}, {
 									"entityIid": "68ba07a0-9f30-11ed-9393-3d7129b4f7dd",
 									"layerIid": "e07964f0-9f30-11ed-b2c8-47ef907f2e4f",
 									"levelIid": "75888860-9f30-11ed-b2c8-dfa72777c7f8",
-									"worldIid": "20779c20-3b70-11ee-a8cb-35cf8f801f13"
-								} ], "__type": "Array<EntityRef>", "__tile": null, "defUid": 2, "realEditorValues": [ {
+									"worldIid": "fe9602d0-3b70-11ee-a13c-f976eb9049e8"
+								} ], "__tile": null, "defUid": 2, "realEditorValues": [ {
 									"id": "V_String",
 									"params": ["5b0e4620-9f30-11ed-9393-3bf5633add20"]
 								}, {
 									"id": "V_String",
 									"params": ["68ba07a0-9f30-11ed-9393-3d7129b4f7dd"]
 								} ] },
-								{ "__identifier": "requiredSkill", "__value": "Firewall", "__type": "LocalEnum.SkillType", "__tile": null, "defUid": 8, "realEditorValues": [{
+								{ "__identifier": "requiredSkill", "__type": "LocalEnum.SkillType", "__value": "Firewall", "__tile": null, "defUid": 8, "realEditorValues": [{
 									"id": "V_String",
 									"params": ["Firewall"]
 								}] },
-								{ "__identifier": "requirement", "__value": 2000, "__type": "Int", "__tile": null, "defUid": 9, "realEditorValues": [{ "id": "V_Int", "params": [2000] }] },
-								{ "__identifier": "name", "__value": "CIA Boston Subnet", "__type": "String", "__tile": null, "defUid": 10, "realEditorValues": [{
+								{ "__identifier": "requirement", "__type": "Int", "__value": 2000, "__tile": null, "defUid": 9, "realEditorValues": [{ "id": "V_Int", "params": [2000] }] },
+								{ "__identifier": "name", "__type": "String", "__value": "CIA Boston Subnet", "__tile": null, "defUid": 10, "realEditorValues": [{
 									"id": "V_String",
 									"params": ["CIA Boston Subnet"]
 								}] },
-								{ "__identifier": "icon", "__value": "Wifi_router", "__type": "LocalEnum.Icon", "__tile": null, "defUid": 12, "realEditorValues": [{
+								{ "__identifier": "icon", "__type": "LocalEnum.Icon", "__value": "Wifi_router", "__tile": null, "defUid": 12, "realEditorValues": [{
 									"id": "V_String",
 									"params": ["Wifi_router"]
 								}] },
-								{ "__identifier": "type", "__value": "Normal", "__type": "LocalEnum.NodeType", "__tile": null, "defUid": 14, "realEditorValues": [{
+								{ "__identifier": "type", "__type": "LocalEnum.NodeType", "__value": "Normal", "__tile": null, "defUid": 14, "realEditorValues": [{
 									"id": "V_String",
 									"params": ["Normal"]
 								}] },
-								{ "__identifier": "subnet", "__value": null, "__type": "LocalEnum.LevelNode", "__tile": null, "defUid": 16, "realEditorValues": [] }
+								{ "__identifier": "subnet", "__type": "LocalEnum.LevelNode", "__value": null, "__tile": null, "defUid": 16, "realEditorValues": [] }
 							]
 						},
 						{
@@ -680,36 +730,38 @@
 							"__tags": ["node"],
 							"__tile": null,
 							"__smartColor": "#94D9B3",
+							"__worldX": 216,
+							"__worldY": 136,
 							"iid": "68ba07a0-9f30-11ed-9393-3d7129b4f7dd",
 							"width": 30,
 							"height": 30,
 							"defUid": 1,
 							"px": [216,136],
 							"fieldInstances": [
-								{ "__identifier": "connectedNodes", "__value": [{
+								{ "__identifier": "connectedNodes", "__type": "Array<EntityRef>", "__value": [{
 									"entityIid": "67f86550-9f30-11ed-9393-257d87688490",
 									"layerIid": "e07964f0-9f30-11ed-b2c8-47ef907f2e4f",
 									"levelIid": "75888860-9f30-11ed-b2c8-dfa72777c7f8",
-									"worldIid": "20779c20-3b70-11ee-a8cb-35cf8f801f13"
-								}], "__type": "Array<EntityRef>", "__tile": null, "defUid": 2, "realEditorValues": [{
+									"worldIid": "fe9602d0-3b70-11ee-a13c-f976eb9049e8"
+								}], "__tile": null, "defUid": 2, "realEditorValues": [{
 									"id": "V_String",
 									"params": ["67f86550-9f30-11ed-9393-257d87688490"]
 								}] },
-								{ "__identifier": "requiredSkill", "__value": "Firewall", "__type": "LocalEnum.SkillType", "__tile": null, "defUid": 8, "realEditorValues": [{
+								{ "__identifier": "requiredSkill", "__type": "LocalEnum.SkillType", "__value": "Firewall", "__tile": null, "defUid": 8, "realEditorValues": [{
 									"id": "V_String",
 									"params": ["Firewall"]
 								}] },
-								{ "__identifier": "requirement", "__value": 4000, "__type": "Int", "__tile": null, "defUid": 9, "realEditorValues": [{ "id": "V_Int", "params": [4000] }] },
-								{ "__identifier": "name", "__value": "Illuminati Subnet Alpha", "__type": "String", "__tile": null, "defUid": 10, "realEditorValues": [{
+								{ "__identifier": "requirement", "__type": "Int", "__value": 4000, "__tile": null, "defUid": 9, "realEditorValues": [{ "id": "V_Int", "params": [4000] }] },
+								{ "__identifier": "name", "__type": "String", "__value": "Illuminati Subnet Alpha", "__tile": null, "defUid": 10, "realEditorValues": [{
 									"id": "V_String",
 									"params": ["Illuminati Subnet Alpha"]
 								}] },
-								{ "__identifier": "icon", "__value": "Bank", "__type": "LocalEnum.Icon", "__tile": null, "defUid": 12, "realEditorValues": [{
+								{ "__identifier": "icon", "__type": "LocalEnum.Icon", "__value": "Bank", "__tile": null, "defUid": 12, "realEditorValues": [{
 									"id": "V_String",
 									"params": ["Bank"]
 								}] },
-								{ "__identifier": "type", "__value": "Normal", "__type": "LocalEnum.NodeType", "__tile": null, "defUid": 14, "realEditorValues": [] },
-								{ "__identifier": "subnet", "__value": null, "__type": "LocalEnum.LevelNode", "__tile": null, "defUid": 16, "realEditorValues": [] }
+								{ "__identifier": "type", "__type": "LocalEnum.NodeType", "__value": "Normal", "__tile": null, "defUid": 14, "realEditorValues": [] },
+								{ "__identifier": "subnet", "__type": "LocalEnum.LevelNode", "__value": null, "__tile": null, "defUid": 16, "realEditorValues": [] }
 							]
 						}
 					]
@@ -764,272 +816,544 @@
 					"entityInstances": [
 						{
 							"__identifier": "HackingNode",
-							"__grid": [3,3],
+							"__grid": [16,1],
 							"__pivot": [0.5,0.5],
 							"__tags": ["node"],
 							"__tile": null,
 							"__smartColor": "#94D9B3",
+							"__worldX": 264,
+							"__worldY": 296,
 							"iid": "7cc3e400-3b70-11ee-a8cb-5bc9dc08a31c",
 							"width": 30,
 							"height": 30,
 							"defUid": 1,
-							"px": [56,56],
+							"px": [264,24],
 							"fieldInstances": [
-								{ "__identifier": "connectedNodes", "__value": [ {
+								{ "__identifier": "connectedNodes", "__type": "Array<EntityRef>", "__value": [ {
 									"entityIid": "7e2c4da0-3b70-11ee-a8cb-77f32f58df9d",
 									"layerIid": "7a23e4c0-3b70-11ee-a8cb-c181e542c619",
 									"levelIid": "7a2396a0-3b70-11ee-a8cb-a54be0773ee2",
-									"worldIid": "20779c20-3b70-11ee-a8cb-35cf8f801f13"
+									"worldIid": "fe9602d0-3b70-11ee-a13c-f976eb9049e8"
 								}, {
 									"entityIid": "7e2c4da0-3b70-11ee-a8cb-77f32f58df9d",
 									"layerIid": "7a23e4c0-3b70-11ee-a8cb-c181e542c619",
 									"levelIid": "7a2396a0-3b70-11ee-a8cb-a54be0773ee2",
-									"worldIid": "20779c20-3b70-11ee-a8cb-35cf8f801f13"
-								} ], "__type": "Array<EntityRef>", "__tile": null, "defUid": 2, "realEditorValues": [ {
+									"worldIid": "fe9602d0-3b70-11ee-a13c-f976eb9049e8"
+								} ], "__tile": null, "defUid": 2, "realEditorValues": [ {
 									"id": "V_String",
 									"params": ["7e2c4da0-3b70-11ee-a8cb-77f32f58df9d"]
 								}, {
 									"id": "V_String",
 									"params": ["7e2c4da0-3b70-11ee-a8cb-77f32f58df9d"]
 								} ] },
-								{ "__identifier": "requiredSkill", "__value": "Firewall", "__type": "LocalEnum.SkillType", "__tile": null, "defUid": 8, "realEditorValues": [{
+								{ "__identifier": "requiredSkill", "__type": "LocalEnum.SkillType", "__value": "Firewall", "__tile": null, "defUid": 8, "realEditorValues": [{
 									"id": "V_String",
 									"params": ["Firewall"]
 								}] },
-								{ "__identifier": "requirement", "__value": 0, "__type": "Int", "__tile": null, "defUid": 9, "realEditorValues": [] },
-								{ "__identifier": "name", "__value": "Modem T-100", "__type": "String", "__tile": null, "defUid": 10, "realEditorValues": [{
+								{ "__identifier": "requirement", "__type": "Int", "__value": 0, "__tile": null, "defUid": 9, "realEditorValues": [] },
+								{ "__identifier": "name", "__type": "String", "__value": "Modem T-100", "__tile": null, "defUid": 10, "realEditorValues": [{
 									"id": "V_String",
 									"params": ["Modem T-100"]
 								}] },
-								{ "__identifier": "icon", "__value": "Server_rack", "__type": "LocalEnum.Icon", "__tile": null, "defUid": 12, "realEditorValues": [{
+								{ "__identifier": "icon", "__type": "LocalEnum.Icon", "__value": "Server_rack", "__tile": null, "defUid": 12, "realEditorValues": [{
 									"id": "V_String",
 									"params": ["Server_rack"]
 								}] },
-								{ "__identifier": "type", "__value": "Normal", "__type": "LocalEnum.NodeType", "__tile": null, "defUid": 14, "realEditorValues": [] },
-								{ "__identifier": "subnet", "__value": null, "__type": "LocalEnum.LevelNode", "__tile": null, "defUid": 16, "realEditorValues": [] }
+								{ "__identifier": "type", "__type": "LocalEnum.NodeType", "__value": "Normal", "__tile": null, "defUid": 14, "realEditorValues": [] },
+								{ "__identifier": "subnet", "__type": "LocalEnum.LevelNode", "__value": null, "__tile": null, "defUid": 16, "realEditorValues": [] }
 							]
 						},
 						{
 							"__identifier": "HackingNode",
-							"__grid": [7,6],
+							"__grid": [16,7],
 							"__pivot": [0.5,0.5],
 							"__tags": ["node"],
 							"__tile": null,
 							"__smartColor": "#94D9B3",
+							"__worldX": 264,
+							"__worldY": 392,
 							"iid": "7e2c4da0-3b70-11ee-a8cb-77f32f58df9d",
 							"width": 30,
 							"height": 30,
 							"defUid": 1,
-							"px": [120,104],
+							"px": [264,120],
 							"fieldInstances": [
-								{ "__identifier": "connectedNodes", "__value": [
+								{ "__identifier": "connectedNodes", "__type": "Array<EntityRef>", "__value": [
 									{
 										"entityIid": "370f89e0-3b70-11ee-a8cb-477c5ba41472",
 										"layerIid": "7a23e4c0-3b70-11ee-a8cb-c181e542c619",
 										"levelIid": "7a2396a0-3b70-11ee-a8cb-a54be0773ee2",
-										"worldIid": "20779c20-3b70-11ee-a8cb-35cf8f801f13"
+										"worldIid": "fe9602d0-3b70-11ee-a13c-f976eb9049e8"
 									},
 									{
 										"entityIid": "fae837f0-3b70-11ee-a8cb-5397af709dea",
 										"layerIid": "7a23e4c0-3b70-11ee-a8cb-c181e542c619",
 										"levelIid": "7a2396a0-3b70-11ee-a8cb-a54be0773ee2",
-										"worldIid": "20779c20-3b70-11ee-a8cb-35cf8f801f13"
+										"worldIid": "fe9602d0-3b70-11ee-a13c-f976eb9049e8"
 									},
 									{
 										"entityIid": "7cc3e400-3b70-11ee-a8cb-5bc9dc08a31c",
 										"layerIid": "7a23e4c0-3b70-11ee-a8cb-c181e542c619",
 										"levelIid": "7a2396a0-3b70-11ee-a8cb-a54be0773ee2",
-										"worldIid": "20779c20-3b70-11ee-a8cb-35cf8f801f13"
+										"worldIid": "fe9602d0-3b70-11ee-a13c-f976eb9049e8"
 									},
 									{
 										"entityIid": "a1b1f850-3b70-11ee-a8cb-1d0477444535",
 										"layerIid": "7a23e4c0-3b70-11ee-a8cb-c181e542c619",
 										"levelIid": "7a2396a0-3b70-11ee-a8cb-a54be0773ee2",
-										"worldIid": "20779c20-3b70-11ee-a8cb-35cf8f801f13"
+										"worldIid": "fe9602d0-3b70-11ee-a13c-f976eb9049e8"
+									},
+									{
+										"entityIid": "21dbb460-3b70-11ee-a13c-2bfca3aea540",
+										"layerIid": "7a23e4c0-3b70-11ee-a8cb-c181e542c619",
+										"levelIid": "7a2396a0-3b70-11ee-a8cb-a54be0773ee2",
+										"worldIid": "fe9602d0-3b70-11ee-a13c-f976eb9049e8"
+									},
+									{
+										"entityIid": "bfd3c4a0-3b70-11ee-a13c-d182ec74934b",
+										"layerIid": "7a23e4c0-3b70-11ee-a8cb-c181e542c619",
+										"levelIid": "7a2396a0-3b70-11ee-a8cb-a54be0773ee2",
+										"worldIid": "fe9602d0-3b70-11ee-a13c-f976eb9049e8"
+									},
+									{
+										"entityIid": "db832ba0-3b70-11ee-a13c-f78f43f3b71a",
+										"layerIid": "7a23e4c0-3b70-11ee-a8cb-c181e542c619",
+										"levelIid": "7a2396a0-3b70-11ee-a8cb-a54be0773ee2",
+										"worldIid": "fe9602d0-3b70-11ee-a13c-f976eb9049e8"
 									}
-								], "__type": "Array<EntityRef>", "__tile": null, "defUid": 2, "realEditorValues": [ {
-									"id": "V_String",
-									"params": ["370f89e0-3b70-11ee-a8cb-477c5ba41472"]
-								}, {
-									"id": "V_String",
-									"params": ["fae837f0-3b70-11ee-a8cb-5397af709dea"]
-								}, {
-									"id": "V_String",
-									"params": ["7cc3e400-3b70-11ee-a8cb-5bc9dc08a31c"]
-								}, {
-									"id": "V_String",
-									"params": ["a1b1f850-3b70-11ee-a8cb-1d0477444535"]
-								} ] },
-								{ "__identifier": "requiredSkill", "__value": "Firewall", "__type": "LocalEnum.SkillType", "__tile": null, "defUid": 8, "realEditorValues": [{
+								], "__tile": null, "defUid": 2, "realEditorValues": [
+									{
+										"id": "V_String",
+										"params": ["370f89e0-3b70-11ee-a8cb-477c5ba41472"]
+									},
+									{
+										"id": "V_String",
+										"params": ["fae837f0-3b70-11ee-a8cb-5397af709dea"]
+									},
+									{
+										"id": "V_String",
+										"params": ["7cc3e400-3b70-11ee-a8cb-5bc9dc08a31c"]
+									},
+									{
+										"id": "V_String",
+										"params": ["a1b1f850-3b70-11ee-a8cb-1d0477444535"]
+									},
+									{
+										"id": "V_String",
+										"params": ["21dbb460-3b70-11ee-a13c-2bfca3aea540"]
+									},
+									{
+										"id": "V_String",
+										"params": ["bfd3c4a0-3b70-11ee-a13c-d182ec74934b"]
+									},
+									{
+										"id": "V_String",
+										"params": ["db832ba0-3b70-11ee-a13c-f78f43f3b71a"]
+									}
+								] },
+								{ "__identifier": "requiredSkill", "__type": "LocalEnum.SkillType", "__value": "Firewall", "__tile": null, "defUid": 8, "realEditorValues": [{
 									"id": "V_String",
 									"params": ["Firewall"]
 								}] },
-								{ "__identifier": "requirement", "__value": 100, "__type": "Int", "__tile": null, "defUid": 9, "realEditorValues": [{ "id": "V_Int", "params": [100] }] },
-								{ "__identifier": "name", "__value": "Router_4b 192.168.10.23", "__type": "String", "__tile": null, "defUid": 10, "realEditorValues": [{
+								{ "__identifier": "requirement", "__type": "Int", "__value": 100, "__tile": null, "defUid": 9, "realEditorValues": [{ "id": "V_Int", "params": [100] }] },
+								{ "__identifier": "name", "__type": "String", "__value": "Router_4b 192.168.10.23", "__tile": null, "defUid": 10, "realEditorValues": [{
 									"id": "V_String",
 									"params": ["Router_4b 192.168.10.23"]
 								}] },
-								{ "__identifier": "icon", "__value": "Wifi_router", "__type": "LocalEnum.Icon", "__tile": null, "defUid": 12, "realEditorValues": [{
+								{ "__identifier": "icon", "__type": "LocalEnum.Icon", "__value": "Wifi_router", "__tile": null, "defUid": 12, "realEditorValues": [{
 									"id": "V_String",
 									"params": ["Wifi_router"]
 								}] },
-								{ "__identifier": "type", "__value": "Normal", "__type": "LocalEnum.NodeType", "__tile": null, "defUid": 14, "realEditorValues": [] },
-								{ "__identifier": "subnet", "__value": null, "__type": "LocalEnum.LevelNode", "__tile": null, "defUid": 16, "realEditorValues": [] }
+								{ "__identifier": "type", "__type": "LocalEnum.NodeType", "__value": "Normal", "__tile": null, "defUid": 14, "realEditorValues": [] },
+								{ "__identifier": "subnet", "__type": "LocalEnum.LevelNode", "__value": null, "__tile": null, "defUid": 16, "realEditorValues": [] }
 							]
 						},
 						{
 							"__identifier": "StartIndicator",
-							"__grid": [2,5],
+							"__grid": [18,1],
 							"__pivot": [0,0],
 							"__tags": [],
 							"__tile": null,
 							"__smartColor": "#94D9B3",
+							"__worldX": 288,
+							"__worldY": 288,
 							"iid": "a99fced0-3b70-11ee-a8cb-dbaf12523401",
 							"width": 16,
 							"height": 16,
 							"defUid": 5,
-							"px": [32,80],
-							"fieldInstances": [{ "__identifier": "StartNode", "__value": {
+							"px": [288,16],
+							"fieldInstances": [{ "__identifier": "StartNode", "__type": "EntityRef", "__value": {
 								"entityIid": "7cc3e400-3b70-11ee-a8cb-5bc9dc08a31c",
 								"layerIid": "7a23e4c0-3b70-11ee-a8cb-c181e542c619",
 								"levelIid": "7a2396a0-3b70-11ee-a8cb-a54be0773ee2",
-								"worldIid": "20779c20-3b70-11ee-a8cb-35cf8f801f13"
-							}, "__type": "EntityRef", "__tile": null, "defUid": 6, "realEditorValues": [{
+								"worldIid": "fe9602d0-3b70-11ee-a13c-f976eb9049e8"
+							}, "__tile": null, "defUid": 6, "realEditorValues": [{
 								"id": "V_String",
 								"params": ["7cc3e400-3b70-11ee-a8cb-5bc9dc08a31c"]
 							}] }]
 						},
 						{
 							"__identifier": "HackingNode",
-							"__grid": [10,2],
+							"__grid": [7,2],
 							"__pivot": [0.5,0.5],
 							"__tags": ["node"],
 							"__tile": null,
 							"__smartColor": "#94D9B3",
+							"__worldX": 120,
+							"__worldY": 312,
 							"iid": "fae837f0-3b70-11ee-a8cb-5397af709dea",
 							"width": 30,
 							"height": 30,
 							"defUid": 1,
-							"px": [168,40],
+							"px": [120,40],
 							"fieldInstances": [
-								{ "__identifier": "connectedNodes", "__value": [ {
+								{ "__identifier": "connectedNodes", "__type": "Array<EntityRef>", "__value": [ {
 									"entityIid": "7e2c4da0-3b70-11ee-a8cb-77f32f58df9d",
 									"layerIid": "7a23e4c0-3b70-11ee-a8cb-c181e542c619",
 									"levelIid": "7a2396a0-3b70-11ee-a8cb-a54be0773ee2",
-									"worldIid": "20779c20-3b70-11ee-a8cb-35cf8f801f13"
+									"worldIid": "fe9602d0-3b70-11ee-a13c-f976eb9049e8"
 								}, {
 									"entityIid": "7e2c4da0-3b70-11ee-a8cb-77f32f58df9d",
 									"layerIid": "7a23e4c0-3b70-11ee-a8cb-c181e542c619",
 									"levelIid": "7a2396a0-3b70-11ee-a8cb-a54be0773ee2",
-									"worldIid": "20779c20-3b70-11ee-a8cb-35cf8f801f13"
-								} ], "__type": "Array<EntityRef>", "__tile": null, "defUid": 2, "realEditorValues": [ {
+									"worldIid": "fe9602d0-3b70-11ee-a13c-f976eb9049e8"
+								} ], "__tile": null, "defUid": 2, "realEditorValues": [ {
 									"id": "V_String",
 									"params": ["7e2c4da0-3b70-11ee-a8cb-77f32f58df9d"]
 								}, {
 									"id": "V_String",
 									"params": ["7e2c4da0-3b70-11ee-a8cb-77f32f58df9d"]
 								} ] },
-								{ "__identifier": "requiredSkill", "__value": "Hacking", "__type": "LocalEnum.SkillType", "__tile": null, "defUid": 8, "realEditorValues": [{
+								{ "__identifier": "requiredSkill", "__type": "LocalEnum.SkillType", "__value": "Hacking", "__tile": null, "defUid": 8, "realEditorValues": [{
 									"id": "V_String",
 									"params": ["Hacking"]
 								}] },
-								{ "__identifier": "requirement", "__value": 200, "__type": "Int", "__tile": null, "defUid": 9, "realEditorValues": [{ "id": "V_Int", "params": [200] }] },
-								{ "__identifier": "name", "__value": "Mr. Garrison's IPhone4", "__type": "String", "__tile": null, "defUid": 10, "realEditorValues": [{
+								{ "__identifier": "requirement", "__type": "Int", "__value": 200, "__tile": null, "defUid": 9, "realEditorValues": [{ "id": "V_Int", "params": [200] }] },
+								{ "__identifier": "name", "__type": "String", "__value": "Mr. Garrison's IPhone4", "__tile": null, "defUid": 10, "realEditorValues": [{
 									"id": "V_String",
 									"params": ["Mr. Garrison's IPhone4"]
 								}] },
-								{ "__identifier": "icon", "__value": "Smartphone", "__type": "LocalEnum.Icon", "__tile": null, "defUid": 12, "realEditorValues": [{
+								{ "__identifier": "icon", "__type": "LocalEnum.Icon", "__value": "Smartphone", "__tile": null, "defUid": 12, "realEditorValues": [{
 									"id": "V_String",
 									"params": ["Smartphone"]
 								}] },
-								{ "__identifier": "type", "__value": "Normal", "__type": "LocalEnum.NodeType", "__tile": null, "defUid": 14, "realEditorValues": [] },
-								{ "__identifier": "subnet", "__value": null, "__type": "LocalEnum.LevelNode", "__tile": null, "defUid": 16, "realEditorValues": [] }
+								{ "__identifier": "type", "__type": "LocalEnum.NodeType", "__value": "Normal", "__tile": null, "defUid": 14, "realEditorValues": [] },
+								{ "__identifier": "subnet", "__type": "LocalEnum.LevelNode", "__value": null, "__tile": null, "defUid": 16, "realEditorValues": [] }
 							]
 						},
 						{
 							"__identifier": "HackingNode",
-							"__grid": [13,11],
+							"__grid": [16,17],
 							"__pivot": [0.5,0.5],
 							"__tags": ["node"],
 							"__tile": null,
 							"__smartColor": "#94D9B3",
+							"__worldX": 264,
+							"__worldY": 552,
 							"iid": "370f89e0-3b70-11ee-a8cb-477c5ba41472",
 							"width": 30,
 							"height": 30,
 							"defUid": 1,
-							"px": [216,184],
+							"px": [264,280],
 							"fieldInstances": [
-								{ "__identifier": "connectedNodes", "__value": [ {
+								{ "__identifier": "connectedNodes", "__type": "Array<EntityRef>", "__value": [ {
 									"entityIid": "370f89e0-3b70-11ee-a8cb-477c5ba41472",
 									"layerIid": "7a23e4c0-3b70-11ee-a8cb-c181e542c619",
 									"levelIid": "7a2396a0-3b70-11ee-a8cb-a54be0773ee2",
-									"worldIid": "20779c20-3b70-11ee-a8cb-35cf8f801f13"
+									"worldIid": "fe9602d0-3b70-11ee-a13c-f976eb9049e8"
 								}, {
 									"entityIid": "7e2c4da0-3b70-11ee-a8cb-77f32f58df9d",
 									"layerIid": "7a23e4c0-3b70-11ee-a8cb-c181e542c619",
 									"levelIid": "7a2396a0-3b70-11ee-a8cb-a54be0773ee2",
-									"worldIid": "20779c20-3b70-11ee-a8cb-35cf8f801f13"
-								} ], "__type": "Array<EntityRef>", "__tile": null, "defUid": 2, "realEditorValues": [ {
+									"worldIid": "fe9602d0-3b70-11ee-a13c-f976eb9049e8"
+								} ], "__tile": null, "defUid": 2, "realEditorValues": [ {
 									"id": "V_String",
 									"params": ["370f89e0-3b70-11ee-a8cb-477c5ba41472"]
 								}, {
 									"id": "V_String",
 									"params": ["7e2c4da0-3b70-11ee-a8cb-77f32f58df9d"]
 								} ] },
-								{ "__identifier": "requiredSkill", "__value": "Firewall", "__type": "LocalEnum.SkillType", "__tile": null, "defUid": 8, "realEditorValues": [{
+								{ "__identifier": "requiredSkill", "__type": "LocalEnum.SkillType", "__value": "Firewall", "__tile": null, "defUid": 8, "realEditorValues": [{
 									"id": "V_String",
 									"params": ["Firewall"]
 								}] },
-								{ "__identifier": "requirement", "__value": 300, "__type": "Int", "__tile": null, "defUid": 9, "realEditorValues": [{ "id": "V_Int", "params": [300] }] },
-								{ "__identifier": "name", "__value": "Router_7c 192.168.10.72", "__type": "String", "__tile": null, "defUid": 10, "realEditorValues": [{
+								{ "__identifier": "requirement", "__type": "Int", "__value": 300, "__tile": null, "defUid": 9, "realEditorValues": [{ "id": "V_Int", "params": [300] }] },
+								{ "__identifier": "name", "__type": "String", "__value": "Router_7c 192.168.10.72", "__tile": null, "defUid": 10, "realEditorValues": [{
 									"id": "V_String",
 									"params": ["Router_7c 192.168.10.72"]
 								}] },
-								{ "__identifier": "icon", "__value": "Wifi_router", "__type": "LocalEnum.Icon", "__tile": null, "defUid": 12, "realEditorValues": [{
+								{ "__identifier": "icon", "__type": "LocalEnum.Icon", "__value": "Wifi_router", "__tile": null, "defUid": 12, "realEditorValues": [{
 									"id": "V_String",
 									"params": ["Wifi_router"]
 								}] },
-								{ "__identifier": "type", "__value": "Normal", "__type": "LocalEnum.NodeType", "__tile": null, "defUid": 14, "realEditorValues": [] },
-								{ "__identifier": "subnet", "__value": null, "__type": "LocalEnum.LevelNode", "__tile": null, "defUid": 16, "realEditorValues": [] }
+								{ "__identifier": "type", "__type": "LocalEnum.NodeType", "__value": "Normal", "__tile": null, "defUid": 14, "realEditorValues": [] },
+								{ "__identifier": "subnet", "__type": "LocalEnum.LevelNode", "__value": null, "__tile": null, "defUid": 16, "realEditorValues": [] }
 							]
 						},
 						{
 							"__identifier": "HackingNode",
-							"__grid": [12,4],
+							"__grid": [2,3],
 							"__pivot": [0.5,0.5],
 							"__tags": ["node"],
 							"__tile": null,
 							"__smartColor": "#94D9B3",
+							"__worldX": 40,
+							"__worldY": 328,
 							"iid": "a1b1f850-3b70-11ee-a8cb-1d0477444535",
 							"width": 30,
 							"height": 30,
 							"defUid": 1,
-							"px": [200,72],
+							"px": [40,56],
 							"fieldInstances": [
-								{ "__identifier": "connectedNodes", "__value": [{
+								{ "__identifier": "connectedNodes", "__type": "Array<EntityRef>", "__value": [{
 									"entityIid": "7e2c4da0-3b70-11ee-a8cb-77f32f58df9d",
 									"layerIid": "7a23e4c0-3b70-11ee-a8cb-c181e542c619",
 									"levelIid": "7a2396a0-3b70-11ee-a8cb-a54be0773ee2",
-									"worldIid": "20779c20-3b70-11ee-a8cb-35cf8f801f13"
-								}], "__type": "Array<EntityRef>", "__tile": null, "defUid": 2, "realEditorValues": [{
+									"worldIid": "fe9602d0-3b70-11ee-a13c-f976eb9049e8"
+								}], "__tile": null, "defUid": 2, "realEditorValues": [{
 									"id": "V_String",
 									"params": ["7e2c4da0-3b70-11ee-a8cb-77f32f58df9d"]
 								}] },
-								{ "__identifier": "requiredSkill", "__value": "Hacking", "__type": "LocalEnum.SkillType", "__tile": null, "defUid": 8, "realEditorValues": [{
+								{ "__identifier": "requiredSkill", "__type": "LocalEnum.SkillType", "__value": "Hacking", "__tile": null, "defUid": 8, "realEditorValues": [{
 									"id": "V_String",
 									"params": ["Hacking"]
 								}] },
-								{ "__identifier": "requirement", "__value": 300, "__type": "Int", "__tile": null, "defUid": 9, "realEditorValues": [{ "id": "V_Int", "params": [300] }] },
-								{ "__identifier": "name", "__value": "desk_room_108", "__type": "String", "__tile": null, "defUid": 10, "realEditorValues": [{
+								{ "__identifier": "requirement", "__type": "Int", "__value": 300, "__tile": null, "defUid": 9, "realEditorValues": [{ "id": "V_Int", "params": [300] }] },
+								{ "__identifier": "name", "__type": "String", "__value": "desk_room_108", "__tile": null, "defUid": 10, "realEditorValues": [{
 									"id": "V_String",
 									"params": ["desk_room_108"]
 								}] },
-								{ "__identifier": "icon", "__value": "Pc", "__type": "LocalEnum.Icon", "__tile": null, "defUid": 12, "realEditorValues": [{
+								{ "__identifier": "icon", "__type": "LocalEnum.Icon", "__value": "Pc", "__tile": null, "defUid": 12, "realEditorValues": [{
 									"id": "V_String",
 									"params": ["Pc"]
 								}] },
-								{ "__identifier": "type", "__value": "Normal", "__type": "LocalEnum.NodeType", "__tile": null, "defUid": 14, "realEditorValues": [] },
-								{ "__identifier": "subnet", "__value": null, "__type": "LocalEnum.LevelNode", "__tile": null, "defUid": 16, "realEditorValues": [] }
+								{ "__identifier": "type", "__type": "LocalEnum.NodeType", "__value": "Normal", "__tile": null, "defUid": 14, "realEditorValues": [] },
+								{ "__identifier": "subnet", "__type": "LocalEnum.LevelNode", "__value": null, "__tile": null, "defUid": 16, "realEditorValues": [] }
+							]
+						},
+						{
+							"__identifier": "HackingNode",
+							"__grid": [7,7],
+							"__pivot": [0.5,0.5],
+							"__tags": ["node"],
+							"__tile": null,
+							"__smartColor": "#94D9B3",
+							"__worldX": 120,
+							"__worldY": 392,
+							"iid": "21dbb460-3b70-11ee-a13c-2bfca3aea540",
+							"width": 30,
+							"height": 30,
+							"defUid": 1,
+							"px": [120,120],
+							"fieldInstances": [
+								{ "__identifier": "connectedNodes", "__type": "Array<EntityRef>", "__value": [
+									{
+										"entityIid": "7e2c4da0-3b70-11ee-a8cb-77f32f58df9d",
+										"layerIid": "7a23e4c0-3b70-11ee-a8cb-c181e542c619",
+										"levelIid": "7a2396a0-3b70-11ee-a8cb-a54be0773ee2",
+										"worldIid": "fe9602d0-3b70-11ee-a13c-f976eb9049e8"
+									},
+									{
+										"entityIid": "4a3e2500-3b70-11ee-a13c-499b6c70edbd",
+										"layerIid": "7a23e4c0-3b70-11ee-a8cb-c181e542c619",
+										"levelIid": "7a2396a0-3b70-11ee-a8cb-a54be0773ee2",
+										"worldIid": "fe9602d0-3b70-11ee-a13c-f976eb9049e8"
+									},
+									{
+										"entityIid": "77ed6560-3b70-11ee-a13c-b509308aab14",
+										"layerIid": "7a23e4c0-3b70-11ee-a8cb-c181e542c619",
+										"levelIid": "7a2396a0-3b70-11ee-a8cb-a54be0773ee2",
+										"worldIid": "fe9602d0-3b70-11ee-a13c-f976eb9049e8"
+									}
+								], "__tile": null, "defUid": 2, "realEditorValues": [ {
+									"id": "V_String",
+									"params": ["7e2c4da0-3b70-11ee-a8cb-77f32f58df9d"]
+								}, {
+									"id": "V_String",
+									"params": ["4a3e2500-3b70-11ee-a13c-499b6c70edbd"]
+								}, {
+									"id": "V_String",
+									"params": ["77ed6560-3b70-11ee-a13c-b509308aab14"]
+								} ] },
+								{ "__identifier": "requiredSkill", "__type": "LocalEnum.SkillType", "__value": "Hacking", "__tile": null, "defUid": 8, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["Hacking"]
+								}] },
+								{ "__identifier": "requirement", "__type": "Int", "__value": 100, "__tile": null, "defUid": 9, "realEditorValues": [{ "id": "V_Int", "params": [100] }] },
+								{ "__identifier": "name", "__type": "String", "__value": "sallys_samsing_5g", "__tile": null, "defUid": 10, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["sallys_samsing_5g"]
+								}] },
+								{ "__identifier": "icon", "__type": "LocalEnum.Icon", "__value": "Smartphone", "__tile": null, "defUid": 12, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["Smartphone"]
+								}] },
+								{ "__identifier": "type", "__type": "LocalEnum.NodeType", "__value": "Normal", "__tile": null, "defUid": 14, "realEditorValues": [] },
+								{ "__identifier": "subnet", "__type": "LocalEnum.LevelNode", "__value": null, "__tile": null, "defUid": 16, "realEditorValues": [] }
+							]
+						},
+						{
+							"__identifier": "HackingNode",
+							"__grid": [5,8],
+							"__pivot": [0.5,0.5],
+							"__tags": ["node"],
+							"__tile": null,
+							"__smartColor": "#94D9B3",
+							"__worldX": 88,
+							"__worldY": 408,
+							"iid": "4a3e2500-3b70-11ee-a13c-499b6c70edbd",
+							"width": 30,
+							"height": 30,
+							"defUid": 1,
+							"px": [88,136],
+							"fieldInstances": [
+								{ "__identifier": "connectedNodes", "__type": "Array<EntityRef>", "__value": [{
+									"entityIid": "21dbb460-3b70-11ee-a13c-2bfca3aea540",
+									"layerIid": "7a23e4c0-3b70-11ee-a8cb-c181e542c619",
+									"levelIid": "7a2396a0-3b70-11ee-a8cb-a54be0773ee2",
+									"worldIid": "fe9602d0-3b70-11ee-a13c-f976eb9049e8"
+								}], "__tile": null, "defUid": 2, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["21dbb460-3b70-11ee-a13c-2bfca3aea540"]
+								}] },
+								{ "__identifier": "requiredSkill", "__type": "LocalEnum.SkillType", "__value": "Hacking", "__tile": null, "defUid": 8, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["Hacking"]
+								}] },
+								{ "__identifier": "requirement", "__type": "Int", "__value": 200, "__tile": null, "defUid": 9, "realEditorValues": [{ "id": "V_Int", "params": [200] }] },
+								{ "__identifier": "name", "__type": "String", "__value": "Sally's Amazing.com Account", "__tile": null, "defUid": 10, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["Sally's Amazing.com Account"]
+								}] },
+								{ "__identifier": "icon", "__type": "LocalEnum.Icon", "__value": "Shop", "__tile": null, "defUid": 12, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["Shop"]
+								}] },
+								{ "__identifier": "type", "__type": "LocalEnum.NodeType", "__value": "Normal", "__tile": null, "defUid": 14, "realEditorValues": [] },
+								{ "__identifier": "subnet", "__type": "LocalEnum.LevelNode", "__value": null, "__tile": null, "defUid": 16, "realEditorValues": [] }
+							]
+						},
+						{
+							"__identifier": "HackingNode",
+							"__grid": [7,9],
+							"__pivot": [0.5,0.5],
+							"__tags": ["node"],
+							"__tile": null,
+							"__smartColor": "#94D9B3",
+							"__worldX": 120,
+							"__worldY": 424,
+							"iid": "77ed6560-3b70-11ee-a13c-b509308aab14",
+							"width": 30,
+							"height": 30,
+							"defUid": 1,
+							"px": [120,152],
+							"fieldInstances": [
+								{ "__identifier": "connectedNodes", "__type": "Array<EntityRef>", "__value": [{
+									"entityIid": "21dbb460-3b70-11ee-a13c-2bfca3aea540",
+									"layerIid": "7a23e4c0-3b70-11ee-a8cb-c181e542c619",
+									"levelIid": "7a2396a0-3b70-11ee-a8cb-a54be0773ee2",
+									"worldIid": "fe9602d0-3b70-11ee-a13c-f976eb9049e8"
+								}], "__tile": null, "defUid": 2, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["21dbb460-3b70-11ee-a13c-2bfca3aea540"]
+								}] },
+								{ "__identifier": "requiredSkill", "__type": "LocalEnum.SkillType", "__value": "Hacking", "__tile": null, "defUid": 8, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["Hacking"]
+								}] },
+								{ "__identifier": "requirement", "__type": "Int", "__value": 100, "__tile": null, "defUid": 9, "realEditorValues": [{ "id": "V_Int", "params": [100] }] },
+								{ "__identifier": "name", "__type": "String", "__value": "SexyBabe69's Twotter Account", "__tile": null, "defUid": 10, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["SexyBabe69's Twotter Account"]
+								}] },
+								{ "__identifier": "icon", "__type": "LocalEnum.Icon", "__value": "Shop", "__tile": null, "defUid": 12, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["Shop"]
+								}] },
+								{ "__identifier": "type", "__type": "LocalEnum.NodeType", "__value": "Normal", "__tile": null, "defUid": 14, "realEditorValues": [] },
+								{ "__identifier": "subnet", "__type": "LocalEnum.LevelNode", "__value": null, "__tile": null, "defUid": 16, "realEditorValues": [] }
+							]
+						},
+						{
+							"__identifier": "HackingNode",
+							"__grid": [10,9],
+							"__pivot": [0.5,0.5],
+							"__tags": ["node"],
+							"__tile": null,
+							"__smartColor": "#94D9B3",
+							"__worldX": 168,
+							"__worldY": 424,
+							"iid": "bfd3c4a0-3b70-11ee-a13c-d182ec74934b",
+							"width": 30,
+							"height": 30,
+							"defUid": 1,
+							"px": [168,152],
+							"fieldInstances": [
+								{ "__identifier": "connectedNodes", "__type": "Array<EntityRef>", "__value": [{
+									"entityIid": "7e2c4da0-3b70-11ee-a8cb-77f32f58df9d",
+									"layerIid": "7a23e4c0-3b70-11ee-a8cb-c181e542c619",
+									"levelIid": "7a2396a0-3b70-11ee-a8cb-a54be0773ee2",
+									"worldIid": "fe9602d0-3b70-11ee-a13c-f976eb9049e8"
+								}], "__tile": null, "defUid": 2, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["7e2c4da0-3b70-11ee-a8cb-77f32f58df9d"]
+								}] },
+								{ "__identifier": "requiredSkill", "__type": "LocalEnum.SkillType", "__value": "Hacking", "__tile": null, "defUid": 8, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["Hacking"]
+								}] },
+								{ "__identifier": "requirement", "__type": "Int", "__value": 50, "__tile": null, "defUid": 9, "realEditorValues": [{ "id": "V_Int", "params": [50] }] },
+								{ "__identifier": "name", "__type": "String", "__value": "Johnny's Windows Phone", "__tile": null, "defUid": 10, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["Johnny's Windows Phone"]
+								}] },
+								{ "__identifier": "icon", "__type": "LocalEnum.Icon", "__value": "Smartphone", "__tile": null, "defUid": 12, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["Smartphone"]
+								}] },
+								{ "__identifier": "type", "__type": "LocalEnum.NodeType", "__value": "Normal", "__tile": null, "defUid": 14, "realEditorValues": [] },
+								{ "__identifier": "subnet", "__type": "LocalEnum.LevelNode", "__value": null, "__tile": null, "defUid": 16, "realEditorValues": [] }
+							]
+						},
+						{
+							"__identifier": "HackingNode",
+							"__grid": [6,12],
+							"__pivot": [0.5,0.5],
+							"__tags": ["node"],
+							"__tile": null,
+							"__smartColor": "#94D9B3",
+							"__worldX": 104,
+							"__worldY": 472,
+							"iid": "db832ba0-3b70-11ee-a13c-f78f43f3b71a",
+							"width": 30,
+							"height": 30,
+							"defUid": 1,
+							"px": [104,200],
+							"fieldInstances": [
+								{ "__identifier": "connectedNodes", "__type": "Array<EntityRef>", "__value": [{
+									"entityIid": "7e2c4da0-3b70-11ee-a8cb-77f32f58df9d",
+									"layerIid": "7a23e4c0-3b70-11ee-a8cb-c181e542c619",
+									"levelIid": "7a2396a0-3b70-11ee-a8cb-a54be0773ee2",
+									"worldIid": "fe9602d0-3b70-11ee-a13c-f976eb9049e8"
+								}], "__tile": null, "defUid": 2, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["7e2c4da0-3b70-11ee-a8cb-77f32f58df9d"]
+								}] },
+								{ "__identifier": "requiredSkill", "__type": "LocalEnum.SkillType", "__value": "Hacking", "__tile": null, "defUid": 8, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["Hacking"]
+								}] },
+								{ "__identifier": "requirement", "__type": "Int", "__value": 200, "__tile": null, "defUid": 9, "realEditorValues": [{ "id": "V_Int", "params": [200] }] },
+								{ "__identifier": "name", "__type": "String", "__value": "Cody's PSP", "__tile": null, "defUid": 10, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["Cody's PSP"]
+								}] },
+								{ "__identifier": "icon", "__type": "LocalEnum.Icon", "__value": "Smartphone", "__tile": null, "defUid": 12, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["Smartphone"]
+								}] },
+								{ "__identifier": "type", "__type": "LocalEnum.NodeType", "__value": "Normal", "__tile": null, "defUid": 14, "realEditorValues": [] },
+								{ "__identifier": "subnet", "__type": "LocalEnum.LevelNode", "__value": null, "__tile": null, "defUid": 16, "realEditorValues": [] }
 							]
 						}
 					]
@@ -1038,5 +1362,6 @@
 			"__neighbours": []
 		}
 	],
-	"worlds": []
+	"worlds": [],
+	"dummyWorldIid": "fe9602d0-3b70-11ee-a13c-f976eb9049e8"
 }
