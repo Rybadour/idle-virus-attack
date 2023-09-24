@@ -3,8 +3,8 @@
 	"uniqueIdentifer": "7a2396a0-3b70-11ee-a8cb-a54be0773ee2",
 	"x": 0,
 	"y": 272,
-	"width": 256,
-	"height": 256,
+	"width": 496,
+	"height": 352,
 	"bgColor": "#696A79",
 	"neighbourLevels": [],
 	"customFields" : {},
@@ -22,6 +22,12 @@
 				"color": 9755059,
 				"customFields": {
 					"connectedNodes": [
+						{
+							"entityIid": "7e2c4da0-3b70-11ee-a8cb-77f32f58df9d",
+							"layerIid": "7a23e4c0-3b70-11ee-a8cb-c181e542c619",
+							"levelIid": "7a2396a0-3b70-11ee-a8cb-a54be0773ee2",
+							"worldIid": "20779c20-3b70-11ee-a8cb-35cf8f801f13"
+						},
 						{
 							"entityIid": "7e2c4da0-3b70-11ee-a8cb-77f32f58df9d",
 							"layerIid": "7a23e4c0-3b70-11ee-a8cb-c181e542c619",
@@ -49,7 +55,25 @@
 				"customFields": {
 					"connectedNodes": [
 						{
+							"entityIid": "370f89e0-3b70-11ee-a8cb-477c5ba41472",
+							"layerIid": "7a23e4c0-3b70-11ee-a8cb-c181e542c619",
+							"levelIid": "7a2396a0-3b70-11ee-a8cb-a54be0773ee2",
+							"worldIid": "20779c20-3b70-11ee-a8cb-35cf8f801f13"
+						},
+						{
 							"entityIid": "fae837f0-3b70-11ee-a8cb-5397af709dea",
+							"layerIid": "7a23e4c0-3b70-11ee-a8cb-c181e542c619",
+							"levelIid": "7a2396a0-3b70-11ee-a8cb-a54be0773ee2",
+							"worldIid": "20779c20-3b70-11ee-a8cb-35cf8f801f13"
+						},
+						{
+							"entityIid": "7cc3e400-3b70-11ee-a8cb-5bc9dc08a31c",
+							"layerIid": "7a23e4c0-3b70-11ee-a8cb-c181e542c619",
+							"levelIid": "7a2396a0-3b70-11ee-a8cb-a54be0773ee2",
+							"worldIid": "20779c20-3b70-11ee-a8cb-35cf8f801f13"
+						},
+						{
+							"entityIid": "a1b1f850-3b70-11ee-a8cb-1d0477444535",
 							"layerIid": "7a23e4c0-3b70-11ee-a8cb-c181e542c619",
 							"levelIid": "7a2396a0-3b70-11ee-a8cb-a54be0773ee2",
 							"worldIid": "20779c20-3b70-11ee-a8cb-35cf8f801f13"
@@ -73,11 +97,82 @@
 				"height": 30,
 				"color": 9755059,
 				"customFields": {
-					"connectedNodes": [],
+					"connectedNodes": [
+						{
+							"entityIid": "7e2c4da0-3b70-11ee-a8cb-77f32f58df9d",
+							"layerIid": "7a23e4c0-3b70-11ee-a8cb-c181e542c619",
+							"levelIid": "7a2396a0-3b70-11ee-a8cb-a54be0773ee2",
+							"worldIid": "20779c20-3b70-11ee-a8cb-35cf8f801f13"
+						},
+						{
+							"entityIid": "7e2c4da0-3b70-11ee-a8cb-77f32f58df9d",
+							"layerIid": "7a23e4c0-3b70-11ee-a8cb-c181e542c619",
+							"levelIid": "7a2396a0-3b70-11ee-a8cb-a54be0773ee2",
+							"worldIid": "20779c20-3b70-11ee-a8cb-35cf8f801f13"
+						}
+					],
 					"requiredSkill": "Hacking",
 					"requirement": 200,
 					"name": "Mr. Garrison's IPhone4",
 					"icon": "Smartphone",
+					"type": "Normal",
+					"subnet": null
+				}
+			},
+			{
+				"id": "HackingNode",
+				"iid": "370f89e0-3b70-11ee-a8cb-477c5ba41472",
+				"layer": "Nodes",
+				"x": 216,
+				"y": 184,
+				"width": 30,
+				"height": 30,
+				"color": 9755059,
+				"customFields": {
+					"connectedNodes": [
+						{
+							"entityIid": "370f89e0-3b70-11ee-a8cb-477c5ba41472",
+							"layerIid": "7a23e4c0-3b70-11ee-a8cb-c181e542c619",
+							"levelIid": "7a2396a0-3b70-11ee-a8cb-a54be0773ee2",
+							"worldIid": "20779c20-3b70-11ee-a8cb-35cf8f801f13"
+						},
+						{
+							"entityIid": "7e2c4da0-3b70-11ee-a8cb-77f32f58df9d",
+							"layerIid": "7a23e4c0-3b70-11ee-a8cb-c181e542c619",
+							"levelIid": "7a2396a0-3b70-11ee-a8cb-a54be0773ee2",
+							"worldIid": "20779c20-3b70-11ee-a8cb-35cf8f801f13"
+						}
+					],
+					"requiredSkill": "Firewall",
+					"requirement": 300,
+					"name": "Router_7c 192.168.10.72",
+					"icon": "Wifi_router",
+					"type": "Normal",
+					"subnet": null
+				}
+			},
+			{
+				"id": "HackingNode",
+				"iid": "a1b1f850-3b70-11ee-a8cb-1d0477444535",
+				"layer": "Nodes",
+				"x": 200,
+				"y": 72,
+				"width": 30,
+				"height": 30,
+				"color": 9755059,
+				"customFields": {
+					"connectedNodes": [
+						{
+							"entityIid": "7e2c4da0-3b70-11ee-a8cb-77f32f58df9d",
+							"layerIid": "7a23e4c0-3b70-11ee-a8cb-c181e542c619",
+							"levelIid": "7a2396a0-3b70-11ee-a8cb-a54be0773ee2",
+							"worldIid": "20779c20-3b70-11ee-a8cb-35cf8f801f13"
+						}
+					],
+					"requiredSkill": "Hacking",
+					"requirement": 300,
+					"name": "desk_room_108",
+					"icon": "Pc",
 					"type": "Normal",
 					"subnet": null
 				}
