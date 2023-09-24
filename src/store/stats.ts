@@ -1,3 +1,4 @@
+import { cloneDeep } from "lodash";
 import { MyCreateSlice, SkillType } from "../shared/types";
 
 export interface StatsSlice {
@@ -11,18 +12,22 @@ export interface StatsSlice {
 
   useSkill: (requirement: number, skill: SkillType, elapsed: number) => void,
   addProtection: (protection: number) => void,
+  reset: () => void,
+}
+
+const startingSkills: Record<SkillType, number> = {
+  [SkillType.Hacking]: 10,
+  [SkillType.Spoofing]: 10,
+  [SkillType.Firewall]: 10,
 }
 
 const IMPROVEMENT_SKILL_RATIO = 0.01;
 const PERMANENT_IMPROVEMENT_RATIO = 0.2;
 const ANTI_VIRUS_STRENGTH_INCREASE = 0.05;
+const ANTI_VIRUS_START = 2;
 const createStatsSlice: MyCreateSlice<StatsSlice, []> = (set, get) => {
   return {
-    skills: {
-      [SkillType.Hacking]: 10,
-      [SkillType.Spoofing]: 10,
-      [SkillType.Firewall]: 10,
-    },
+    skills: cloneDeep(startingSkills),
     permanentSkills: {
       [SkillType.Hacking]: 0,
       [SkillType.Spoofing]: 0,
@@ -30,7 +35,7 @@ const createStatsSlice: MyCreateSlice<StatsSlice, []> = (set, get) => {
     },
     protection: 200,
     maxProtection: 200,
-    antiVirusStrength: 2,
+    antiVirusStrength: ANTI_VIRUS_START,
 
     getSkill: (skill: SkillType) => {
       const {skills, permanentSkills} = get();
@@ -57,6 +62,14 @@ const createStatsSlice: MyCreateSlice<StatsSlice, []> = (set, get) => {
 
     addProtection: (protection: number) => {
       set({ protection: Math.min(get().protection + protection, get().maxProtection) });
+    },
+
+    reset: () => {
+      set({ 
+        skills: cloneDeep(startingSkills),
+        protection: get().maxProtection,
+        antiVirusStrength: ANTI_VIRUS_START,
+      });
     }
   }
 };

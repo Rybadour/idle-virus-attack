@@ -32,23 +32,25 @@ function App() {
   );
 }
 
+let requestId = requestAnimationFrame(loop);
+let lastTime: number = 0;
+function loop(timeStamp: number) {
+  const elapsed = timeStamp - lastTime;
+  lastTime = timeStamp;
+  
+  const state = useStore.getState();
+  state.actions.update(elapsed);
+  if (state.stats.protection <= 0) {
+    state.nodes.reset();
+    state.stats.reset();
+    state.actions.reset();
+  }
+
+  requestId = requestAnimationFrame(loop);
+}
+
+
 function Content() {
-  const actions = useStore(s => pick(s.actions, ['update']), shallow)
-
-  useEffect(() => {
-    let requestId = requestAnimationFrame(loop);
-    let lastTime: number = Date.now();
-    function loop(timeStamp: number) {
-      const elapsed = timeStamp - lastTime;
-      lastTime = timeStamp;
-      
-      actions.update(elapsed);
-      requestId = requestAnimationFrame(loop);
-    }
-
-    return () => cancelAnimationFrame(requestId);
-  }, [actions.update]);
-
   return <div className="content">
     <CountdownTimer />
     <SideBySidePanels>

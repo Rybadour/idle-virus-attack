@@ -13,6 +13,7 @@ export interface NodesSlice {
   completeNode: (nodePath: NodePathId) => void,
   isConnectedCompleted: (nodeId: string, level: NodeLevel) => boolean,
   switchToSubnet: (subnet?: NodeLevel) => void,
+  reset: () => void,
 }
 
 function preprocessLevel(level: NodeLevel) {
@@ -91,6 +92,17 @@ const createNodesSlice: MyCreateSlice<NodesSlice, [() => ActionsSlice]>
     switchToSubnet: (subnet) => {
       set({ currentMap: subnet });
     },
+
+    reset: () => {
+      set({
+        currentMap: NodeLevel.Internet,
+        nodes: {
+          [NodeLevel.Internet]: preprocessLevel(NodeLevel.Internet),
+          [NodeLevel.HighSchool]: preprocessLevel(NodeLevel.HighSchool),
+        },
+        nodeProgress: undefined,
+      })
+    }
   };
 };
 

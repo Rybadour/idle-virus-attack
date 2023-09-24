@@ -8,6 +8,7 @@ export interface ActionsSlice {
 
   update: (elapsed: number) => void,
   queueAction: (action: IAction) => void,
+  reset: () => void,
 }
 
 const createActionsSlice: MyCreateSlice<ActionsSlice, [() => StatsSlice, () => NodesSlice]> = (set, get, stats, nodes) => {
@@ -58,6 +59,10 @@ const createActionsSlice: MyCreateSlice<ActionsSlice, [() => StatsSlice, () => N
         startAction(action);
       }
       set({ queuedActions: newQueueActions })
+    },
+
+    reset: () => {
+      set({ queuedActions: [] });
     }
   }
 };
