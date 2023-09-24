@@ -1,9 +1,9 @@
 import { pick } from "lodash";
 import { useCallback, useState } from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { shallow } from "zustand/shallow";
 
-import { INode, NodeType } from "../../shared/types";
+import { INode, NodeLevel, NodeType } from "../../shared/types";
 import { lerpLineSegment, lineSegmentBetweenCircles } from "../../shared/utils";
 import useStore from "../../store";
 import { NODE_SIZE, Node } from "./node";
@@ -34,49 +34,66 @@ export default function NodeMap() {
         nodes.queueMining(node.id, nodes.currentMap);
       //}
     }
-  }, [nodes])
+  }, [nodes]);
+  const backToInternet = useCallback(() => {
+    nodes.switchToSubnet(NodeLevel.Internet);
+  }, [nodes]);
 
   const nodeMap = nodes.nodes[nodes.currentMap];
+  const isViewingSubnet = nodes.currentMap !== NodeLevel.Internet;
 
-  return <NodesContainer
-    onMouseDown={() => setIsDragging(true)}
-    onMouseUp={() => setIsDragging(false)}
-    onMouseMove={(evt) => moveMouse(evt)}
-  >
-    <g transform={`translate(${panOffset.x} ${panOffset.y})`}>
+  return <NodeMapPanel>
+    <NodeNavigationList>
+      <NodeNavItem clickable={isViewingSubnet} onClick={backToInternet}>Internet</NodeNavItem>
+      {isViewingSubnet && <>
+        <span>&gt;</span>
+        <NodeNavItem clickable={false}>{nodes.currentMap}</NodeNavItem>
+      </>}
+    </NodeNavigationList>
+    <NodesContainer
+      onMouseDown={() => setIsDragging(true)}
+      onMouseUp={() => setIsDragging(false)}
+      onMouseMove={(evt) => moveMouse(evt)}
+    >
+      <g transform={`translate(${panOffset.x} ${panOffset.y})`}>
 
-    {Object.values(nodeMap).map(node =>
-      node.connections.map(otherId => {
-        const other = nodeMap[otherId];
-        let otherLine;
-        if (nodes.nodeProgress && nodes.nodeProgress.node.id === otherId) {
-          const progress = nodeAction.current / nodeAction.requirement;
-          const progressLine = lineSegmentBetweenCircles(node, other, NODE_SIZE/2);
-          const progressPoint = lerpLineSegment(progressLine[0], progressLine[1], progress);
-          otherLine = <line
-            key={node.id + '-' + otherId + '-progress'} x1={progressLine[0].x} y1={progressLine[0].y} x2={progressPoint.x} y2={progressPoint.y}
-            stroke="white" strokeWidth={3}
-          />;
-        }
-        return <>
-          <NodeConnection
-            key={node.id + '-' + otherId} x1={node.x} y1={node.y} x2={other.x} y2={other.y}
-            isComplete={other.isComplete}
-          />
-          {otherLine}
-        </>;
-      })
-    )}
+      {Object.values(nodeMap).map(node =>
+        node.connections.map(otherId => {
+          const other = nodeMap[otherId];
+          let otherLine;
+          if (nodes.nodeProgress && nodes.nodeProgress.node.id === otherId) {
+            const progress = nodeAction.current / nodeAction.requirement;
+            const progressLine = lineSegmentBetweenCircles(node, other, NODE_SIZE/2);
+            const progressPoint = lerpLineSegment(progressLine[0], progressLine[1], progress);
+            otherLine = <line
+              key={node.id + '-' + otherId + '-progress'} x1={progressLine[0].x} y1={progressLine[0].y} x2={progressPoint.x} y2={progressPoint.y}
+              stroke="white" strokeWidth={3}
+            />;
+          }
+          return <>
+            <NodeConnection
+              key={node.id + '-' + otherId} x1={node.x} y1={node.y} x2={other.x} y2={other.y}
+              isComplete={other.isComplete}
+            />
+            {otherLine}
+          </>;
+        })
+      )}
 
-    {Object.values(nodeMap).map(node =>
-      <Node
-        key={node.id} node={node}
-        onClick={() => clickNode(node)}
-      ></Node>
-    )}
-    </g>
-  </NodesContainer>;
+      {Object.values(nodeMap).map(node =>
+        <Node
+          key={node.id} node={node}
+          onClick={() => clickNode(node)}
+        ></Node>
+      )}
+      </g>
+    </NodesContainer>;
+  </NodeMapPanel>;
 }
+
+const NodeMapPanel = styled.div`
+  height: 100%;
+`;
 
 const NodesContainer = styled.svg`
   width: 100%;
@@ -89,4 +106,24 @@ const NodesContainer = styled.svg`
 const NodeConnection = styled.line<{isComplete: boolean}>`
   stroke: ${p => p.isComplete ? 'white': 'grey'};
   stroke-width: 3px;
+`;
+
+const NodeNavigationList = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin: 10px 0 6px;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+`;
+
+const NodeNavItem = styled.div<{clickable: boolean}>`
+  ${p => p.clickable && css`
+    color: #DDD;
+    cursor: pointer;
+    &:hover {
+      color: white;
+    }
+  `}
 `;
