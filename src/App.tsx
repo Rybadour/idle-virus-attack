@@ -13,6 +13,7 @@ import Queue from './components/queue';
 import styled from 'styled-components';
 import Skills from './components/skills';
 import Programs from './components/programs';
+import { ResetPage } from './components/reset-page';
 
 function App() {
   return (
@@ -44,6 +45,7 @@ function loop(timeStamp: number) {
     state.nodes.reset();
     state.stats.reset();
     state.actions.reset();
+    state.scenes.startReset();
   }
 
   requestId = requestAnimationFrame(loop);
@@ -51,20 +53,25 @@ function loop(timeStamp: number) {
 
 
 function Content() {
+  const scenes = useStore(s => s.scenes);
   return <div className="content">
-    <CountdownTimer />
-    <SideBySidePanels>
-      <SidePanel>
-        <Skills />
-        <Programs />
-      </SidePanel>
-      <CenterPanel>
-        <NodeMap />
-      </CenterPanel>
-      <SidePanel>
-        <Queue />
-      </SidePanel>
-    </SideBySidePanels>
+    {scenes.isReseting ? 
+      <ResetPage />
+    : <>
+      <CountdownTimer />
+      <SideBySidePanels>
+        <SidePanel>
+          <Skills />
+          <Programs />
+        </SidePanel>
+        <CenterPanel>
+          <NodeMap />
+        </CenterPanel>
+        <SidePanel>
+          <Queue />
+        </SidePanel>
+      </SideBySidePanels>
+    </>}
   </div>;
 }
 
