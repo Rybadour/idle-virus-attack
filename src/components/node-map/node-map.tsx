@@ -80,7 +80,7 @@ export default function NodeMap() {
 
       {Object.values(nodeMap).map(node =>
         <Node
-          key={node.id} node={node}
+          key={node.id} node={node} isTarget={node.id === nodes.nodeProgress?.node.id}
           onClick={() => clickNode(node)}
         ></Node>
       )}

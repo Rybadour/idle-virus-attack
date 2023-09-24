@@ -1,11 +1,11 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import { Tooltip, TooltipContent, TooltipTrigger } from "./tooltip";
 import { INode } from "../../shared/types";
 
 export const NODE_SIZE = 30;
 
-export function Node(props: {node: INode, onClick: () => void}) {
+export function Node(props: {node: INode, isTarget: boolean, onClick: () => void}) {
   return <>
     <Tooltip>
       <TooltipTrigger asChild>
@@ -14,6 +14,7 @@ export function Node(props: {node: INode, onClick: () => void}) {
             onClick={props.onClick}
             cx={props.node.x} cy={props.node.y} r={NODE_SIZE/2}
             isComplete={props.node.isComplete}
+            isTarget={props.isTarget}
           />
           <NodeIcon x={props.node.x} y={props.node.y} icon={props.node.icon}></NodeIcon>
         </g>
@@ -27,8 +28,14 @@ export function Node(props: {node: INode, onClick: () => void}) {
   </>;
 }
 
-const NodeCircle = styled.circle<{isComplete: boolean}>`
+const NodeCircle = styled.circle<{isComplete: boolean, isTarget: boolean}>`
   fill: ${props => props.isComplete ? '#5B8FB9;' : '#777'};
+
+  ${p => p.isTarget && css`
+    stroke: white;
+    stroke-width: 2px;
+    stroke-dasharray: 7 3;
+  `}
 
   &:hover {
     filter: brightness(0.9);
