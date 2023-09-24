@@ -1,7 +1,7 @@
 import { ActionType, IAction, MyCreateSlice } from "../shared/types";
 import { NodesSlice } from "./nodes";
 import { StatsSlice } from "./stats";
-import consumablesWithIds, { ConsumableId } from "../config/consumables";
+import programsWithIds, { ProgramId } from "../config/programs";
 
 export interface ActionsSlice {
   queuedActions: IAction[],
@@ -18,9 +18,10 @@ const createActionsSlice: MyCreateSlice<ActionsSlice, [() => StatsSlice, () => N
     }
   }
 
-  function applyConsumable(c: ConsumableId, elapsed: number) {
-    const consumable = consumablesWithIds[c];
-    stats().addProtection(consumable.protectionProvided * elapsed/1000);
+  function applyProgram(c: ProgramId, elapsed: number) {
+    const program = programsWithIds[c];
+    const skillPower = stats().skills[program.requiredSkill];
+    stats().addProtection(program.protectionProvided * skillPower * elapsed/1000);
   }
 
   return {
@@ -33,8 +34,8 @@ const createActionsSlice: MyCreateSlice<ActionsSlice, [() => StatsSlice, () => N
       const newAction = {...actions[0]};
       newAction.current += stats().skills[newAction.requiredSkill] * elapsed/1000;
       stats().useSkill(newAction.requirement, newAction.requiredSkill, elapsed);
-      if (newAction.typeId.type === ActionType.Consumable) {
-        applyConsumable(newAction.typeId.id, elapsed);
+      if (newAction.typeId.type === ActionType.Program) {
+        applyProgram(newAction.typeId.id, elapsed);
       }
       
       if (newAction.current >= newAction.requirement) {

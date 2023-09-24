@@ -12,7 +12,7 @@ import CountdownTimer from './components/countdown';
 import Queue from './components/queue';
 import styled from 'styled-components';
 import Skills from './components/skills';
-import Consumables from './components/consumables';
+import Programs from './components/programs';
 
 function App() {
   return (
@@ -54,7 +54,7 @@ function Content() {
     <SideBySidePanels>
       <SidePanel>
         <Skills />
-        <Consumables />
+        <Programs />
       </SidePanel>
       <CenterPanel>
         <NodeMap />

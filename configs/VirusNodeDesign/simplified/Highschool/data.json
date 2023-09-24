@@ -56,7 +56,7 @@
 						}
 					],
 					"requiredSkill": "Firewall",
-					"requirement": 200,
+					"requirement": 100,
 					"name": "Router_4b 192.168.10.23",
 					"icon": "Wifi_router",
 					"type": "Normal",
@@ -75,7 +75,7 @@
 				"customFields": {
 					"connectedNodes": [],
 					"requiredSkill": "Hacking",
-					"requirement": 0,
+					"requirement": 200,
 					"name": "Mr. Garrison's IPhone4",
 					"icon": "Smartphone",
 					"type": "Normal",

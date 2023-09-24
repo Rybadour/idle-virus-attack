@@ -553,7 +553,7 @@
 									"id": "V_String",
 									"params": ["Hacking"]
 								}] },
-								{ "__identifier": "requirement", "__value": 400, "__type": "Int", "__tile": null, "defUid": 9, "realEditorValues": [{ "id": "V_Int", "params": [400] }] },
+								{ "__identifier": "requirement", "__value": 100, "__type": "Int", "__tile": null, "defUid": 9, "realEditorValues": [{ "id": "V_Int", "params": [100] }] },
 								{ "__identifier": "name", "__value": "Riverside High", "__type": "String", "__tile": null, "defUid": 10, "realEditorValues": [{
 									"id": "V_String",
 									"params": ["Riverside High"]
@@ -791,7 +791,7 @@
 									"id": "V_String",
 									"params": ["Firewall"]
 								}] },
-								{ "__identifier": "requirement", "__value": 200, "__type": "Int", "__tile": null, "defUid": 9, "realEditorValues": [{ "id": "V_Int", "params": [200] }] },
+								{ "__identifier": "requirement", "__value": 100, "__type": "Int", "__tile": null, "defUid": 9, "realEditorValues": [{ "id": "V_Int", "params": [100] }] },
 								{ "__identifier": "name", "__value": "Router_4b 192.168.10.23", "__type": "String", "__tile": null, "defUid": 10, "realEditorValues": [{
 									"id": "V_String",
 									"params": ["Router_4b 192.168.10.23"]
@@ -844,7 +844,7 @@
 									"id": "V_String",
 									"params": ["Hacking"]
 								}] },
-								{ "__identifier": "requirement", "__value": 0, "__type": "Int", "__tile": null, "defUid": 9, "realEditorValues": [] },
+								{ "__identifier": "requirement", "__value": 200, "__type": "Int", "__tile": null, "defUid": 9, "realEditorValues": [{ "id": "V_Int", "params": [200] }] },
 								{ "__identifier": "name", "__value": "Mr. Garrison's IPhone4", "__type": "String", "__tile": null, "defUid": 10, "realEditorValues": [{
 									"id": "V_String",
 									"params": ["Mr. Garrison's IPhone4"]

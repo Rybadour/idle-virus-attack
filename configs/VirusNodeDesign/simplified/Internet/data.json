@@ -62,7 +62,7 @@
 						}
 					],
 					"requiredSkill": "Hacking",
-					"requirement": 400,
+					"requirement": 100,
 					"name": "Riverside High",
 					"icon": "Graduate_cap",
 					"type": "Subnet",

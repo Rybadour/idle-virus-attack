@@ -1,5 +1,5 @@
 import { StoreApi } from "zustand";
-import { ConsumableId } from "../config/consumables";
+import { ProgramId as ProgramId } from "../config/programs";
 
 export interface INode {
   id: string;
@@ -40,8 +40,8 @@ export enum SkillType {
   Firewall = 'Firewall',
 }
 
-export interface ConsumableConfig {
-  id: ConsumableId,
+export interface ProgramConfig {
+  id: ProgramId,
   name: string,
   description: string,
   requirement: number,
@@ -50,7 +50,7 @@ export interface ConsumableConfig {
 }
 
 export enum ActionType {
-  Consumable = 'Consumable',
+  Program = 'Program',
   Node = 'Node',
 }
 
@@ -63,8 +63,8 @@ export interface IAction {
     type: ActionType.Node,
     id: NodePathId,
   } | {
-    type: ActionType.Consumable,
-    id: ConsumableId,
+    type: ActionType.Program,
+    id: ProgramId,
   }
 }
 

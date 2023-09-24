@@ -27,7 +27,7 @@ const Title = styled.h2`
 
 const QueueContainer = styled.div`
   width: 100%;
-  min-width: 200px;
+  min-width: 260px;
   max-width: 300px;
   background-color: grey;
   border-radius: 10px;

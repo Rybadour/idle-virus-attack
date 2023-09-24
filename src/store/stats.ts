@@ -15,9 +15,9 @@ const ANTI_VIRUS_STRENGTH_INCREASE = 0.05;
 const createStatsSlice: MyCreateSlice<StatsSlice, []> = (set, get) => {
   return {
     skills: {
-      [SkillType.Hacking]: 100,
+      [SkillType.Hacking]: 10,
       [SkillType.Spoofing]: 10,
-      [SkillType.Firewall]: 100,
+      [SkillType.Firewall]: 10,
     },
     protection: 200,
     maxProtection: 200,
