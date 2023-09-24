@@ -58,22 +58,26 @@ export default function NodeMap() {
       {Object.values(nodeMap).map(node =>
         node.connections.map(otherId => {
           const other = nodeMap[otherId];
-          let otherLine;
-          if (nodes.nodeProgress && nodes.nodeProgress.node.id === otherId) {
+          // Don't render lines from target node
+          if (nodes.nodeProgress && nodes.nodeProgress.node.id === node.id) return;
+
+          let progressLine;
+          // Since connections are bidirectional only draw from complete nodes
+          if (node.isComplete && nodes.nodeProgress && nodes.nodeProgress.node.id === otherId) {
             const progress = nodeAction.current / nodeAction.requirement;
-            const progressLine = lineSegmentBetweenCircles(node, other, NODE_SIZE/2);
-            const progressPoint = lerpLineSegment(progressLine[0], progressLine[1], progress);
-            otherLine = <line
-              key={node.id + '-' + otherId + '-progress'} x1={progressLine[0].x} y1={progressLine[0].y} x2={progressPoint.x} y2={progressPoint.y}
+            const edgeToEdge = lineSegmentBetweenCircles(node, other, NODE_SIZE/2);
+            const progressPoint = lerpLineSegment(edgeToEdge[0], edgeToEdge[1], progress);
+            progressLine = <line
+              key={node.id + '-' + otherId + '-progress'} x1={edgeToEdge[0].x} y1={edgeToEdge[0].y} x2={progressPoint.x} y2={progressPoint.y}
               stroke="white" strokeWidth={3}
             />;
           }
           return <>
             <NodeConnection
               key={node.id + '-' + otherId} x1={node.x} y1={node.y} x2={other.x} y2={other.y}
-              isComplete={other.isComplete}
+              isComplete={node.isComplete && other.isComplete}
             />
-            {otherLine}
+            {progressLine}
           </>;
         })
       )}
