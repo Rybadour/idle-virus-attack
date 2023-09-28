@@ -34,7 +34,8 @@
 					"name": "Home",
 					"icon": "House",
 					"type": "Normal",
-					"subnet": null
+					"subnet": null,
+					"nodeRewardProgram": null
 				}
 			},
 			{
@@ -60,7 +61,8 @@
 					"name": "Riverside High",
 					"icon": "Graduate_cap",
 					"type": "Subnet",
-					"subnet": "Highschool"
+					"subnet": "Highschool",
+					"nodeRewardProgram": null
 				}
 			},
 			{
@@ -86,7 +88,8 @@
 					"name": "BD Bank Subnet",
 					"icon": "Bank",
 					"type": "Normal",
-					"subnet": null
+					"subnet": null,
+					"nodeRewardProgram": null
 				}
 			},
 			{
@@ -112,7 +115,8 @@
 					"name": "CIA Boston Subnet",
 					"icon": "Wifi_router",
 					"type": "Normal",
-					"subnet": null
+					"subnet": null,
+					"nodeRewardProgram": null
 				}
 			},
 			{
@@ -138,7 +142,8 @@
 					"name": "Illuminati Subnet Alpha",
 					"icon": "Bank",
 					"type": "Normal",
-					"subnet": null
+					"subnet": null,
+					"nodeRewardProgram": null
 				}
 			},
 			{
@@ -188,7 +193,8 @@
 					"name": "DNS-BOS-76db2640-a3ef",
 					"icon": "Server_rack",
 					"type": "Normal",
-					"subnet": null
+					"subnet": null,
+					"nodeRewardProgram": null
 				}
 			}
 		],

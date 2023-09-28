@@ -1,5 +1,14 @@
 import { mapValues } from "lodash";
-import { ProgramConfig, SkillType } from "../shared/types";
+import { SkillType } from "../shared/types";
+
+export interface ProgramConfig {
+  id: ProgramId,
+  name: string,
+  description: string,
+  requirement: number,
+  requiredSkill: SkillType,
+  protectionProvided: number,
+}
 
 const programsConfig = {
   decoys: {
@@ -8,7 +17,21 @@ const programsConfig = {
     requirement: 30,
     requiredSkill: SkillType.Spoofing,
     protectionProvided: 1,
-  }
+  },
+  ForceWindowsUpdate: {
+    name: 'Force Windows Update',
+    description: '',
+    requirement: 300,
+    requiredSkill: SkillType.Spoofing,
+    protectionProvided: 2,
+  },
+  StealMoney: {
+    name: 'Steal Money',
+    description: '',
+    requirement: 300,
+    requiredSkill: SkillType.Spoofing,
+    protectionProvided: 2,
+  },
 } satisfies Record<string, Omit<ProgramConfig, "id">>;;
 
 export type ProgramId = keyof typeof programsConfig;

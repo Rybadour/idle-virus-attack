@@ -2,6 +2,7 @@ import _, { cloneDeep } from "lodash";
 import { getNodes } from "../config/node-map";
 import { ActionType, INode, INodeProgress, MyCreateSlice, NodeLevel, NodePathId } from "../shared/types";
 import { ActionsSlice } from "./actions";
+import { ProgramsSlice } from "./programs";
 
 export interface NodesSlice {
   nodes: Record<NodeLevel, Record<string, INode>>,
@@ -36,8 +37,8 @@ function markConnectionsAsQueueable(nodes: Record<string, INode>, nodeId: string
   });
 }
 
-const createNodesSlice: MyCreateSlice<NodesSlice, [() => ActionsSlice]>
-= (set, get, actions) => {
+const createNodesSlice: MyCreateSlice<NodesSlice, [() => ActionsSlice, () => ProgramsSlice]>
+= (set, get, actions, programs) => {
 
   return {
     nodes: {
@@ -64,10 +65,14 @@ const createNodesSlice: MyCreateSlice<NodesSlice, [() => ActionsSlice]>
 
     completeNode: ([level, nodeId]) => {
       const newNodes = cloneDeep(get().nodes);
-      newNodes[level][nodeId].isComplete = true;
-      newNodes[level][nodeId].isQueueable = false;
-
+      const node = newNodes[level][nodeId];
+      node.isComplete = true;
+      node.isQueueable = false;
       set({ nodes: newNodes, nodeProgress: undefined });
+
+      if (node.nodeRewardProgram) {
+        programs().rewardProgram(node.nodeRewardProgram);
+      }
     },
 
     startNodeAction: ([level, nodeId]) => {

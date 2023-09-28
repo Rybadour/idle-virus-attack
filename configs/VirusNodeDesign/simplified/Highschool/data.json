@@ -40,7 +40,8 @@
 					"name": "Modem T-100",
 					"icon": "Server_rack",
 					"type": "Normal",
-					"subnet": null
+					"subnet": null,
+					"nodeRewardProgram": null
 				}
 			},
 			{
@@ -102,7 +103,8 @@
 					"name": "Router_4b 192.168.10.23",
 					"icon": "Wifi_router",
 					"type": "Normal",
-					"subnet": null
+					"subnet": null,
+					"nodeRewardProgram": null
 				}
 			},
 			{
@@ -134,7 +136,8 @@
 					"name": "Mr. Garrison's IPhone4",
 					"icon": "Smartphone",
 					"type": "Normal",
-					"subnet": null
+					"subnet": null,
+					"nodeRewardProgram": null
 				}
 			},
 			{
@@ -166,7 +169,8 @@
 					"name": "Router_7c 192.168.10.72",
 					"icon": "Wifi_router",
 					"type": "Normal",
-					"subnet": null
+					"subnet": null,
+					"nodeRewardProgram": null
 				}
 			},
 			{
@@ -192,7 +196,8 @@
 					"name": "desk_room_108",
 					"icon": "Pc",
 					"type": "Normal",
-					"subnet": null
+					"subnet": null,
+					"nodeRewardProgram": "ForceWindowsUpdate"
 				}
 			},
 			{
@@ -230,7 +235,8 @@
 					"name": "sallys_samsing_5g",
 					"icon": "Smartphone",
 					"type": "Normal",
-					"subnet": null
+					"subnet": null,
+					"nodeRewardProgram": null
 				}
 			},
 			{
@@ -256,7 +262,8 @@
 					"name": "Sally's Amazing.com Account",
 					"icon": "Shop",
 					"type": "Normal",
-					"subnet": null
+					"subnet": null,
+					"nodeRewardProgram": "StealMoney"
 				}
 			},
 			{
@@ -282,7 +289,8 @@
 					"name": "SexyBabe69's Twotter Account",
 					"icon": "Shop",
 					"type": "Normal",
-					"subnet": null
+					"subnet": null,
+					"nodeRewardProgram": null
 				}
 			},
 			{
@@ -308,7 +316,8 @@
 					"name": "Johnny's Windows Phone",
 					"icon": "Smartphone",
 					"type": "Normal",
-					"subnet": null
+					"subnet": null,
+					"nodeRewardProgram": null
 				}
 			},
 			{
@@ -334,7 +343,8 @@
 					"name": "Cody's PSP",
 					"icon": "Smartphone",
 					"type": "Normal",
-					"subnet": null
+					"subnet": null,
+					"nodeRewardProgram": null
 				}
 			}
 		],

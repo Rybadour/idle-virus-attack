@@ -1,28 +1,29 @@
 import styled from "styled-components";
 import useStore from "../store";
-import programsConfig from "../config/programs";
 import { useCallback } from "react";
-import { ActionType, ProgramConfig } from "../shared/types";
+import { ActionType } from "../shared/types";
+import { ProgramConfig } from "../config/programs";
 
 export default function Programs() {
+  const programs = useStore(s => s.programs);
   const actions = useStore(s => s.actions);
 
-  const queueProgram = useCallback((con: ProgramConfig) => {
+  const queueProgram = useCallback((prog: ProgramConfig) => {
     actions.queueAction({
-      typeId: {type: ActionType.Program, id: con.id},
+      typeId: {type: ActionType.Program, id: prog.id},
       current: 0,
-      ...con,
-      name: 'Program - ' + con.name,
+      ...prog,
+      name: 'Program - ' + prog.name,
     });
   }, [actions]);
 
   return <ProgramsContainer>
     <h2>Programs</h2>
     <ProgramList>
-      {Object.values(programsConfig).map((con) => 
-        <Program key={con.id} onClick={() => queueProgram(con)}>
-          <span>{con.name}</span>
-          <span>{con.description}</span>
+      {Object.values(programs.programs).filter(p => p.isEnabled).map((prog) => 
+        <Program key={prog.id} onClick={() => queueProgram(prog)}>
+          <span>{prog.name}</span>
+          <span>{prog.description}</span>
         </Program>
       )}
     </ProgramList>

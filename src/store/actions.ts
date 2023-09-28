@@ -2,6 +2,7 @@ import { ActionType, IAction, MyCreateSlice } from "../shared/types";
 import { NodesSlice } from "./nodes";
 import { StatsSlice } from "./stats";
 import programsWithIds, { ProgramId } from "../config/programs";
+import { globals } from "../globals";
 
 export interface ActionsSlice {
   queuedActions: IAction[],
@@ -31,6 +32,8 @@ const createActionsSlice: MyCreateSlice<ActionsSlice, [() => StatsSlice, () => N
     update: (elapsed) => {
       const actions = [...get().queuedActions];
       if (actions.length <= 0) return;
+
+      elapsed *= globals.gameSpeed;
 
       const newAction = {...actions[0]};
       newAction.current += stats().getSkill(newAction.requiredSkill) * elapsed/1000;

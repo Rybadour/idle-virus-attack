@@ -2,19 +2,20 @@ import { StoreApi } from "zustand";
 import { ProgramId as ProgramId } from "../config/programs";
 
 export interface INode {
-  id: string;
-  x: number;
-  y: number;
-  name: string;
-  type: NodeType;
-  requirement: number;
+  id: string,
+  x: number,
+  y: number,
+  name: string,
+  type: NodeType,
+  requirement: number,
   requiredSkill: SkillType,
-  icon: string;
+  icon: string,
   connections: string[],
-  isStart: boolean;
-  isQueueable: boolean;
-  isComplete: boolean;
-  subnet?: NodeLevel;
+  isStart: boolean,
+  isQueueable: boolean,
+  isComplete: boolean,
+  subnet?: NodeLevel,
+  nodeRewardProgram?: ProgramId,
 }
 
 export type NodePathId = [NodeLevel, string];
@@ -38,15 +39,6 @@ export enum SkillType {
   Hacking = 'Hacking',
   Spoofing = 'Spoofing',
   Firewall = 'Firewall',
-}
-
-export interface ProgramConfig {
-  id: ProgramId,
-  name: string,
-  description: string,
-  requirement: number,
-  requiredSkill: SkillType,
-  protectionProvided: number,
 }
 
 export enum ActionType {

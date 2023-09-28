@@ -3,6 +3,7 @@ import internetNodeMap from '../../configs/VirusNodeDesign/simplified/Internet/d
 import highschoolNodeMap from '../../configs/VirusNodeDesign/simplified/HighSchool/data.json';
 import { INode, NodeLevel, NodeType, SkillType } from '../shared/types';
 import { enumFromKey } from '../shared/utils';
+import programsWithIds, { ProgramId } from './programs';
 
 interface INodeMapDesign {
   entities: {
@@ -17,6 +18,7 @@ interface INodeMapDesign {
         icon: string,
         type: string,
         subnet: string | null,
+        nodeRewardProgram: string | null,
         connectedNodes: {
           entityIid: string,
         }[]
@@ -58,10 +60,21 @@ export function getNodes(level: NodeLevel) {
       isQueueable: false,
       isComplete: node.iid == startId,
       subnet: enumFromKey(NodeLevel, node.customFields.subnet ?? ''),
+      nodeRewardProgram: mapStringToProgramId(node.customFields.nodeRewardProgram),
     };
   })
 
   return nodes;
+}
+
+function mapStringToProgramId(strId: string | null) {
+  if (!strId) return;
+
+  if (Object.keys(programsWithIds).includes(strId)) {
+    return strId as ProgramId;
+  } else {
+    throw `nodeRewardProgram "${strId}" is not a known program.`;
+  }
 }
 
 export function getStart(nodeMap: INodeMapDesign): string | undefined {
