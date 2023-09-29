@@ -1066,7 +1066,10 @@
 								}] },
 								{ "__identifier": "type", "__type": "LocalEnum.NodeType", "__value": "Normal", "__tile": null, "defUid": 14, "realEditorValues": [] },
 								{ "__identifier": "subnet", "__type": "LocalEnum.LevelNode", "__value": null, "__tile": null, "defUid": 16, "realEditorValues": [] },
-								{ "__identifier": "nodeRewardProgram", "__type": "LocalEnum.NodeRewardProgram", "__value": null, "__tile": null, "defUid": 19, "realEditorValues": [null] }
+								{ "__identifier": "nodeRewardProgram", "__type": "LocalEnum.NodeRewardProgram", "__value": "ForceWindowsUpdate", "__tile": null, "defUid": 19, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["ForceWindowsUpdate"]
+								}] }
 							]
 						},
 						{

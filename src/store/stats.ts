@@ -1,5 +1,6 @@
 import { cloneDeep } from "lodash";
 import { MyCreateSlice, SkillType } from "../shared/types";
+import { globals } from "../globals";
 
 export interface StatsSlice {
   skills: Record<SkillType, number>;
@@ -12,6 +13,7 @@ export interface StatsSlice {
 
   useSkill: (requirement: number, skill: SkillType, elapsed: number) => void,
   addProtection: (protection: number) => void,
+  multiplyMaxProtection: (multi: number) => void,
   reset: () => void,
 }
 
@@ -23,8 +25,7 @@ const startingSkills: Record<SkillType, number> = {
 
 const IMPROVEMENT_SKILL_RATIO = 0.01;
 const PERMANENT_IMPROVEMENT_RATIO = 0.2;
-const ANTI_VIRUS_STRENGTH_INCREASE = 0.05;
-const ANTI_VIRUS_START = 2;
+const ANTI_VIRUS_STRENGTH_INCREASE = 0.02;
 const createStatsSlice: MyCreateSlice<StatsSlice, []> = (set, get) => {
   return {
     skills: cloneDeep(startingSkills),
@@ -33,9 +34,9 @@ const createStatsSlice: MyCreateSlice<StatsSlice, []> = (set, get) => {
       [SkillType.Spoofing]: 0,
       [SkillType.Firewall]: 0,
     },
-    protection: 200,
-    maxProtection: 200,
-    antiVirusStrength: ANTI_VIRUS_START,
+    protection: globals.startingMaxProtection,
+    maxProtection: globals.startingMaxProtection,
+    antiVirusStrength: globals.startingAntiVirus,
 
     getSkill: (skill: SkillType) => {
       const {skills, permanentSkills} = get();
@@ -64,11 +65,17 @@ const createStatsSlice: MyCreateSlice<StatsSlice, []> = (set, get) => {
       set({ protection: Math.min(get().protection + protection, get().maxProtection) });
     },
 
+    multiplyMaxProtection: (multi: number) => {
+      const newMaxProt = get().maxProtection * multi;
+      const maxDiff = newMaxProt - get().maxProtection;
+      set({ maxProtection: newMaxProt, protection: get().protection + maxDiff });
+    },
+
     reset: () => {
       set({ 
         skills: cloneDeep(startingSkills),
         protection: get().maxProtection,
-        antiVirusStrength: ANTI_VIRUS_START,
+        antiVirusStrength: globals.startingAntiVirus,
       });
     }
   }

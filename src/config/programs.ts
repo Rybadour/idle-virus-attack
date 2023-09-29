@@ -7,7 +7,8 @@ export interface ProgramConfig {
   description: string,
   requirement: number,
   requiredSkill: SkillType,
-  protectionProvided: number,
+  protectionProvided?: number,
+  maxProtectionMultiplier?: number,
 }
 
 const programsConfig = {
@@ -23,7 +24,7 @@ const programsConfig = {
     description: '',
     requirement: 300,
     requiredSkill: SkillType.Spoofing,
-    protectionProvided: 2,
+    maxProtectionMultiplier: 1.5,
   },
   StealMoney: {
     name: 'Steal Money',

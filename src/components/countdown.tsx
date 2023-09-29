@@ -1,19 +1,22 @@
 import { pick } from "lodash";
 import styled from "styled-components";
 import useStore from "../store";
-import { autoFormatNumber } from "../shared/utils";
+import { autoFormatNumber, formatNumber } from "../shared/utils";
 
 export default function CountdownTimer() {
-  const stats = useStore(s => pick(s.stats, ['protection', 'maxProtection', 'antiVirusStrength']))
+  const stats = useStore(s => s.stats);
 
   const progress = stats.protection / stats.maxProtection * 100;
   const avStrenthText = "Anti-Virus Strength is " + autoFormatNumber(stats.antiVirusStrength);
-  return <CountDownContainer>
-    <StrengthText color="black">{avStrenthText}</StrengthText>
-    <CountDownProgress style={{width: progress + '%'}}>
-      <StrengthText color="white">{avStrenthText}</StrengthText>
-    </CountDownProgress>
-  </CountDownContainer>
+  return <div>
+    <CountDownContainer>
+      <StrengthText color="black">{avStrenthText}</StrengthText>
+      <CountDownProgress style={{width: progress + '%'}}>
+        <StrengthText color="white">{avStrenthText}</StrengthText>
+      </CountDownProgress>
+    </CountDownContainer>
+    <ProtectionText>{formatNumber(stats.protection, 0, 0)} / {formatNumber(stats.maxProtection, 0, 0)}</ProtectionText>
+  </div>
 }
 
 const CountDownContainer = styled.div`
@@ -46,6 +49,8 @@ const StrengthText = styled.div<{color: string}>`
   align-items: center;
 `;
 
-const Time = styled.strong`
+const ProtectionText = styled.div`
+  color: white;
   font-size: 20px;
+  text-align: center;
 `;

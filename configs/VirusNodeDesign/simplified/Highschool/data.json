@@ -104,7 +104,7 @@
 					"icon": "Wifi_router",
 					"type": "Normal",
 					"subnet": null,
-					"nodeRewardProgram": null
+					"nodeRewardProgram": "ForceWindowsUpdate"
 				}
 			},
 			{

@@ -23,7 +23,16 @@ const createActionsSlice: MyCreateSlice<ActionsSlice, [() => StatsSlice, () => N
   function applyProgram(c: ProgramId, elapsed: number) {
     const program = programsWithIds[c];
     const skillPower = stats().getSkill(program.requiredSkill);
-    stats().addProtection(program.protectionProvided * skillPower * elapsed/1000);
+    if (program.protectionProvided) {
+      stats().addProtection(program.protectionProvided * skillPower * elapsed/1000);
+    }
+  }
+
+  function applyProgramOnComplete(c: ProgramId) {
+    const program = programsWithIds[c];
+    if (program.maxProtectionMultiplier) {
+      stats().multiplyMaxProtection(program.maxProtectionMultiplier);
+    }
   }
 
   return {
@@ -45,7 +54,10 @@ const createActionsSlice: MyCreateSlice<ActionsSlice, [() => StatsSlice, () => N
       if (newAction.current >= newAction.requirement) {
         if (newAction.typeId.type === ActionType.Node) {
           nodes().completeNode(newAction.typeId.id);
+        } else if (newAction.typeId.type === ActionType.Program) {
+          applyProgramOnComplete(newAction.typeId.id);
         }
+
         actions.splice(0, 1);
         if (actions.length > 0) {
           startAction(actions[0]);
