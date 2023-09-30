@@ -7,7 +7,10 @@ export interface StatsSlice {
   permanentSkills: Record<SkillType, number>;
   protection: number;
   maxProtection: number;
+  maxProtectionMulti: number;
   antiVirusStrength: number;
+  nextProtectionOnReset: number;
+  lastAddedMaxProtection: number;
 
   getSkill: (skill: SkillType) => number,
 
@@ -33,7 +36,10 @@ const createStatsSlice: MyCreateSlice<StatsSlice, []> = (set, get) => {
     },
     protection: globals.STARTING_MAX_PROTECTION,
     maxProtection: globals.STARTING_MAX_PROTECTION,
+    maxProtectionMulti: 1,
     antiVirusStrength: globals.STARTING_ANTI_VIRUS,
+    nextProtectionOnReset: 0,
+    lastAddedMaxProtection: 0,
 
     getSkill: (skill: SkillType) => {
       const {skills, permanentSkills} = get();
@@ -55,6 +61,7 @@ const createStatsSlice: MyCreateSlice<StatsSlice, []> = (set, get) => {
         permanentSkills: newPermanentSkills,
         protection: get().protection - avStr * perSec,
         antiVirusStrength: avStr,
+        nextProtectionOnReset: get().nextProtectionOnReset + perSec,
       });
     },
 
@@ -65,14 +72,25 @@ const createStatsSlice: MyCreateSlice<StatsSlice, []> = (set, get) => {
     multiplyMaxProtection: (multi: number) => {
       const newMaxProt = get().maxProtection * multi;
       const maxDiff = newMaxProt - get().maxProtection;
-      set({ maxProtection: newMaxProt, protection: get().protection + maxDiff });
+      set({
+        maxProtection: newMaxProt,
+        maxProtectionMulti: get().maxProtectionMulti * multi,
+        protection: get().protection + maxDiff,
+      });
     },
 
     reset: () => {
+      const flatMax = get().maxProtection / get().maxProtectionMulti;
+      const addedMax = (Math.log2(get().nextProtectionOnReset) / 100) * flatMax;
+      const newMax = flatMax + addedMax;
       set({ 
         skills: cloneDeep(startingSkills),
-        protection: get().maxProtection,
+        protection: newMax,
+        maxProtection: newMax,
+        maxProtectionMulti: 1,
         antiVirusStrength: globals.STARTING_ANTI_VIRUS,
+        nextProtectionOnReset: 0,
+        lastAddedMaxProtection: addedMax,
       });
     }
   }
