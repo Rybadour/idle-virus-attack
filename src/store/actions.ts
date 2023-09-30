@@ -42,7 +42,7 @@ const createActionsSlice: MyCreateSlice<ActionsSlice, [() => StatsSlice, () => N
       const actions = [...get().queuedActions];
       if (actions.length <= 0) return;
 
-      elapsed *= globals.gameSpeed;
+      elapsed *= globals.GAME_SPEED;
 
       const newAction = {...actions[0]};
       newAction.current += stats().getSkill(newAction.requiredSkill) * elapsed/1000;

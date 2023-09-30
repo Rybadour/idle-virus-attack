@@ -23,9 +23,6 @@ const startingSkills: Record<SkillType, number> = {
   [SkillType.Firewall]: 10,
 }
 
-const IMPROVEMENT_SKILL_RATIO = 0.01;
-const PERMANENT_IMPROVEMENT_RATIO = 0.2;
-const ANTI_VIRUS_STRENGTH_INCREASE = 0.02;
 const createStatsSlice: MyCreateSlice<StatsSlice, []> = (set, get) => {
   return {
     skills: cloneDeep(startingSkills),
@@ -34,9 +31,9 @@ const createStatsSlice: MyCreateSlice<StatsSlice, []> = (set, get) => {
       [SkillType.Spoofing]: 0,
       [SkillType.Firewall]: 0,
     },
-    protection: globals.startingMaxProtection,
-    maxProtection: globals.startingMaxProtection,
-    antiVirusStrength: globals.startingAntiVirus,
+    protection: globals.STARTING_MAX_PROTECTION,
+    maxProtection: globals.STARTING_MAX_PROTECTION,
+    antiVirusStrength: globals.STARTING_ANTI_VIRUS,
 
     getSkill: (skill: SkillType) => {
       const {skills, permanentSkills} = get();
@@ -46,13 +43,13 @@ const createStatsSlice: MyCreateSlice<StatsSlice, []> = (set, get) => {
     useSkill: (requirement: number, skill: SkillType, elapsed: number) => {
       const perSec = elapsed/1000;
       const newSkills = {...get().skills};
-      const improvement = newSkills[skill] * IMPROVEMENT_SKILL_RATIO * perSec;
+      const improvement = newSkills[skill] * globals.IMPROVEMENT_SKILL_RATIO * perSec;
       newSkills[skill] += improvement;
 
       const newPermanentSkills = {...get().permanentSkills};
-      newPermanentSkills[skill] += improvement * PERMANENT_IMPROVEMENT_RATIO;
+      newPermanentSkills[skill] += improvement * globals.PERMANENT_IMPROVEMENT_RATIO;
 
-      const avStr = get().antiVirusStrength * (1 + ANTI_VIRUS_STRENGTH_INCREASE * perSec);
+      const avStr = get().antiVirusStrength * (1 + globals.ANTI_VIRUS_STRENGTH_INCREASE * perSec);
       set({
         skills: newSkills,
         permanentSkills: newPermanentSkills,
@@ -75,7 +72,7 @@ const createStatsSlice: MyCreateSlice<StatsSlice, []> = (set, get) => {
       set({ 
         skills: cloneDeep(startingSkills),
         protection: get().maxProtection,
-        antiVirusStrength: globals.startingAntiVirus,
+        antiVirusStrength: globals.STARTING_ANTI_VIRUS,
       });
     }
   }

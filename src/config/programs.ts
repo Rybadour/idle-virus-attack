@@ -14,7 +14,7 @@ export interface ProgramConfig {
 const programsConfig = {
   decoys: {
     name: 'Decoy Executables',
-    description: '',
+    description: 'Create decoy programs to fool the anti-virus programs in this subnet.',
     requirement: 30,
     requiredSkill: SkillType.Spoofing,
     protectionProvided: 1,
