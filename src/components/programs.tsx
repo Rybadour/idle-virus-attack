@@ -41,6 +41,9 @@ function getBehaviourDescription(program: ProgramConfig, stats: StatsSlice) {
   } else if (program.maxProtectionMultiplier) {
     const multiPercent = (program.maxProtectionMultiplier - 1) * 100;
     return `Increases max protection by ${autoFormatNumber(multiPercent)}% after ${autoFormatNumber(duration)}s.`;
+  } else if (program.antiVirusReduction) {
+    const multiPercent = (1/program.antiVirusReduction) * 100;
+    return `Reduce anti-virus strength by ${autoFormatNumber(multiPercent)}% after ${autoFormatNumber(duration)}s.`;
   }
 
   return '';

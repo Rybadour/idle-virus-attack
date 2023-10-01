@@ -483,7 +483,7 @@
 		], "iconTilesetUid": null, "externalRelPath": null, "externalFileChecksum": null, "tags": [] },
 		{ "identifier": "NodeType", "uid": 13, "values": [ { "id": "Normal", "tileRect": null, "color": 14120515 }, { "id": "Subnet", "tileRect": null, "color": 12470831 } ], "iconTilesetUid": null, "externalRelPath": null, "externalFileChecksum": null, "tags": [] },
 		{ "identifier": "LevelNode", "uid": 15, "values": [ { "id": "Internet", "tileRect": null, "color": 12470831 }, { "id": "Highschool", "tileRect": null, "color": 14120515 } ], "iconTilesetUid": null, "externalRelPath": null, "externalFileChecksum": null, "tags": [] },
-		{ "identifier": "NodeRewardProgram", "uid": 18, "values": [ { "id": "ForceWindowsUpdate", "tileRect": null, "color": 12470831 }, { "id": "StealMoney", "tileRect": null, "color": 14120515 } ], "iconTilesetUid": null, "externalRelPath": null, "externalFileChecksum": null, "tags": [] }
+		{ "identifier": "NodeRewardProgram", "uid": 18, "values": [ { "id": "ForceWindowsUpdate", "tileRect": null, "color": 12470831 }, { "id": "AntiVirusDef", "tileRect": null, "color": 14120515 } ], "iconTilesetUid": null, "externalRelPath": null, "externalFileChecksum": null, "tags": [] }
 	], "externalEnums": [], "levelFields": [] },
 	"levels": [
 		{
@@ -1193,7 +1193,10 @@
 								}] },
 								{ "__identifier": "type", "__type": "LocalEnum.NodeType", "__value": "Normal", "__tile": null, "defUid": 14, "realEditorValues": [] },
 								{ "__identifier": "subnet", "__type": "LocalEnum.LevelNode", "__value": null, "__tile": null, "defUid": 16, "realEditorValues": [] },
-								{ "__identifier": "nodeRewardProgram", "__type": "LocalEnum.NodeRewardProgram", "__value": null, "__tile": null, "defUid": 19, "realEditorValues": [] }
+								{ "__identifier": "nodeRewardProgram", "__type": "LocalEnum.NodeRewardProgram", "__value": "AntiVirusDef", "__tile": null, "defUid": 19, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["AntiVirusDef"]
+								}] }
 							]
 						},
 						{
@@ -1342,9 +1345,9 @@
 								}] },
 								{ "__identifier": "type", "__type": "LocalEnum.NodeType", "__value": "Normal", "__tile": null, "defUid": 14, "realEditorValues": [] },
 								{ "__identifier": "subnet", "__type": "LocalEnum.LevelNode", "__value": null, "__tile": null, "defUid": 16, "realEditorValues": [] },
-								{ "__identifier": "nodeRewardProgram", "__type": "LocalEnum.NodeRewardProgram", "__value": "StealMoney", "__tile": null, "defUid": 19, "realEditorValues": [{
+								{ "__identifier": "nodeRewardProgram", "__type": "LocalEnum.NodeRewardProgram", "__value": "AntiVirusDef", "__tile": null, "defUid": 19, "realEditorValues": [{
 									"id": "V_String",
-									"params": ["StealMoney"]
+									"params": ["AntiVirusDef"]
 								}] }
 							]
 						},

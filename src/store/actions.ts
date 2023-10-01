@@ -32,6 +32,8 @@ const createActionsSlice: MyCreateSlice<ActionsSlice, [() => StatsSlice, () => N
     const program = programsWithIds[c];
     if (program.maxProtectionMultiplier) {
       stats().multiplyMaxProtection(program.maxProtectionMultiplier);
+    } else if (program.antiVirusReduction) {
+      stats().multiplyAntiVirus(1 / program.antiVirusReduction);
     }
   }
 

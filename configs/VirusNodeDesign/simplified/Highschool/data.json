@@ -170,7 +170,7 @@
 					"icon": "Wifi_router",
 					"type": "Normal",
 					"subnet": null,
-					"nodeRewardProgram": null
+					"nodeRewardProgram": "AntiVirusDef"
 				}
 			},
 			{
@@ -263,7 +263,7 @@
 					"icon": "Shop",
 					"type": "Normal",
 					"subnet": null,
-					"nodeRewardProgram": "StealMoney"
+					"nodeRewardProgram": "AntiVirusDef"
 				}
 			},
 			{

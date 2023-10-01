@@ -9,6 +9,7 @@ export interface ProgramConfig {
   requiredSkill: SkillType,
   protectionProvided?: number,
   maxProtectionMultiplier?: number,
+  antiVirusReduction?: number,
 }
 
 const programsConfig = {
@@ -26,12 +27,12 @@ const programsConfig = {
     requiredSkill: SkillType.Spoofing,
     maxProtectionMultiplier: 1.5,
   },
-  StealMoney: {
-    name: 'Steal Money',
+  AntiVirusDef: {
+    name: 'Change Anti-virus Definition File',
     description: '',
-    requirement: 300,
+    requirement: 500,
     requiredSkill: SkillType.Spoofing,
-    protectionProvided: 2,
+    antiVirusReduction: 2,
   },
 } satisfies Record<string, Omit<ProgramConfig, "id">>;;
 

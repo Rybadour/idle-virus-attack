@@ -17,6 +17,7 @@ export interface StatsSlice {
   useSkill: (requirement: number, skill: SkillType, elapsed: number) => void,
   addProtection: (protection: number) => void,
   multiplyMaxProtection: (multi: number) => void,
+  multiplyAntiVirus: (multi: number) => void,
   reset: () => void,
 }
 
@@ -76,6 +77,12 @@ const createStatsSlice: MyCreateSlice<StatsSlice, []> = (set, get) => {
         maxProtection: newMaxProt,
         maxProtectionMulti: get().maxProtectionMulti * multi,
         protection: get().protection + maxDiff,
+      });
+    },
+
+    multiplyAntiVirus: (multi: number) => {
+      set({
+        antiVirusStrength: get().antiVirusStrength * multi,
       });
     },
 
