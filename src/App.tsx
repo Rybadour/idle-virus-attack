@@ -45,6 +45,7 @@ function loop(timeStamp: number) {
     state.nodes.reset();
     state.stats.reset();
     state.actions.reset();
+    state.programs.reset();
     state.scenes.startReset();
   }
 

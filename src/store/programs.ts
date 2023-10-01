@@ -11,6 +11,7 @@ export interface ProgramsSlice {
   programs: Record<ProgramId, RealizedProgram>,
 
   rewardProgram: (pid: ProgramId) => void, 
+  reset: () => void,
 }
 
 const createProgramsSlice: MyCreateSlice<ProgramsSlice, []>
@@ -29,6 +30,15 @@ const createProgramsSlice: MyCreateSlice<ProgramsSlice, []>
         }
         return {...p};
       }) });
+    },
+
+    reset: () => {
+      set({
+        programs: mapValues(get().programs, (p) => ({
+          ...p,
+          isEnabled: globals.startingPrograms.includes(p.id),
+        }))
+      })
     }
   };
 };
