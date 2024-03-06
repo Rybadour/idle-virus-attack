@@ -11,7 +11,7 @@
 	"iid": "7ecf1aa0-3b70-11ee-9856-1f1fad47cf9e",
 	"jsonVersion": "1.4.0",
 	"appBuildId": 470941,
-	"nextUid": 20,
+	"nextUid": 21,
 	"identifierStyle": "Capitalize",
 	"toc": [],
 	"worldLayout": "Free",
@@ -388,6 +388,41 @@
 					"allowedRefsEntityUid": null,
 					"allowedRefTags": [],
 					"tilesetUid": null
+				},
+				{
+					"identifier": "IdName",
+					"doc": null,
+					"__type": "String",
+					"uid": 20,
+					"type": "F_String",
+					"isArray": false,
+					"canBeNull": true,
+					"arrayMinLength": null,
+					"arrayMaxLength": null,
+					"editorDisplayMode": "Hidden",
+					"editorDisplayScale": 1,
+					"editorDisplayPos": "Above",
+					"editorLinkStyle": "StraightArrow",
+					"editorDisplayColor": null,
+					"editorAlwaysShow": false,
+					"editorShowInWorld": true,
+					"editorCutLongValues": true,
+					"editorTextSuffix": null,
+					"editorTextPrefix": null,
+					"useForSmartColor": false,
+					"min": null,
+					"max": null,
+					"regex": null,
+					"acceptFileTypes": null,
+					"defaultOverride": null,
+					"textLanguageMode": null,
+					"symmetricalRef": false,
+					"autoChainRef": true,
+					"allowOutOfLevelRef": true,
+					"allowedRefs": "OnlySame",
+					"allowedRefsEntityUid": null,
+					"allowedRefTags": [],
+					"tilesetUid": null
 				}
 			]
 		},
@@ -483,7 +518,11 @@
 		], "iconTilesetUid": null, "externalRelPath": null, "externalFileChecksum": null, "tags": [] },
 		{ "identifier": "NodeType", "uid": 13, "values": [ { "id": "Normal", "tileRect": null, "color": 14120515 }, { "id": "Subnet", "tileRect": null, "color": 12470831 } ], "iconTilesetUid": null, "externalRelPath": null, "externalFileChecksum": null, "tags": [] },
 		{ "identifier": "LevelNode", "uid": 15, "values": [ { "id": "Internet", "tileRect": null, "color": 12470831 }, { "id": "Highschool", "tileRect": null, "color": 14120515 } ], "iconTilesetUid": null, "externalRelPath": null, "externalFileChecksum": null, "tags": [] },
-		{ "identifier": "NodeRewardProgram", "uid": 18, "values": [ { "id": "ForceWindowsUpdate", "tileRect": null, "color": 12470831 }, { "id": "AntiVirusDef", "tileRect": null, "color": 14120515 } ], "iconTilesetUid": null, "externalRelPath": null, "externalFileChecksum": null, "tags": [] }
+		{ "identifier": "NodeRewardProgram", "uid": 18, "values": [
+			{ "id": "ForceWindowsUpdate", "tileRect": null, "color": 12470831 },
+			{ "id": "AntiVirusDef", "tileRect": null, "color": 14120515 },
+			{ "id": "DiscoverTeachersPassword", "tileRect": null, "color": 15389866 }
+		], "iconTilesetUid": null, "externalRelPath": null, "externalFileChecksum": null, "tags": [] }
 	], "externalEnums": [], "levelFields": [] },
 	"levels": [
 		{
@@ -573,7 +612,8 @@
 									"params": ["Normal"]
 								}] },
 								{ "__identifier": "subnet", "__type": "LocalEnum.LevelNode", "__value": null, "__tile": null, "defUid": 16, "realEditorValues": [null] },
-								{ "__identifier": "nodeRewardProgram", "__type": "LocalEnum.NodeRewardProgram", "__value": null, "__tile": null, "defUid": 19, "realEditorValues": [] }
+								{ "__identifier": "nodeRewardProgram", "__type": "LocalEnum.NodeRewardProgram", "__value": null, "__tile": null, "defUid": 19, "realEditorValues": [] },
+								{ "__identifier": "IdName", "__type": "String", "__value": null, "__tile": null, "defUid": 20, "realEditorValues": [] }
 							]
 						},
 						{
@@ -645,7 +685,8 @@
 									"id": "V_String",
 									"params": ["Highschool"]
 								}] },
-								{ "__identifier": "nodeRewardProgram", "__type": "LocalEnum.NodeRewardProgram", "__value": null, "__tile": null, "defUid": 19, "realEditorValues": [] }
+								{ "__identifier": "nodeRewardProgram", "__type": "LocalEnum.NodeRewardProgram", "__value": null, "__tile": null, "defUid": 19, "realEditorValues": [] },
+								{ "__identifier": "IdName", "__type": "String", "__value": null, "__tile": null, "defUid": 20, "realEditorValues": [] }
 							]
 						},
 						{
@@ -687,7 +728,8 @@
 								}] },
 								{ "__identifier": "type", "__type": "LocalEnum.NodeType", "__value": "Normal", "__tile": null, "defUid": 14, "realEditorValues": [] },
 								{ "__identifier": "subnet", "__type": "LocalEnum.LevelNode", "__value": null, "__tile": null, "defUid": 16, "realEditorValues": [] },
-								{ "__identifier": "nodeRewardProgram", "__type": "LocalEnum.NodeRewardProgram", "__value": null, "__tile": null, "defUid": 19, "realEditorValues": [] }
+								{ "__identifier": "nodeRewardProgram", "__type": "LocalEnum.NodeRewardProgram", "__value": null, "__tile": null, "defUid": 19, "realEditorValues": [] },
+								{ "__identifier": "IdName", "__type": "String", "__value": null, "__tile": null, "defUid": 20, "realEditorValues": [] }
 							]
 						},
 						{
@@ -732,7 +774,8 @@
 									"params": ["Normal"]
 								}] },
 								{ "__identifier": "subnet", "__type": "LocalEnum.LevelNode", "__value": null, "__tile": null, "defUid": 16, "realEditorValues": [] },
-								{ "__identifier": "nodeRewardProgram", "__type": "LocalEnum.NodeRewardProgram", "__value": null, "__tile": null, "defUid": 19, "realEditorValues": [] }
+								{ "__identifier": "nodeRewardProgram", "__type": "LocalEnum.NodeRewardProgram", "__value": null, "__tile": null, "defUid": 19, "realEditorValues": [] },
+								{ "__identifier": "IdName", "__type": "String", "__value": null, "__tile": null, "defUid": 20, "realEditorValues": [] }
 							]
 						},
 						{
@@ -774,7 +817,8 @@
 								}] },
 								{ "__identifier": "type", "__type": "LocalEnum.NodeType", "__value": "Normal", "__tile": null, "defUid": 14, "realEditorValues": [] },
 								{ "__identifier": "subnet", "__type": "LocalEnum.LevelNode", "__value": null, "__tile": null, "defUid": 16, "realEditorValues": [] },
-								{ "__identifier": "nodeRewardProgram", "__type": "LocalEnum.NodeRewardProgram", "__value": null, "__tile": null, "defUid": 19, "realEditorValues": [] }
+								{ "__identifier": "nodeRewardProgram", "__type": "LocalEnum.NodeRewardProgram", "__value": null, "__tile": null, "defUid": 19, "realEditorValues": [] },
+								{ "__identifier": "IdName", "__type": "String", "__value": null, "__tile": null, "defUid": 20, "realEditorValues": [] }
 							]
 						},
 						{
@@ -860,7 +904,8 @@
 								}] },
 								{ "__identifier": "type", "__type": "LocalEnum.NodeType", "__value": "Normal", "__tile": null, "defUid": 14, "realEditorValues": [] },
 								{ "__identifier": "subnet", "__type": "LocalEnum.LevelNode", "__value": null, "__tile": null, "defUid": 16, "realEditorValues": [] },
-								{ "__identifier": "nodeRewardProgram", "__type": "LocalEnum.NodeRewardProgram", "__value": null, "__tile": null, "defUid": 19, "realEditorValues": [] }
+								{ "__identifier": "nodeRewardProgram", "__type": "LocalEnum.NodeRewardProgram", "__value": null, "__tile": null, "defUid": 19, "realEditorValues": [] },
+								{ "__identifier": "IdName", "__type": "String", "__value": null, "__tile": null, "defUid": 20, "realEditorValues": [] }
 							]
 						}
 					]
@@ -960,7 +1005,8 @@
 								}] },
 								{ "__identifier": "type", "__type": "LocalEnum.NodeType", "__value": "Normal", "__tile": null, "defUid": 14, "realEditorValues": [] },
 								{ "__identifier": "subnet", "__type": "LocalEnum.LevelNode", "__value": null, "__tile": null, "defUid": 16, "realEditorValues": [] },
-								{ "__identifier": "nodeRewardProgram", "__type": "LocalEnum.NodeRewardProgram", "__value": null, "__tile": null, "defUid": 19, "realEditorValues": [] }
+								{ "__identifier": "nodeRewardProgram", "__type": "LocalEnum.NodeRewardProgram", "__value": null, "__tile": null, "defUid": 19, "realEditorValues": [] },
+								{ "__identifier": "IdName", "__type": "String", "__value": null, "__tile": null, "defUid": 20, "realEditorValues": [] }
 							]
 						},
 						{
@@ -1069,7 +1115,8 @@
 								{ "__identifier": "nodeRewardProgram", "__type": "LocalEnum.NodeRewardProgram", "__value": "ForceWindowsUpdate", "__tile": null, "defUid": 19, "realEditorValues": [{
 									"id": "V_String",
 									"params": ["ForceWindowsUpdate"]
-								}] }
+								}] },
+								{ "__identifier": "IdName", "__type": "String", "__value": null, "__tile": null, "defUid": 20, "realEditorValues": [] }
 							]
 						},
 						{
@@ -1143,7 +1190,11 @@
 								}] },
 								{ "__identifier": "type", "__type": "LocalEnum.NodeType", "__value": "Normal", "__tile": null, "defUid": 14, "realEditorValues": [] },
 								{ "__identifier": "subnet", "__type": "LocalEnum.LevelNode", "__value": null, "__tile": null, "defUid": 16, "realEditorValues": [] },
-								{ "__identifier": "nodeRewardProgram", "__type": "LocalEnum.NodeRewardProgram", "__value": null, "__tile": null, "defUid": 19, "realEditorValues": [] }
+								{ "__identifier": "nodeRewardProgram", "__type": "LocalEnum.NodeRewardProgram", "__value": "DiscoverTeachersPassword", "__tile": null, "defUid": 19, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["DiscoverTeachersPassword"]
+								}] },
+								{ "__identifier": "IdName", "__type": "String", "__value": null, "__tile": null, "defUid": 20, "realEditorValues": [] }
 							]
 						},
 						{
@@ -1196,7 +1247,8 @@
 								{ "__identifier": "nodeRewardProgram", "__type": "LocalEnum.NodeRewardProgram", "__value": "AntiVirusDef", "__tile": null, "defUid": 19, "realEditorValues": [{
 									"id": "V_String",
 									"params": ["AntiVirusDef"]
-								}] }
+								}] },
+								{ "__identifier": "IdName", "__type": "String", "__value": null, "__tile": null, "defUid": 20, "realEditorValues": [] }
 							]
 						},
 						{
@@ -1241,6 +1293,10 @@
 								{ "__identifier": "nodeRewardProgram", "__type": "LocalEnum.NodeRewardProgram", "__value": "ForceWindowsUpdate", "__tile": null, "defUid": 19, "realEditorValues": [{
 									"id": "V_String",
 									"params": ["ForceWindowsUpdate"]
+								}] },
+								{ "__identifier": "IdName", "__type": "String", "__value": "TeachersPC", "__tile": null, "defUid": 20, "realEditorValues": [{
+									"id": "V_String",
+									"params": ["TeachersPC"]
 								}] }
 							]
 						},
@@ -1303,7 +1359,8 @@
 								}] },
 								{ "__identifier": "type", "__type": "LocalEnum.NodeType", "__value": "Normal", "__tile": null, "defUid": 14, "realEditorValues": [] },
 								{ "__identifier": "subnet", "__type": "LocalEnum.LevelNode", "__value": null, "__tile": null, "defUid": 16, "realEditorValues": [] },
-								{ "__identifier": "nodeRewardProgram", "__type": "LocalEnum.NodeRewardProgram", "__value": null, "__tile": null, "defUid": 19, "realEditorValues": [] }
+								{ "__identifier": "nodeRewardProgram", "__type": "LocalEnum.NodeRewardProgram", "__value": null, "__tile": null, "defUid": 19, "realEditorValues": [] },
+								{ "__identifier": "IdName", "__type": "String", "__value": null, "__tile": null, "defUid": 20, "realEditorValues": [] }
 							]
 						},
 						{
@@ -1345,10 +1402,8 @@
 								}] },
 								{ "__identifier": "type", "__type": "LocalEnum.NodeType", "__value": "Normal", "__tile": null, "defUid": 14, "realEditorValues": [] },
 								{ "__identifier": "subnet", "__type": "LocalEnum.LevelNode", "__value": null, "__tile": null, "defUid": 16, "realEditorValues": [] },
-								{ "__identifier": "nodeRewardProgram", "__type": "LocalEnum.NodeRewardProgram", "__value": "AntiVirusDef", "__tile": null, "defUid": 19, "realEditorValues": [{
-									"id": "V_String",
-									"params": ["AntiVirusDef"]
-								}] }
+								{ "__identifier": "nodeRewardProgram", "__type": "LocalEnum.NodeRewardProgram", "__value": null, "__tile": null, "defUid": 19, "realEditorValues": [null] },
+								{ "__identifier": "IdName", "__type": "String", "__value": null, "__tile": null, "defUid": 20, "realEditorValues": [] }
 							]
 						},
 						{
@@ -1390,7 +1445,8 @@
 								}] },
 								{ "__identifier": "type", "__type": "LocalEnum.NodeType", "__value": "Normal", "__tile": null, "defUid": 14, "realEditorValues": [] },
 								{ "__identifier": "subnet", "__type": "LocalEnum.LevelNode", "__value": null, "__tile": null, "defUid": 16, "realEditorValues": [] },
-								{ "__identifier": "nodeRewardProgram", "__type": "LocalEnum.NodeRewardProgram", "__value": null, "__tile": null, "defUid": 19, "realEditorValues": [] }
+								{ "__identifier": "nodeRewardProgram", "__type": "LocalEnum.NodeRewardProgram", "__value": null, "__tile": null, "defUid": 19, "realEditorValues": [] },
+								{ "__identifier": "IdName", "__type": "String", "__value": null, "__tile": null, "defUid": 20, "realEditorValues": [] }
 							]
 						},
 						{
@@ -1432,7 +1488,8 @@
 								}] },
 								{ "__identifier": "type", "__type": "LocalEnum.NodeType", "__value": "Normal", "__tile": null, "defUid": 14, "realEditorValues": [] },
 								{ "__identifier": "subnet", "__type": "LocalEnum.LevelNode", "__value": null, "__tile": null, "defUid": 16, "realEditorValues": [] },
-								{ "__identifier": "nodeRewardProgram", "__type": "LocalEnum.NodeRewardProgram", "__value": null, "__tile": null, "defUid": 19, "realEditorValues": [] }
+								{ "__identifier": "nodeRewardProgram", "__type": "LocalEnum.NodeRewardProgram", "__value": null, "__tile": null, "defUid": 19, "realEditorValues": [] },
+								{ "__identifier": "IdName", "__type": "String", "__value": null, "__tile": null, "defUid": 20, "realEditorValues": [] }
 							]
 						},
 						{
@@ -1474,7 +1531,8 @@
 								}] },
 								{ "__identifier": "type", "__type": "LocalEnum.NodeType", "__value": "Normal", "__tile": null, "defUid": 14, "realEditorValues": [] },
 								{ "__identifier": "subnet", "__type": "LocalEnum.LevelNode", "__value": null, "__tile": null, "defUid": 16, "realEditorValues": [] },
-								{ "__identifier": "nodeRewardProgram", "__type": "LocalEnum.NodeRewardProgram", "__value": null, "__tile": null, "defUid": 19, "realEditorValues": [] }
+								{ "__identifier": "nodeRewardProgram", "__type": "LocalEnum.NodeRewardProgram", "__value": null, "__tile": null, "defUid": 19, "realEditorValues": [] },
+								{ "__identifier": "IdName", "__type": "String", "__value": null, "__tile": null, "defUid": 20, "realEditorValues": [] }
 							]
 						}
 					]

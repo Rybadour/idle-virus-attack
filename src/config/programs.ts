@@ -10,6 +10,8 @@ export interface ProgramConfig {
   protectionProvided?: number,
   maxProtectionMultiplier?: number,
   antiVirusReduction?: number,
+  unlocksNode?: string,
+  limitNum?: number,
 }
 
 const programsConfig = {
@@ -19,6 +21,14 @@ const programsConfig = {
     requirement: 30,
     requiredSkill: SkillType.Spoofing,
     protectionProvided: 1,
+  },
+  DiscoverTeachersPassword: {
+    name: 'Snoop Around on Mr. Garrison\'s Phone',
+    description: 'Discover Mr. Garrisons\'s Password',
+    requirement: 150,
+    requiredSkill: SkillType.Hacking,
+    unlocksNode: 'TeachersPC',
+    limitNum: 1,
   },
   ForceWindowsUpdate: {
     name: 'Force Windows Update',
@@ -33,6 +43,7 @@ const programsConfig = {
     requirement: 500,
     requiredSkill: SkillType.Spoofing,
     antiVirusReduction: 2,
+    limitNum: 1,
   },
 } satisfies Record<string, Omit<ProgramConfig, "id">>;;
 

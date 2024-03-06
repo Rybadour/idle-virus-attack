@@ -41,7 +41,8 @@
 					"icon": "Server_rack",
 					"type": "Normal",
 					"subnet": null,
-					"nodeRewardProgram": null
+					"nodeRewardProgram": null,
+					"IdName": null
 				}
 			},
 			{
@@ -104,7 +105,8 @@
 					"icon": "Wifi_router",
 					"type": "Normal",
 					"subnet": null,
-					"nodeRewardProgram": "ForceWindowsUpdate"
+					"nodeRewardProgram": "ForceWindowsUpdate",
+					"IdName": null
 				}
 			},
 			{
@@ -137,7 +139,8 @@
 					"icon": "Smartphone",
 					"type": "Normal",
 					"subnet": null,
-					"nodeRewardProgram": null
+					"nodeRewardProgram": "DiscoverTeachersPassword",
+					"IdName": null
 				}
 			},
 			{
@@ -170,7 +173,8 @@
 					"icon": "Wifi_router",
 					"type": "Normal",
 					"subnet": null,
-					"nodeRewardProgram": "AntiVirusDef"
+					"nodeRewardProgram": "AntiVirusDef",
+					"IdName": null
 				}
 			},
 			{
@@ -197,7 +201,8 @@
 					"icon": "Pc",
 					"type": "Normal",
 					"subnet": null,
-					"nodeRewardProgram": "ForceWindowsUpdate"
+					"nodeRewardProgram": "ForceWindowsUpdate",
+					"IdName": "TeachersPC"
 				}
 			},
 			{
@@ -236,7 +241,8 @@
 					"icon": "Smartphone",
 					"type": "Normal",
 					"subnet": null,
-					"nodeRewardProgram": null
+					"nodeRewardProgram": null,
+					"IdName": null
 				}
 			},
 			{
@@ -263,7 +269,8 @@
 					"icon": "Shop",
 					"type": "Normal",
 					"subnet": null,
-					"nodeRewardProgram": "AntiVirusDef"
+					"nodeRewardProgram": null,
+					"IdName": null
 				}
 			},
 			{
@@ -290,7 +297,8 @@
 					"icon": "Shop",
 					"type": "Normal",
 					"subnet": null,
-					"nodeRewardProgram": null
+					"nodeRewardProgram": null,
+					"IdName": null
 				}
 			},
 			{
@@ -317,7 +325,8 @@
 					"icon": "Smartphone",
 					"type": "Normal",
 					"subnet": null,
-					"nodeRewardProgram": null
+					"nodeRewardProgram": null,
+					"IdName": null
 				}
 			},
 			{
@@ -344,7 +353,8 @@
 					"icon": "Smartphone",
 					"type": "Normal",
 					"subnet": null,
-					"nodeRewardProgram": null
+					"nodeRewardProgram": null,
+					"IdName": null
 				}
 			}
 		],

@@ -3,6 +3,7 @@ import { NodesSlice } from "./nodes";
 import { StatsSlice } from "./stats";
 import programsWithIds, { ProgramId } from "../config/programs";
 import { globals } from "../globals";
+import { ProgramsSlice } from "./programs";
 
 export interface ActionsSlice {
   queuedActions: IAction[],
@@ -12,7 +13,8 @@ export interface ActionsSlice {
   reset: () => void,
 }
 
-const createActionsSlice: MyCreateSlice<ActionsSlice, [() => StatsSlice, () => NodesSlice]> = (set, get, stats, nodes) => {
+const createActionsSlice: MyCreateSlice<ActionsSlice, [() => StatsSlice, () => NodesSlice, () => ProgramsSlice]> = 
+(set, get, stats, nodes, programs) => {
 
   function startAction(action: IAction) {
     if (action.typeId.type === ActionType.Node) {
@@ -58,6 +60,7 @@ const createActionsSlice: MyCreateSlice<ActionsSlice, [() => StatsSlice, () => N
           nodes().completeNode(newAction.typeId.id);
         } else if (newAction.typeId.type === ActionType.Program) {
           applyProgramOnComplete(newAction.typeId.id);
+          programs().completeProgram(newAction.typeId.id);
         }
 
         actions.splice(0, 1);

@@ -35,7 +35,8 @@
 					"icon": "House",
 					"type": "Normal",
 					"subnet": null,
-					"nodeRewardProgram": null
+					"nodeRewardProgram": null,
+					"IdName": null
 				}
 			},
 			{
@@ -62,7 +63,8 @@
 					"icon": "Graduate_cap",
 					"type": "Subnet",
 					"subnet": "Highschool",
-					"nodeRewardProgram": null
+					"nodeRewardProgram": null,
+					"IdName": null
 				}
 			},
 			{
@@ -89,7 +91,8 @@
 					"icon": "Bank",
 					"type": "Normal",
 					"subnet": null,
-					"nodeRewardProgram": null
+					"nodeRewardProgram": null,
+					"IdName": null
 				}
 			},
 			{
@@ -116,7 +119,8 @@
 					"icon": "Wifi_router",
 					"type": "Normal",
 					"subnet": null,
-					"nodeRewardProgram": null
+					"nodeRewardProgram": null,
+					"IdName": null
 				}
 			},
 			{
@@ -143,7 +147,8 @@
 					"icon": "Bank",
 					"type": "Normal",
 					"subnet": null,
-					"nodeRewardProgram": null
+					"nodeRewardProgram": null,
+					"IdName": null
 				}
 			},
 			{
@@ -194,7 +199,8 @@
 					"icon": "Server_rack",
 					"type": "Normal",
 					"subnet": null,
-					"nodeRewardProgram": null
+					"nodeRewardProgram": null,
+					"IdName": null
 				}
 			}
 		],

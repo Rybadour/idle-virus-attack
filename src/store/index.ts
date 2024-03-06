@@ -26,7 +26,7 @@ const useStore = create<FullStore>((set, get) => {
     scenes: createScenesSlice(...scenes),
     stats: createStatsSlice(...stats),
     nodes: createNodesSlice(...nodes, actions[1], programs[1]),
-    actions: createActionsSlice(...actions, stats[1], nodes[1]),
+    actions: createActionsSlice(...actions, stats[1], nodes[1], programs[1]),
     programs: createProgramsSlice(...programs),
   }
 });

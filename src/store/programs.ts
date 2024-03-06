@@ -5,12 +5,14 @@ import { globals } from "../globals";
 
 export interface RealizedProgram extends ProgramConfig {
   isEnabled: boolean,
+  numCompleted: number,
 }
 
 export interface ProgramsSlice {
   programs: Record<ProgramId, RealizedProgram>,
 
   rewardProgram: (pid: ProgramId) => void, 
+  completeProgram: (pid: ProgramId) => void,
   reset: () => void,
 }
 
@@ -21,6 +23,7 @@ const createProgramsSlice: MyCreateSlice<ProgramsSlice, []>
     programs: mapValues(programsWithIds, (program) => ({
       ...program,
       isEnabled: globals.startingPrograms.includes(program.id),
+      numCompleted: 0,
     })),
 
     rewardProgram: (pid) => {
@@ -30,6 +33,19 @@ const createProgramsSlice: MyCreateSlice<ProgramsSlice, []>
         }
         return {...p};
       }) });
+    },
+
+    completeProgram: (pid) => {
+      const newPrograms = mapValues(get().programs, (p) => {
+        if (p.id === pid) {
+          p.numCompleted++;
+          if (p.limitNum && p.numCompleted >= p.limitNum) {
+            p.isEnabled = false;
+          }
+        }
+        return {...p};
+      });
+      set({ programs: newPrograms });
     },
 
     reset: () => {
