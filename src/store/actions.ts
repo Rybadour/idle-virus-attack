@@ -7,6 +7,7 @@ import { ProgramsSlice } from "./programs";
 
 export interface ActionsSlice {
   queuedActions: IAction[],
+  nodeSpeedUps: Record<string, number>,
 
   update: (elapsed: number) => void,
   queueAction: (action: IAction) => void,
@@ -36,11 +37,19 @@ const createActionsSlice: MyCreateSlice<ActionsSlice, [() => StatsSlice, () => N
       stats().multiplyMaxProtection(program.maxProtectionMultiplier);
     } else if (program.antiVirusReduction) {
       stats().multiplyAntiVirus(1 / program.antiVirusReduction);
+    } else if (program.nodeSpeedUp) {
+      const newNodeSpeedUps = {...get().nodeSpeedUps};
+      if (!newNodeSpeedUps[program.nodeSpeedUp.node]) {
+        newNodeSpeedUps[program.nodeSpeedUp.node] = 1;
+      }
+      newNodeSpeedUps[program.nodeSpeedUp.node] *= program.nodeSpeedUp.speedUp;
+      set({ nodeSpeedUps: newNodeSpeedUps });
     }
   }
 
   return {
     queuedActions: [],
+    nodeSpeedUps: {},
 
     update: (elapsed) => {
       const actions = [...get().queuedActions];
@@ -49,8 +58,16 @@ const createActionsSlice: MyCreateSlice<ActionsSlice, [() => StatsSlice, () => N
       elapsed *= globals.GAME_SPEED;
 
       const newAction = {...actions[0]};
-      newAction.current += stats().getSkill(newAction.requiredSkill) * elapsed/1000;
+      let bonus = 1;
+      if (newAction.typeId.type === ActionType.Node) {
+        const node = nodes().getNode(newAction.typeId.id);
+        if (get().nodeSpeedUps[node.idName ?? '']) {
+          bonus = get().nodeSpeedUps[node.idName ?? ''];
+        }
+      }
+      newAction.current += stats().getSkill(newAction.requiredSkill) * elapsed/1000 * bonus;
       stats().useSkill(newAction.requirement, newAction.requiredSkill, elapsed);
+
       if (newAction.typeId.type === ActionType.Program) {
         applyProgram(newAction.typeId.id, elapsed);
       }

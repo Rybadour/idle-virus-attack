@@ -19,6 +19,7 @@ interface INodeMapDesign {
         type: string,
         subnet: string | null,
         nodeRewardProgram: string | null,
+        idName: string | null,
         connectedNodes: {
           entityIid: string,
         }[]
@@ -61,6 +62,7 @@ export function getNodes(level: NodeLevel) {
       isComplete: node.iid == startId,
       subnet: enumFromKey(NodeLevel, node.customFields.subnet ?? ''),
       nodeRewardProgram: mapStringToProgramId(node.customFields.nodeRewardProgram),
+      idName: node.customFields.idName,
     };
   })
 

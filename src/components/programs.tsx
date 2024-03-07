@@ -10,6 +10,28 @@ export default function Programs() {
   const stats = useStore(s => s.stats);
   const programs = useStore(s => s.programs);
   const actions = useStore(s => s.actions);
+  const nodes = useStore(s => s.nodes);
+
+  function getBehaviourDescription(program: ProgramConfig, stats: StatsSlice) {
+    const duration = (program.requirement / stats.getSkill(program.requiredSkill));
+    if (program.protectionProvided) {
+      const speed = stats.getSkill(program.requiredSkill) * program.protectionProvided;
+      return `Provides ${autoFormatNumber(speed)} protection per sec for ${autoFormatNumber(duration)}s.`;
+    } else if (program.maxProtectionMultiplier) {
+      const multiPercent = (program.maxProtectionMultiplier - 1) * 100;
+      return `Increases max protection by ${autoFormatNumber(multiPercent)}% after ${autoFormatNumber(duration)}s.`;
+    } else if (program.antiVirusReduction) {
+      const multiPercent = (1/program.antiVirusReduction) * 100;
+      return `Reduce anti-virus strength by ${autoFormatNumber(multiPercent)}% after ${autoFormatNumber(duration)}s.`;
+    } else if (program.nodeSpeedUp) {
+      const node = nodes.getNodeByIdName(program.nodeSpeedUp.node);
+      if (node) {
+        return `Reduce the cost of hacking the '${node.name}' node by ${program.nodeSpeedUp.speedUp}x.`;
+      }
+    }
+
+    return '';
+  }
 
   const queueProgram = useCallback((prog: ProgramConfig) => {
     actions.queueAction({
@@ -25,28 +47,12 @@ export default function Programs() {
     <ProgramList>
       {Object.values(programs.programs).filter(p => p.isEnabled).map((prog) => 
         <Program key={prog.id} onClick={() => queueProgram(prog)}>
-          <span>{prog.name}</span>
+          <strong>{prog.name}</strong>
           <div>{getBehaviourDescription(prog, stats)}</div>
         </Program>
       )}
     </ProgramList>
   </ProgramsContainer>
-}
-
-function getBehaviourDescription(program: ProgramConfig, stats: StatsSlice) {
-  const duration = (program.requirement / stats.getSkill(program.requiredSkill));
-  if (program.protectionProvided) {
-    const speed = stats.getSkill(program.requiredSkill) * program.protectionProvided;
-    return `Provides ${autoFormatNumber(speed)} protection per sec for ${autoFormatNumber(duration)}s.`;
-  } else if (program.maxProtectionMultiplier) {
-    const multiPercent = (program.maxProtectionMultiplier - 1) * 100;
-    return `Increases max protection by ${autoFormatNumber(multiPercent)}% after ${autoFormatNumber(duration)}s.`;
-  } else if (program.antiVirusReduction) {
-    const multiPercent = (1/program.antiVirusReduction) * 100;
-    return `Reduce anti-virus strength by ${autoFormatNumber(multiPercent)}% after ${autoFormatNumber(duration)}s.`;
-  }
-
-  return '';
 }
 
 

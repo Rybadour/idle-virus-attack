@@ -36,7 +36,7 @@
 					"type": "Normal",
 					"subnet": null,
 					"nodeRewardProgram": null,
-					"IdName": null
+					"idName": null
 				}
 			},
 			{
@@ -64,7 +64,7 @@
 					"type": "Subnet",
 					"subnet": "Highschool",
 					"nodeRewardProgram": null,
-					"IdName": null
+					"idName": null
 				}
 			},
 			{
@@ -92,7 +92,7 @@
 					"type": "Normal",
 					"subnet": null,
 					"nodeRewardProgram": null,
-					"IdName": null
+					"idName": null
 				}
 			},
 			{
@@ -120,7 +120,7 @@
 					"type": "Normal",
 					"subnet": null,
 					"nodeRewardProgram": null,
-					"IdName": null
+					"idName": null
 				}
 			},
 			{
@@ -148,7 +148,7 @@
 					"type": "Normal",
 					"subnet": null,
 					"nodeRewardProgram": null,
-					"IdName": null
+					"idName": null
 				}
 			},
 			{
@@ -200,7 +200,7 @@
 					"type": "Normal",
 					"subnet": null,
 					"nodeRewardProgram": null,
-					"IdName": null
+					"idName": null
 				}
 			}
 		],

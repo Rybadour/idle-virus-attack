@@ -15,6 +15,8 @@ export interface NodesSlice {
   isConnectedCompleted: (nodeId: string, level: NodeLevel) => boolean,
   switchToSubnet: (subnet?: NodeLevel) => void,
   reset: () => void,
+  getNode: (nodePath: NodePathId) => INode,
+  getNodeByIdName: (idName: string) => INode | undefined,
 }
 
 function preprocessLevel(level: NodeLevel) {
@@ -108,6 +110,23 @@ const createNodesSlice: MyCreateSlice<NodesSlice, [() => ActionsSlice, () => Pro
         },
         nodeProgress: undefined,
       })
+    },
+
+    getNode: (nodePath: NodePathId) => {
+      return get().nodes[nodePath[0]][nodePath[1]];
+    },
+
+    getNodeByIdName: (idName: string) => {
+      const nodes = get().nodes;
+      for (const nodeLevel of Object.values(nodes)) {
+        for (const node of Object.values(nodeLevel)) {
+          if (node.idName === idName) {
+            return node;
+          }
+        }
+      }
+
+      return;
     }
   };
 };

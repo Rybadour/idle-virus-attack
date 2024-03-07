@@ -16,7 +16,7 @@ export interface INode {
   isComplete: boolean,
   subnet?: NodeLevel,
   nodeRewardProgram?: ProgramId,
-  idName?: string,
+  idName: string | null,
 }
 
 export type NodePathId = [NodeLevel, string];

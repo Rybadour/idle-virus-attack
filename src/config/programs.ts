@@ -11,6 +11,10 @@ export interface ProgramConfig {
   maxProtectionMultiplier?: number,
   antiVirusReduction?: number,
   unlocksNode?: string,
+  nodeSpeedUp?: {
+    node: string,
+    speedUp: number,
+  },
   limitNum?: number,
 }
 
@@ -27,7 +31,10 @@ const programsConfig = {
     description: 'Discover Mr. Garrisons\'s Password',
     requirement: 150,
     requiredSkill: SkillType.Hacking,
-    unlocksNode: 'TeachersPC',
+    nodeSpeedUp: {
+      node: 'TeachersPC',
+      speedUp: 10,
+    },
     limitNum: 1,
   },
   ForceWindowsUpdate: {
