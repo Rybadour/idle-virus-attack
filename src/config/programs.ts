@@ -15,6 +15,7 @@ export interface ProgramConfig {
     node: string,
     speedUp: number,
   },
+  autoRepeat?: true,
   limitNum?: number,
 }
 
@@ -25,6 +26,7 @@ const programsConfig = {
     requirement: 30,
     requiredSkill: SkillType.Spoofing,
     protectionProvided: 1,
+    autoRepeat: true,
   },
   DiscoverTeachersPassword: {
     name: 'Snoop Around on Mr. Garrison\'s Phone',

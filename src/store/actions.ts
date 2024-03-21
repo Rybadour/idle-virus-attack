@@ -5,6 +5,10 @@ import programsWithIds, { ProgramId } from "../config/programs";
 import { globals } from "../globals";
 import { ProgramsSlice } from "./programs";
 
+export interface IActionCompletion {
+  stopRepeat: boolean;
+}
+
 export interface ActionsSlice {
   queuedActions: IAction[],
   nodeSpeedUps: Record<string, number>,
@@ -31,7 +35,8 @@ const createActionsSlice: MyCreateSlice<ActionsSlice, [() => StatsSlice, () => N
     }
   }
 
-  function applyProgramOnComplete(c: ProgramId) {
+  function applyProgramOnComplete(c: ProgramId): IActionCompletion {
+    const completion = {stopRepeat: false};
     const program = programsWithIds[c];
     if (program.maxProtectionMultiplier) {
       stats().multiplyMaxProtection(program.maxProtectionMultiplier);
@@ -44,7 +49,12 @@ const createActionsSlice: MyCreateSlice<ActionsSlice, [() => StatsSlice, () => N
       }
       newNodeSpeedUps[program.nodeSpeedUp.node] *= program.nodeSpeedUp.speedUp;
       set({ nodeSpeedUps: newNodeSpeedUps });
+    } else if (program.protectionProvided) {
+      if (stats().protection >= stats().maxProtection) {
+        completion.stopRepeat = true;
+      }
     }
+    return completion;
   }
 
   return {
@@ -73,14 +83,22 @@ const createActionsSlice: MyCreateSlice<ActionsSlice, [() => StatsSlice, () => N
       }
       
       if (newAction.current >= newAction.requirement) {
+        let repeatAction = false;
         if (newAction.typeId.type === ActionType.Node) {
           nodes().completeNode(newAction.typeId.id);
         } else if (newAction.typeId.type === ActionType.Program) {
-          applyProgramOnComplete(newAction.typeId.id);
-          programs().completeProgram(newAction.typeId.id);
+          const programId = newAction.typeId.id;
+          const actionCompletion = applyProgramOnComplete(programId);
+          programs().completeProgram(programId);
+          repeatAction = !actionCompletion.stopRepeat && !!programsWithIds[programId].autoRepeat;
         }
 
-        actions.splice(0, 1);
+        if (repeatAction) {
+          resetAction(newAction);
+          actions[0] = newAction;
+        } else {
+          actions.splice(0, 1);
+        }
         if (actions.length > 0) {
           startAction(actions[0]);
         }
@@ -103,5 +121,9 @@ const createActionsSlice: MyCreateSlice<ActionsSlice, [() => StatsSlice, () => N
     }
   }
 };
+
+function resetAction(action: IAction) {
+  action.current = 0;
+}
 
 export default createActionsSlice;
