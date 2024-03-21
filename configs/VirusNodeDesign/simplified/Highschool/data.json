@@ -100,7 +100,7 @@
 						}
 					],
 					"requiredSkill": "Firewall",
-					"requirement": 1000,
+					"requirement": 300,
 					"name": "Router_4b 192.168.10.23",
 					"icon": "Wifi_router",
 					"type": "Normal",
@@ -236,7 +236,7 @@
 						}
 					],
 					"requiredSkill": "Hacking",
-					"requirement": 1000,
+					"requirement": 600,
 					"name": "sallys_samsing_5g",
 					"icon": "Smartphone",
 					"type": "Normal",
@@ -320,7 +320,7 @@
 						}
 					],
 					"requiredSkill": "Hacking",
-					"requirement": 500,
+					"requirement": 300,
 					"name": "Johnny's Windows Phone",
 					"icon": "Smartphone",
 					"type": "Normal",
