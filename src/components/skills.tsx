@@ -18,7 +18,7 @@ export default function Skills() {
         return <Skill key={skill}>
           <SkillStats>
             <span>{skill}</span>
-            <span>{formatNumber(stats.getSkill(skill), 0, 0)}</span>
+            <span>{formatNumber(stats.getSkill(skill), 0, 0)} ({Math.floor(perma)})</span>
           </SkillStats>
           <div>
             <ProgressBar progress={perma - Math.floor(perma)} height={5} color={"#5B8FB9"} noBorder />

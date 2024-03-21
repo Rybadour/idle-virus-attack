@@ -13,6 +13,7 @@ export interface StatsSlice {
   lastAddedMaxProtection: number;
 
   getSkill: (skill: SkillType) => number,
+  getSkillPower: (skill: SkillType) => number,
 
   useSkill: (requirement: number, skill: SkillType, elapsed: number) => void,
   addProtection: (protection: number) => void,
@@ -45,6 +46,11 @@ const createStatsSlice: MyCreateSlice<StatsSlice, []> = (set, get) => {
     getSkill: (skill: SkillType) => {
       const {skills, permanentSkills} = get();
       return skills[skill] + permanentSkills[skill];
+    },
+
+    getSkillPower: (skill: SkillType) => {
+      const skillLevel = get().getSkill(skill);
+      return Math.log10(skillLevel);
     },
 
     useSkill: (requirement: number, skill: SkillType, elapsed: number) => {

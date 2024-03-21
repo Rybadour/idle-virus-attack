@@ -31,7 +31,12 @@ const createActionsSlice: MyCreateSlice<ActionsSlice, [() => StatsSlice, () => N
     const program = programsWithIds[c];
     const skillPower = stats().getSkill(program.requiredSkill);
     if (program.protectionProvided) {
-      stats().addProtection(program.protectionProvided * skillPower * elapsed/1000);
+      const totalDuration = (program.requirement / skillPower);
+      // Change to continuous calculations
+      if (totalDuration <= 1) {
+        const speed = program.protectionProvided / totalDuration;
+        stats().addProtection(speed * elapsed/1000);
+      }
     }
   }
 
@@ -50,6 +55,12 @@ const createActionsSlice: MyCreateSlice<ActionsSlice, [() => StatsSlice, () => N
       newNodeSpeedUps[program.nodeSpeedUp.node] *= program.nodeSpeedUp.speedUp;
       set({ nodeSpeedUps: newNodeSpeedUps });
     } else if (program.protectionProvided) {
+      const skillPower = stats().getSkill(program.requiredSkill);
+      const totalDuration = (program.requirement / skillPower);
+      // Change to continuous calculations
+      if (totalDuration > 1) {
+        stats().addProtection(program.protectionProvided);
+      }
       if (stats().protection >= stats().maxProtection) {
         completion.stopRepeat = true;
       }

@@ -25,7 +25,7 @@ const programsConfig = {
     description: 'Create decoy programs to fool the anti-virus programs in this subnet.',
     requirement: 30,
     requiredSkill: SkillType.Spoofing,
-    protectionProvided: 1,
+    protectionProvided: 20,
     autoRepeat: true,
   },
   DiscoverTeachersPassword: {

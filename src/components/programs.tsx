@@ -15,8 +15,12 @@ export default function Programs() {
   function getBehaviourDescription(program: ProgramConfig, stats: StatsSlice) {
     const duration = (program.requirement / stats.getSkill(program.requiredSkill));
     if (program.protectionProvided) {
-      const speed = stats.getSkill(program.requiredSkill) * program.protectionProvided;
-      return `Provides ${autoFormatNumber(speed)} protection per sec for ${autoFormatNumber(duration)}s.`;
+      if (duration > 1) {
+        return `Provides ${autoFormatNumber(program.protectionProvided)} protection after ${autoFormatNumber(duration)}s.`;
+      } else {
+        const speed = program.protectionProvided / duration;
+        return `Provides ${autoFormatNumber(speed)} protection/s`
+      }
     } else if (program.maxProtectionMultiplier) {
       const multiPercent = (program.maxProtectionMultiplier - 1) * 100;
       return `Increases max protection by ${autoFormatNumber(multiPercent)}% after ${autoFormatNumber(duration)}s.`;
