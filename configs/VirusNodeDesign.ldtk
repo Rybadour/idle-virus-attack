@@ -1101,7 +1101,7 @@
 									"id": "V_String",
 									"params": ["Firewall"]
 								}] },
-								{ "__identifier": "requirement", "__type": "Int", "__value": 100, "__tile": null, "defUid": 9, "realEditorValues": [{ "id": "V_Int", "params": [100] }] },
+								{ "__identifier": "requirement", "__type": "Int", "__value": 1000, "__tile": null, "defUid": 9, "realEditorValues": [{ "id": "V_Int", "params": [1000] }] },
 								{ "__identifier": "name", "__type": "String", "__value": "Router_4b 192.168.10.23", "__tile": null, "defUid": 10, "realEditorValues": [{
 									"id": "V_String",
 									"params": ["Router_4b 192.168.10.23"]
@@ -1179,7 +1179,7 @@
 									"id": "V_String",
 									"params": ["Hacking"]
 								}] },
-								{ "__identifier": "requirement", "__type": "Int", "__value": 200, "__tile": null, "defUid": 9, "realEditorValues": [{ "id": "V_Int", "params": [200] }] },
+								{ "__identifier": "requirement", "__type": "Int", "__value": 2000, "__tile": null, "defUid": 9, "realEditorValues": [{ "id": "V_Int", "params": [2000] }] },
 								{ "__identifier": "name", "__type": "String", "__value": "Mr. Garrison's IPhone4", "__tile": null, "defUid": 10, "realEditorValues": [{
 									"id": "V_String",
 									"params": ["Mr. Garrison's IPhone4"]
@@ -1233,7 +1233,7 @@
 									"id": "V_String",
 									"params": ["Firewall"]
 								}] },
-								{ "__identifier": "requirement", "__type": "Int", "__value": 300, "__tile": null, "defUid": 9, "realEditorValues": [{ "id": "V_Int", "params": [300] }] },
+								{ "__identifier": "requirement", "__type": "Int", "__value": 15000, "__tile": null, "defUid": 9, "realEditorValues": [{ "id": "V_Int", "params": [15000] }] },
 								{ "__identifier": "name", "__type": "String", "__value": "Router_7c 192.168.10.72", "__tile": null, "defUid": 10, "realEditorValues": [{
 									"id": "V_String",
 									"params": ["Router_7c 192.168.10.72"]
@@ -1279,7 +1279,7 @@
 									"id": "V_String",
 									"params": ["Hacking"]
 								}] },
-								{ "__identifier": "requirement", "__type": "Int", "__value": 3000, "__tile": null, "defUid": 9, "realEditorValues": [{ "id": "V_Int", "params": [3000] }] },
+								{ "__identifier": "requirement", "__type": "Int", "__value": 15000, "__tile": null, "defUid": 9, "realEditorValues": [{ "id": "V_Int", "params": [15000] }] },
 								{ "__identifier": "name", "__type": "String", "__value": "desk_room_108", "__tile": null, "defUid": 10, "realEditorValues": [{
 									"id": "V_String",
 									"params": ["desk_room_108"]
@@ -1348,7 +1348,7 @@
 									"id": "V_String",
 									"params": ["Hacking"]
 								}] },
-								{ "__identifier": "requirement", "__type": "Int", "__value": 100, "__tile": null, "defUid": 9, "realEditorValues": [{ "id": "V_Int", "params": [100] }] },
+								{ "__identifier": "requirement", "__type": "Int", "__value": 1000, "__tile": null, "defUid": 9, "realEditorValues": [{ "id": "V_Int", "params": [1000] }] },
 								{ "__identifier": "name", "__type": "String", "__value": "sallys_samsing_5g", "__tile": null, "defUid": 10, "realEditorValues": [{
 									"id": "V_String",
 									"params": ["sallys_samsing_5g"]
@@ -1391,7 +1391,7 @@
 									"id": "V_String",
 									"params": ["Hacking"]
 								}] },
-								{ "__identifier": "requirement", "__type": "Int", "__value": 200, "__tile": null, "defUid": 9, "realEditorValues": [{ "id": "V_Int", "params": [200] }] },
+								{ "__identifier": "requirement", "__type": "Int", "__value": 2000, "__tile": null, "defUid": 9, "realEditorValues": [{ "id": "V_Int", "params": [2000] }] },
 								{ "__identifier": "name", "__type": "String", "__value": "Sally's Amazing.com Account", "__tile": null, "defUid": 10, "realEditorValues": [{
 									"id": "V_String",
 									"params": ["Sally's Amazing.com Account"]
@@ -1434,7 +1434,7 @@
 									"id": "V_String",
 									"params": ["Hacking"]
 								}] },
-								{ "__identifier": "requirement", "__type": "Int", "__value": 100, "__tile": null, "defUid": 9, "realEditorValues": [{ "id": "V_Int", "params": [100] }] },
+								{ "__identifier": "requirement", "__type": "Int", "__value": 1000, "__tile": null, "defUid": 9, "realEditorValues": [{ "id": "V_Int", "params": [1000] }] },
 								{ "__identifier": "name", "__type": "String", "__value": "SexyBabe69's Twotter Account", "__tile": null, "defUid": 10, "realEditorValues": [{
 									"id": "V_String",
 									"params": ["SexyBabe69's Twotter Account"]
@@ -1477,7 +1477,7 @@
 									"id": "V_String",
 									"params": ["Hacking"]
 								}] },
-								{ "__identifier": "requirement", "__type": "Int", "__value": 50, "__tile": null, "defUid": 9, "realEditorValues": [{ "id": "V_Int", "params": [50] }] },
+								{ "__identifier": "requirement", "__type": "Int", "__value": 500, "__tile": null, "defUid": 9, "realEditorValues": [{ "id": "V_Int", "params": [500] }] },
 								{ "__identifier": "name", "__type": "String", "__value": "Johnny's Windows Phone", "__tile": null, "defUid": 10, "realEditorValues": [{
 									"id": "V_String",
 									"params": ["Johnny's Windows Phone"]
@@ -1520,7 +1520,7 @@
 									"id": "V_String",
 									"params": ["Hacking"]
 								}] },
-								{ "__identifier": "requirement", "__type": "Int", "__value": 200, "__tile": null, "defUid": 9, "realEditorValues": [{ "id": "V_Int", "params": [200] }] },
+								{ "__identifier": "requirement", "__type": "Int", "__value": 2000, "__tile": null, "defUid": 9, "realEditorValues": [{ "id": "V_Int", "params": [2000] }] },
 								{ "__identifier": "name", "__type": "String", "__value": "Cody's PSP", "__tile": null, "defUid": 10, "realEditorValues": [{
 									"id": "V_String",
 									"params": ["Cody's PSP"]
