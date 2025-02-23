@@ -2,22 +2,31 @@ import styled, { css } from "styled-components";
 
 import { Tooltip, TooltipContent, TooltipTrigger } from "./tooltip";
 import { INode } from "../../shared/types";
+import { NodeFeatureIcon } from "./node-feature-icon";
 
 export const NODE_SIZE = 30;
+const ICON_SIZE = 18;
 
 export function Node(props: {node: INode, isTarget: boolean, onClick: () => void}) {
   return <>
     <Tooltip>
       <TooltipTrigger asChild>
-        <g>
+        <svg x={props.node.x} y={props.node.y} style={{overflow: 'visible'}}>
           <NodeCircle
             onClick={props.onClick}
-            cx={props.node.x} cy={props.node.y} r={NODE_SIZE/2}
+            r={NODE_SIZE/2}
             isComplete={props.node.isComplete}
             isTarget={props.isTarget}
           />
-          <NodeIcon x={props.node.x} y={props.node.y} icon={props.node.icon}></NodeIcon>
-        </g>
+          <image
+            x={-ICON_SIZE/2}
+            y={-ICON_SIZE/2}
+            width={ICON_SIZE}
+            height={ICON_SIZE}
+            href={`icons/${props.node.icon}.png`}
+            style={{pointerEvents: "none"}}
+          />
+        </svg>
       </TooltipTrigger>
       <TooltipContent>
         <TooltipContainer>
@@ -26,6 +35,20 @@ export function Node(props: {node: INode, isTarget: boolean, onClick: () => void
         </TooltipContainer>
       </TooltipContent>
     </Tooltip>
+    {props.node.subnet &&
+      <NodeFeatureIcon
+        node={props.node}
+        icon="exit-door"
+        description="Contains Subnet. Click node to open subnet."
+      />
+    }
+    {props.node.nodeRewardProgram &&
+      <NodeFeatureIcon
+        node={props.node}
+        icon="computing"
+        description={"Awards the " + props.node.nodeRewardProgram + " program on completion."}
+      />
+    }
   </>;
 }
 
@@ -44,18 +67,6 @@ const NodeCircle = styled.circle<{isComplete: boolean, isTarget: boolean}>`
     stroke-width: 2px;
   }
 `;
-
-function NodeIcon(props: {x: number, y: number, icon: string}) {
-  const iconSize = 18;
-  return <image
-    x={props.x - iconSize/2}
-    y={props.y - iconSize/2}
-    width={iconSize}
-    height={iconSize}
-    href={`icons/${props.icon}.png`}
-    style={{pointerEvents: "none"}}
-  />;
-}
 
 const TooltipContainer = styled.div`
   background-color: #222;
