@@ -12,7 +12,13 @@ export interface INode {
   icon: string,
   connections: string[],
   isStart: boolean,
+  isUnlocked: boolean,
+  isDiscovered: boolean,
+  isScanned: boolean,
   isQueueable: boolean,
+  numDiscovered: number,
+  routesDiscovered: boolean,
+  routesScanned: boolean,
   isComplete: boolean,
   subnet?: NodeLevel,
   nodeRewardProgram?: ProgramId,
@@ -40,11 +46,14 @@ export enum SkillType {
   Hacking = 'Hacking',
   Spoofing = 'Spoofing',
   Firewall = 'Firewall',
+  Mapping = 'Mapping',
 }
 
 export enum ActionType {
   Program = 'Program',
-  Node = 'Node',
+  UnlockNode = 'UnlockNode',
+  DiscoverRoutes = 'DiscoverRoutes',
+  ScanRoutes = 'ScanRoutes',
 }
 
 export interface IAction {
@@ -53,12 +62,16 @@ export interface IAction {
   requirement: number,
   current: number,
   typeId: {
-    type: ActionType.Node,
+    type: (ActionType.UnlockNode | ActionType.DiscoverRoutes | ActionType.ScanRoutes),
     id: NodePathId,
   } | {
     type: ActionType.Program,
     id: ProgramId,
   }
+}
+
+export interface IActionCompletion {
+  stopRepeat: boolean;
 }
 
 export type Lens<T> = [set: StoreApi<T>['setState'], get: StoreApi<T>['getState']];

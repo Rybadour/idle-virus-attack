@@ -43,7 +43,7 @@ const QueueList = styled.div`
 const Action = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 8px;
   width: 100%;
   padding: 10px;
   background-color: white;

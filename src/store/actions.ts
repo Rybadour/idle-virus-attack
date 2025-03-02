@@ -1,13 +1,9 @@
-import { ActionType, IAction, MyCreateSlice } from "../shared/types";
+import { ActionType, IAction, IActionCompletion, MyCreateSlice } from "../shared/types";
 import { NodesSlice } from "./nodes";
 import { StatsSlice } from "./stats";
 import programsWithIds, { ProgramId } from "../config/programs";
 import { globals } from "../globals";
 import { ProgramsSlice } from "./programs";
-
-export interface IActionCompletion {
-  stopRepeat: boolean;
-}
 
 export interface ActionsSlice {
   queuedActions: IAction[],
@@ -22,7 +18,7 @@ const createActionsSlice: MyCreateSlice<ActionsSlice, [() => StatsSlice, () => N
 (set, get, stats, nodes, programs) => {
 
   function startAction(action: IAction) {
-    if (action.typeId.type === ActionType.Node) {
+    if (action.typeId.type === ActionType.UnlockNode) {
       nodes().startNodeAction(action.typeId.id);
     }
   }
@@ -80,7 +76,7 @@ const createActionsSlice: MyCreateSlice<ActionsSlice, [() => StatsSlice, () => N
 
       const newAction = {...actions[0]};
       let bonus = 1;
-      if (newAction.typeId.type === ActionType.Node) {
+      if (newAction.typeId.type === ActionType.UnlockNode) {
         const node = nodes().getNode(newAction.typeId.id);
         if (get().nodeSpeedUps[node.idName ?? '']) {
           bonus = get().nodeSpeedUps[node.idName ?? ''];
@@ -92,11 +88,15 @@ const createActionsSlice: MyCreateSlice<ActionsSlice, [() => StatsSlice, () => N
       if (newAction.typeId.type === ActionType.Program) {
         applyProgram(newAction.typeId.id, elapsed);
       }
-      
+
+      // Action complete
       if (newAction.current >= newAction.requirement) {
         let repeatAction = false;
-        if (newAction.typeId.type === ActionType.Node) {
-          nodes().completeNode(newAction.typeId.id);
+        if (newAction.typeId.type === ActionType.UnlockNode) {
+          nodes().unlockNode(newAction.typeId.id);
+        } else if (newAction.typeId.type === ActionType.DiscoverRoutes) {
+          const actionCompletion = nodes().discoverConnectedNode(newAction.typeId.id);
+          repeatAction = !actionCompletion.stopRepeat;
         } else if (newAction.typeId.type === ActionType.Program) {
           const programId = newAction.typeId.id;
           const actionCompletion = applyProgramOnComplete(programId);

@@ -29,7 +29,7 @@ export default function NodeMap() {
   const clickNode = useCallback((node: INode) => {
     if (node.isComplete && node.type === NodeType.Subnet) {
       nodes.switchToSubnet(node.subnet);
-    } else if (node.isQueueable) {
+    } else if (!node.isComplete) {
       nodes.queueMining(node.id, nodes.currentMap);
     }
   }, [nodes]);
@@ -55,7 +55,7 @@ export default function NodeMap() {
     >
       <g transform={`translate(${panOffset.x} ${panOffset.y})`}>
       {Object.values(nodeMap)
-        .filter(node => node.isComplete)
+        .filter(node => node.isUnlocked)
         .map(node => 
           <NodeConnections
             key={'connections_' + node.id}
@@ -64,7 +64,7 @@ export default function NodeMap() {
         )}
 
       {Object.values(nodeMap)
-        .filter(node => node.isComplete || node.connections.some(otherId => nodeMap[otherId]?.isComplete))
+        .filter(node => node.isDiscovered)
         .map(node => 
           <Node
             key={node.id} node={node} isTarget={node.id === nodes.nodeProgress?.node.id}
@@ -88,10 +88,12 @@ function NodeConnections({nodeMap, node, nodeProgress, nodeAction}: INodeConnect
       const other = nodeMap[otherId];
       // Don't render lines from target node
       if (nodeProgress && nodeProgress.node.id === node.id) return;
+      // Don't render connection at all until it's discovered
+      if (!other.isDiscovered) return;
 
       let progressLine;
       // Since connections are bidirectional only draw from complete nodes
-      if (node.isComplete && nodeProgress && nodeProgress.node.id === otherId) {
+      if (node.isUnlocked && nodeProgress && nodeProgress.node.id === otherId) {
         const progress = nodeAction.current / nodeAction.requirement;
         const edgeToEdge = lineSegmentBetweenCircles(node, other, NODE_SIZE/2);
         const progressPoint = lerpLineSegment(edgeToEdge[0], edgeToEdge[1], progress);
@@ -103,7 +105,7 @@ function NodeConnections({nodeMap, node, nodeProgress, nodeAction}: INodeConnect
       return <>
         <NodeConnection
           key={node.id + '-' + otherId} x1={node.x} y1={node.y} x2={other.x} y2={other.y}
-          isComplete={node.isComplete && other.isComplete}
+          isComplete={node.isComplete && other.isUnlocked}
         />
         {progressLine}
       </>;

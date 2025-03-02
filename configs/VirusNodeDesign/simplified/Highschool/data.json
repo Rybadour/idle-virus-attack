@@ -100,12 +100,12 @@
 						}
 					],
 					"requiredSkill": "Firewall",
-					"requirement": 300,
+					"requirement": 50,
 					"name": "Router_4b 192.168.10.23",
 					"icon": "Wifi_router",
 					"type": "Normal",
 					"subnet": null,
-					"nodeRewardProgram": "ForceWindowsUpdate",
+					"nodeRewardProgram": null,
 					"idName": null
 				}
 			},

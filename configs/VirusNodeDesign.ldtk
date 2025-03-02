@@ -1101,7 +1101,7 @@
 									"id": "V_String",
 									"params": ["Firewall"]
 								}] },
-								{ "__identifier": "requirement", "__type": "Int", "__value": 300, "__tile": null, "defUid": 9, "realEditorValues": [{ "id": "V_Int", "params": [300] }] },
+								{ "__identifier": "requirement", "__type": "Int", "__value": 50, "__tile": null, "defUid": 9, "realEditorValues": [{ "id": "V_Int", "params": [50] }] },
 								{ "__identifier": "name", "__type": "String", "__value": "Router_4b 192.168.10.23", "__tile": null, "defUid": 10, "realEditorValues": [{
 									"id": "V_String",
 									"params": ["Router_4b 192.168.10.23"]
@@ -1112,10 +1112,7 @@
 								}] },
 								{ "__identifier": "type", "__type": "LocalEnum.NodeType", "__value": "Normal", "__tile": null, "defUid": 14, "realEditorValues": [] },
 								{ "__identifier": "subnet", "__type": "LocalEnum.LevelNode", "__value": null, "__tile": null, "defUid": 16, "realEditorValues": [] },
-								{ "__identifier": "nodeRewardProgram", "__type": "LocalEnum.NodeRewardProgram", "__value": "ForceWindowsUpdate", "__tile": null, "defUid": 19, "realEditorValues": [{
-									"id": "V_String",
-									"params": ["ForceWindowsUpdate"]
-								}] },
+								{ "__identifier": "nodeRewardProgram", "__type": "LocalEnum.NodeRewardProgram", "__value": null, "__tile": null, "defUid": 19, "realEditorValues": [null] },
 								{ "__identifier": "idName", "__type": "String", "__value": null, "__tile": null, "defUid": 20, "realEditorValues": [] }
 							]
 						},

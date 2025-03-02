@@ -26,6 +26,7 @@ const startingSkills: Record<SkillType, number> = {
   [SkillType.Hacking]: 10,
   [SkillType.Spoofing]: 10,
   [SkillType.Firewall]: 10,
+  [SkillType.Mapping]: 10,
 }
 
 const createStatsSlice: MyCreateSlice<StatsSlice, []> = (set, get) => {
@@ -35,6 +36,7 @@ const createStatsSlice: MyCreateSlice<StatsSlice, []> = (set, get) => {
       [SkillType.Hacking]: 0,
       [SkillType.Spoofing]: 0,
       [SkillType.Firewall]: 0,
+      [SkillType.Mapping]: 0,
     },
     protection: globals.STARTING_MAX_PROTECTION,
     maxProtection: globals.STARTING_MAX_PROTECTION,

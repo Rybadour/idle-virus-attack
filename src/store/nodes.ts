@@ -1,8 +1,9 @@
 import _, { cloneDeep } from "lodash";
 import { getNodes } from "../config/node-map";
-import { ActionType, INode, INodeProgress, MyCreateSlice, NodeLevel, NodePathId } from "../shared/types";
+import { ActionType, IActionCompletion, INode, INodeProgress, MyCreateSlice, NodeLevel, NodePathId, NodeType, SkillType } from "../shared/types";
 import { ActionsSlice } from "./actions";
 import { ProgramsSlice } from "./programs";
+import { globals } from "../globals";
 
 export interface NodesSlice {
   nodes: Record<NodeLevel, Record<string, INode>>,
@@ -11,6 +12,8 @@ export interface NodesSlice {
 
   queueMining: (nodeId: string, level: NodeLevel) => void,
   startNodeAction: (nodePath: NodePathId) => void,
+  discoverConnectedNode: (nodePath: NodePathId) => IActionCompletion,
+  unlockNode: (nodePath: NodePathId) => void,
   completeNode: (nodePath: NodePathId) => void,
   isConnectedCompleted: (nodeId: string, level: NodeLevel) => boolean,
   switchToSubnet: (subnet?: NodeLevel) => void,
@@ -50,19 +53,59 @@ const createNodesSlice: MyCreateSlice<NodesSlice, [() => ActionsSlice, () => Pro
     currentMap: NodeLevel.Internet,
     nodeProgress: undefined,
 
-    queueMining: (nodeId, level) => {
-      const node = get().nodes[level][nodeId];
-      actions().queueAction({
-        name: "Node - " + node.name,
-        typeId: {type: ActionType.Node, id: [level, nodeId]},
-        requiredSkill: node.requiredSkill,
-        current: 0,
-        requirement: node.requirement,
-      });
+    queueMining: (nodeId, levelId) => {
+      const level = get().nodes[levelId];
+      const node = level[nodeId];
+      
+      if (!node.isUnlocked) {
+        actions().queueAction({
+          name: "Unlocking Node: " + node.name,
+          typeId: {type: ActionType.UnlockNode, id: [levelId, nodeId]},
+          requiredSkill: node.requiredSkill,
+          current: 0,
+          requirement: node.requirement,
+        });
+      } else if (!node.routesDiscovered) {
+        actions().queueAction({
+          name: "Discovering routes connected to Node: " + node.name,
+          typeId: {type: ActionType.DiscoverRoutes, id: [levelId, nodeId]},
+          requiredSkill: SkillType.Mapping,
+          current: 0,
+          requirement: globals.DISCOVER_REQUIREMENT,
+        });
+      }
+    },
 
+    discoverConnectedNode: ([levelId, nodeId]) => {
       const newNodes = cloneDeep(get().nodes);
-      markConnectionsAsQueueable(newNodes[level], nodeId);
-      set({ nodes: newNodes });
+      const level = newNodes[levelId];
+      const node = level[nodeId];
+
+      const undiscoveredConnected = node.connections.filter((connecting) => !level[connecting].isDiscovered);
+      if (undiscoveredConnected.length >= 0) {
+        node.numDiscovered++;
+        level[undiscoveredConnected[0]].isDiscovered = true;
+        set({ nodes: newNodes });
+      } else {
+        return { stopRepeat: true };
+      }
+
+      const unscannedConnected = node.connections.filter((connecting) => !level[connecting].isScanned);
+      return {
+        stopRepeat: node.numDiscovered >= unscannedConnected.length,
+      }
+    },
+
+    unlockNode: ([level, nodeId]) => {
+      const newNodes = cloneDeep(get().nodes);
+      const node = newNodes[level][nodeId];
+      node.isUnlocked = true;
+      if (node.type === NodeType.Subnet) {
+        node.routesDiscovered = true;
+        node.routesScanned = true;
+        node.isComplete = true;
+      }
+      set({ nodes: newNodes, nodeProgress: undefined });
     },
 
     completeNode: ([level, nodeId]) => {
@@ -70,6 +113,8 @@ const createNodesSlice: MyCreateSlice<NodesSlice, [() => ActionsSlice, () => Pro
       const node = newNodes[level][nodeId];
       node.isComplete = true;
       node.isQueueable = false;
+
+      markConnectionsAsQueueable(newNodes[level], nodeId);
       set({ nodes: newNodes, nodeProgress: undefined });
 
       if (node.nodeRewardProgram) {

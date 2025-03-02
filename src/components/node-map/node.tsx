@@ -8,6 +8,7 @@ export const NODE_SIZE = 30;
 const ICON_SIZE = 18;
 
 export function Node(props: {node: INode, isTarget: boolean, onClick: () => void}) {
+  const { node } = props;
   return <>
     <Tooltip>
       <TooltipTrigger asChild>
@@ -18,14 +19,17 @@ export function Node(props: {node: INode, isTarget: boolean, onClick: () => void
             isComplete={props.node.isComplete}
             isTarget={props.isTarget}
           />
-          <image
-            x={-ICON_SIZE/2}
-            y={-ICON_SIZE/2}
-            width={ICON_SIZE}
-            height={ICON_SIZE}
-            href={`icons/${props.node.icon}.png`}
-            style={{pointerEvents: "none"}}
-          />
+          {node.isScanned ?
+            <image
+              x={-ICON_SIZE/2}
+              y={-ICON_SIZE/2}
+              width={ICON_SIZE}
+              height={ICON_SIZE}
+              href={`icons/${props.node.icon}.png`}
+              style={{pointerEvents: "none"}}
+            /> :
+            <Unscanned x={-6} y={8}>?</Unscanned>
+          }
         </svg>
       </TooltipTrigger>
       <TooltipContent>
@@ -45,7 +49,7 @@ export function Node(props: {node: INode, isTarget: boolean, onClick: () => void
     {props.node.nodeRewardProgram &&
       <NodeFeatureIcon
         node={props.node}
-        icon="computing"
+        icon="disc"
         description={"Awards the " + props.node.nodeRewardProgram + " program on completion."}
       />
     }
@@ -75,6 +79,12 @@ const TooltipContainer = styled.div`
   color: white;
   z-index: 10;
 `;
+
+const Unscanned = styled.text`
+  font: bold 20px sans-serif;
+  fill: #fff;
+  pointer-events: none;
+`
 
 const TooltipTitle = styled.strong`
 `;
