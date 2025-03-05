@@ -94,6 +94,8 @@ const createActionsSlice: MyCreateSlice<ActionsSlice, [() => StatsSlice, () => N
         let repeatAction = false;
         if (newAction.typeId.type === ActionType.UnlockNode) {
           nodes().unlockNode(newAction.typeId.id);
+        } else if (newAction.typeId.type === ActionType.ScanNode) {
+          nodes().scanNode(newAction.typeId.id);
         } else if (newAction.typeId.type === ActionType.DiscoverRoutes) {
           const actionCompletion = nodes().discoverConnectedNode(newAction.typeId.id);
           repeatAction = !actionCompletion.stopRepeat;

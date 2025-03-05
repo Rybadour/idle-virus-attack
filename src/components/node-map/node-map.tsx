@@ -105,7 +105,7 @@ function NodeConnections({nodeMap, node, nodeProgress, nodeAction}: INodeConnect
       return <>
         <NodeConnection
           key={node.id + '-' + otherId} x1={node.x} y1={node.y} x2={other.x} y2={other.y}
-          isComplete={node.isComplete && other.isUnlocked}
+          isComplete={(node.isComplete || node.isUnlocked) && other.isUnlocked}
         />
         {progressLine}
       </>;

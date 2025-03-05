@@ -53,7 +53,7 @@ export enum ActionType {
   Program = 'Program',
   UnlockNode = 'UnlockNode',
   DiscoverRoutes = 'DiscoverRoutes',
-  ScanRoutes = 'ScanRoutes',
+  ScanNode = 'ScanNode',
 }
 
 export interface IAction {
@@ -62,7 +62,7 @@ export interface IAction {
   requirement: number,
   current: number,
   typeId: {
-    type: (ActionType.UnlockNode | ActionType.DiscoverRoutes | ActionType.ScanRoutes),
+    type: (ActionType.UnlockNode | ActionType.DiscoverRoutes | ActionType.ScanNode),
     id: NodePathId,
   } | {
     type: ActionType.Program,

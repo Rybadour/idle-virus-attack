@@ -13,6 +13,7 @@ export interface NodesSlice {
   queueMining: (nodeId: string, level: NodeLevel) => void,
   startNodeAction: (nodePath: NodePathId) => void,
   discoverConnectedNode: (nodePath: NodePathId) => IActionCompletion,
+  scanNode: (nodePath: NodePathId) => void,
   unlockNode: (nodePath: NodePathId) => void,
   completeNode: (nodePath: NodePathId) => void,
   isConnectedCompleted: (nodeId: string, level: NodeLevel) => boolean,
@@ -57,7 +58,15 @@ const createNodesSlice: MyCreateSlice<NodesSlice, [() => ActionsSlice, () => Pro
       const level = get().nodes[levelId];
       const node = level[nodeId];
       
-      if (!node.isUnlocked) {
+      if (!node.isScanned) {
+        actions().queueAction({
+          name: "Scanning: ???",
+          typeId: {type: ActionType.ScanNode, id: [levelId, nodeId]},
+          requiredSkill: SkillType.Mapping,
+          current: 0,
+          requirement: node.requirement * globals.SCAN_REQUIREMENT_RATIO,
+        });
+      } else if (!node.isUnlocked) {
         actions().queueAction({
           name: "Unlocking Node: " + node.name,
           typeId: {type: ActionType.UnlockNode, id: [levelId, nodeId]},
@@ -86,14 +95,27 @@ const createNodesSlice: MyCreateSlice<NodesSlice, [() => ActionsSlice, () => Pro
         node.numDiscovered++;
         level[undiscoveredConnected[0]].isDiscovered = true;
         set({ nodes: newNodes });
-      } else {
-        return { stopRepeat: true };
       }
 
       const unscannedConnected = node.connections.filter((connecting) => !level[connecting].isScanned);
-      return {
-        stopRepeat: node.numDiscovered >= unscannedConnected.length,
+      if (node.numDiscovered >= unscannedConnected.length) {
+        node.isComplete = true;
+        node.routesDiscovered = true;
+        set ({ nodes: newNodes })
+        return { stopRepeat: true };
       }
+
+      return {
+        stopRepeat: false,
+      }
+    },
+
+    scanNode: ([level, nodeId]) => {
+      const newNodes = cloneDeep(get().nodes);
+      const node = newNodes[level][nodeId];
+      node.isScanned = true;
+
+      set({ nodes: newNodes, nodeProgress: undefined });
     },
 
     unlockNode: ([level, nodeId]) => {

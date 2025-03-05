@@ -16,6 +16,7 @@ export function Node(props: {node: INode, isTarget: boolean, onClick: () => void
           <NodeCircle
             onClick={props.onClick}
             r={NODE_SIZE/2}
+            isScanned={props.node.isScanned}
             isComplete={props.node.isComplete}
             isTarget={props.isTarget}
           />
@@ -56,13 +57,18 @@ export function Node(props: {node: INode, isTarget: boolean, onClick: () => void
   </>;
 }
 
-const NodeCircle = styled.circle<{isComplete: boolean, isTarget: boolean}>`
-  fill: ${props => props.isComplete ? '#5B8FB9;' : '#777'};
+const NodeCircle = styled.circle<{isComplete: boolean, isScanned: boolean, isTarget: boolean}>`
+  fill: ${p => p.isComplete ? '#5B8FB9;' : (p.isScanned ? '#777' : 'black')};
 
   ${p => p.isTarget && css`
     stroke: white;
     stroke-width: 2px;
     stroke-dasharray: 7 3;
+  `}
+
+  ${p => !p.isScanned && css`
+    stroke: grey;
+    stroke-width: 2px;
   `}
 
   &:hover {
